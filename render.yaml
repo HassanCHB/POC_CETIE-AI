@@ -1,0 +1,24 @@
+# Render deployment configuration for the CETIE AI Configurator
+# https://render.com/docs/yaml-spec
+#
+# When the repo is connected to Render, this file auto-configures the service.
+# The two API keys MUST be set as secrets via the Render dashboard (never commit):
+#   OPENAI_API_KEY
+#   ANTHROPIC_API_KEY
+
+services:
+  - type: web
+    name: cetie-ai-configurator
+    runtime: python
+    plan: starter          # $7/month, always-on (no cold starts, needed for demo UX)
+    region: frankfurt      # nearest to France; change to "oregon" for US clients
+    buildCommand: "pip install -r poc/requirements.txt"
+    startCommand: "gunicorn --chdir poc app:app --workers 2 --timeout 180 --bind 0.0.0.0:$PORT"
+    autoDeploy: true       # redeploy on every git push to main
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.5"
+      - key: OPENAI_API_KEY
+        sync: false        # set in Render dashboard (marked secret)
+      - key: ANTHROPIC_API_KEY
+        sync: false        # set in Render dashboard (marked secret)
