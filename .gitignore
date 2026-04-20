@@ -1,0 +1,48 @@
+# ── Secrets — NEVER commit ─────────────────────────────────────
+.env
+*.env
+poc/.env
+*.pem
+*.key
+
+# ── Raw client data — stays local, not needed in production ────
+yearly_data/
+AI-Project-for-CETIE*
+DEVIS*.xlsm
+DEVIS*.xlsx
+~$*
+
+# ── Node / build artefacts (from root tooling) ─────────────────
+node_modules/
+package-lock.json
+*.tsbuildinfo
+
+# ── Python ─────────────────────────────────────────────────────
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Runtime state files (let server create fresh on first run) ─
+poc/data/feedback.json
+poc/data/history.json
+poc/data/learned_rules.json
+poc/data/eval_report*.json
+
+# ── IDE / OS ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ── Local-only misc ────────────────────────────────────────────
+*.log
+*.tmp
+tmp/

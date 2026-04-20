@@ -1,0 +1,936 @@
+[
+  {
+    "id": 0,
+    "source_file": "DEVIS2601137",
+    "indice": "1",
+    "customer_request": "Demande de devis pour : Armoire 2 pompes 2kW avec S4W. Client : HYDRELEC. Affaire : Bisinchi. Composants principaux : Parafoudre général TRI+N avec sa protection de marque SCHNEIDER référence A9L16297, Parafoudre 230VAC pour la protection de l'alimentation 230VAC/24VDC qui alimente le Sofrel et l'afficheur de pression, Interrupteur général 4x40A avec bobine Mx pour coupure sur arrêt d'urgence, Répartiteur tétrapolaire 100A 7 connecteurs, Relais de manque et d'inversion de phases SCHNEIDER référence RM17TG20, Départ disjoncteur contacteur moteur par pompe 2kW (x2), Départ disjoncteur 230VAC 10A protégé en 300mA sur bornes pour l'éclairage, Départ disjoncteur différentiel 16A protégé en 30mA pour l'alimentation de la prise de courant 230VAC sur porte intérieure, Transformateur 400VAC/24VAC protégé par disjoncteurs pour la commande et la signalisation, Alimentation stabilisée a découpage 230VAC/24VDC  protégé par disjoncteurs pour le S4W et l'afficheur de pression.",
+    "product_type": "Armoire 2 pompes 2kW avec S4W",
+    "sector": "Eau / Assainissement",
+    "summary": "Armoire 2 pompes 2kW avec S4W – HYDRELEC (Bisinchi) | 22.0h câblage / 1.0h prog | Matière : 4210.28 EUR | Prix vente : 7614.0 EUR",
+    "tags": [
+      "2 pompes",
+      "230v",
+      "24v",
+      "2kW",
+      "400v",
+      "contacteur",
+      "disjoncteur",
+      "débit",
+      "flotteur",
+      "gsm",
+      "permutation",
+      "pompe",
+      "pression",
+      "relais",
+      "s4w",
+      "schneider",
+      "sofrel",
+      "urgence"
+    ],
+    "client": "HYDRELEC",
+    "ref_affaire": "Bisinchi",
+    "selected_blocks": [
+      {
+        "id": 16,
+        "label": "Armoire double porte PLM",
+        "designation": "Coffret polyester double porte 1056x852x350",
+        "quantity": 1,
+        "unit_cost": 471.8662,
+        "heures_cablage": 1.619,
+        "heures_prog": 0.0,
+        "categorie": "01.Enveloppe"
+      },
+      {
+        "id": 210,
+        "label": "Socle aluminium",
+        "designation": "Socle aluminium de hauteur 200mm pour armoire 1056x852x350",
+        "quantity": 1,
+        "unit_cost": 156.6,
+        "heures_cablage": 0.75,
+        "heures_prog": 0.0,
+        "categorie": "01.Enveloppe"
+      },
+      {
+        "id": 399,
+        "label": "Parafoudre",
+        "designation": "Parafoudre général TRI+N avec sa protection de marque SCHNEIDER référence A9L16297",
+        "quantity": 1,
+        "unit_cost": 171.7254,
+        "heures_cablage": 0.014,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2555,
+        "label": "Interrupteur général mono frontal",
+        "designation": "Parafoudre 230VAC pour la protection de l'alimentation 230VAC/24VDC qui alimente le Sofrel et l'afficheur de pression",
+        "quantity": 1,
+        "unit_cost": 119.23,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2554,
+        "label": "Interrupteur général tétra frontal",
+        "designation": "Interrupteur général 4x40A avec bobine Mx pour coupure sur arrêt d'urgence",
+        "quantity": 1,
+        "unit_cost": 76.3356,
+        "heures_cablage": 0.208,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 557,
+        "label": "Répartiteur tétrapolaire",
+        "designation": "Répartiteur tétrapolaire 100A 7 connecteurs",
+        "quantity": 1,
+        "unit_cost": 9.2466,
+        "heures_cablage": 0.374,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 587,
+        "label": "Protection c. inversion de phases",
+        "designation": "Relais de manque et d'inversion de phases SCHNEIDER référence RM17TG20",
+        "quantity": 1,
+        "unit_cost": 106.2834,
+        "heures_cablage": 0.283,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 806,
+        "label": "Démarrage direct 2 pompes",
+        "designation": "Départ disjoncteur contacteur moteur par pompe 2kW (x2)",
+        "quantity": 1,
+        "unit_cost": 117.296,
+        "heures_cablage": 0.892,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1493,
+        "label": "Départ disjoncteur DT40 uni + neutre",
+        "designation": "Départ disjoncteur 230VAC 10A protégé en 300mA sur bornes pour l'éclairage",
+        "quantity": 1,
+        "unit_cost": 79.3804,
+        "heures_cablage": 0.014,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1545,
+        "label": "Départ prise 230V",
+        "designation": "Départ disjoncteur différentiel 16A protégé en 30mA pour l'alimentation de la prise de courant 230VAC sur porte intérieure",
+        "quantity": 1,
+        "unit_cost": 56.392,
+        "heures_cablage": 0.074,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1712,
+        "label": "Transformateur 24VAC Legrand protégé par disjoncteur",
+        "designation": "Transformateur 400VAC/24VAC protégé par disjoncteurs pour la commande et la signalisation",
+        "quantity": 1,
+        "unit_cost": 86.748,
+        "heures_cablage": 0.398,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1767,
+        "label": "Alimentation 24VDC Legrand protégée par disjoncteur",
+        "designation": "Alimentation stabilisée a découpage 230VAC/24VDC  protégé par disjoncteurs pour le S4W et l'afficheur de pression",
+        "quantity": 1,
+        "unit_cost": 130.3832,
+        "heures_cablage": 0.162,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1803,
+        "label": "Texte ensemble relais",
+        "designation": "Ensemble de relais et de temporisation pour l'automatisme",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1804,
+        "label": "Mise sous tension temporisée",
+        "designation": "Mise sous tension temporisée",
+        "quantity": 1,
+        "unit_cost": 24.885,
+        "heures_cablage": 0.104,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1809,
+        "label": "Relais",
+        "designation": "Relais WAGO 24VDC 4 Contacts",
+        "quantity": 8,
+        "unit_cost": 39.2456,
+        "heures_cablage": 1.904,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1806,
+        "label": "Relais",
+        "designation": "Relais CAD32 24VDC",
+        "quantity": 1,
+        "unit_cost": 31.619,
+        "heures_cablage": 0.164,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1843,
+        "label": "Relais",
+        "designation": "Temporisation pour permutation",
+        "quantity": 1,
+        "unit_cost": 35.9072,
+        "heures_cablage": 0.074,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1823,
+        "label": "Relais",
+        "designation": "Télérupteur pour la permutation des pompes",
+        "quantity": 1,
+        "unit_cost": 24.0174,
+        "heures_cablage": 0.104,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1817,
+        "label": "Relais",
+        "designation": "Relais sortie S4W",
+        "quantity": 4,
+        "unit_cost": 23.4712,
+        "heures_cablage": 0.336,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2674,
+        "label": "Relais",
+        "designation": "Relais pour sonde PTC par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 74.4984,
+        "heures_cablage": 0.268,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1887,
+        "label": "Départ 4/20mA Sonde radar",
+        "designation": "Départ 4/20mA protégé par bornes fusibles pour la sonde radar de votre fourniture",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1909,
+        "label": "Flotteurs mode secours",
+        "designation": "Mesure de niveau par 2 flotteurs pour le mode secours + 1 flotteur alarme et 1 flotteur niveau très bas (les flotteurs sont de votre fourniture)",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 1913,
+        "label": "Départ 4/20mA capteur de pression",
+        "designation": "Départ 4/20mA protégé par bornes fusibles pour le capteur de pression de votre fourniture",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2612,
+        "label": "Protection du débitmètre",
+        "designation": "Départ disjoncteur 230VAC sur bornes pour la protection du débitmètre dont le transmetteur est extérieur à l'armoire et de votre fourniture",
+        "quantity": 1,
+        "unit_cost": 9.66,
+        "heures_cablage": 0.074,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2656,
+        "label": "Mesure de débit texte",
+        "designation": "Reprise du signal 4-20mA et de l'impulsion du débitmètre sur le Sofrel",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": ""
+      },
+      {
+        "id": 2008,
+        "label": "Batterie 12VDC / 12AH",
+        "designation": "Batterie 12VDC / 12AH pour le S4W",
+        "quantity": 1,
+        "unit_cost": 19.0,
+        "heures_cablage": 0.044,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2010,
+        "label": "SOFREL composé de :",
+        "designation": "Sofrel S4W composé de :",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2017,
+        "label": "Boitier CPU SOFREL",
+        "designation": "S4W MEDIUM 12-2-4 - 1000I - 2MXES - GSM - ETH",
+        "quantity": 1,
+        "unit_cost": 1399.41,
+        "heures_cablage": 0.524,
+        "heures_prog": 0.25,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2019,
+        "label": "Antenne GSM",
+        "designation": "Antenne GSM bi-bande 0 dB câble 4m SMA mâle pour S500 et S4W",
+        "quantity": 1,
+        "unit_cost": 41.67,
+        "heures_cablage": 0.042,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2027,
+        "label": "Fonction",
+        "designation": "S4W - Fonction Poste de Relevage",
+        "quantity": 1,
+        "unit_cost": 80.23,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2106,
+        "label": "Programme client",
+        "designation": "Réalisation du programme du Sofrel de votre fourniture",
+        "quantity": 1,
+        "unit_cost": 0.01,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "04.Options intérieures"
+      },
+      {
+        "id": 2295,
+        "label": "Afficheur 4-20mA PR",
+        "designation": "Afficheur 4/20mA pour l'affichage de la pression",
+        "quantity": 1,
+        "unit_cost": 145.44,
+        "heures_cablage": 0.44,
+        "heures_prog": 0.25,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2308,
+        "label": "Voltmètre général",
+        "designation": "Voltmètre 0-500V et son commutateur de phases",
+        "quantity": 1,
+        "unit_cost": 28.868,
+        "heures_cablage": 0.334,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2331,
+        "label": "Voyant sous tension",
+        "designation": "Voyant LED 24V blanc \"sous tension\"",
+        "quantity": 1,
+        "unit_cost": 2.713,
+        "heures_cablage": 0.144,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2336,
+        "label": "Voyant alarme",
+        "designation": "Voyant LED 24V jaune \"niveau très haut\"",
+        "quantity": 1,
+        "unit_cost": 4.159,
+        "heures_cablage": 0.144,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2384,
+        "label": "2 pompes",
+        "designation": "Commutateur \"man o auto\" par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 18.26,
+        "heures_cablage": 0.288,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2389,
+        "label": "2 pompes",
+        "designation": "Voyant LED 24V rouge \"défaut\" par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 8.13,
+        "heures_cablage": 0.288,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2390,
+        "label": "2 pompes",
+        "designation": "Voyant LED 24V vert \"marche\" par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 8.13,
+        "heures_cablage": 0.288,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2391,
+        "label": "2 pompes",
+        "designation": "Compteur horaire par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 50.4,
+        "heures_cablage": 0.26,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2399,
+        "label": "2 pompes",
+        "designation": "Ampèremètre sur TC 0-5-25A par pompe (x2)",
+        "quantity": 1,
+        "unit_cost": 104.226,
+        "heures_cablage": 0.376,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2464,
+        "label": "Bouton poussoir",
+        "designation": "Bouton poussoir bleu \"réarmement\"",
+        "quantity": 1,
+        "unit_cost": 5.6292,
+        "heures_cablage": 0.144,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2479,
+        "label": "Commutateur",
+        "designation": "Commutateur ''normal / secours''",
+        "quantity": 1,
+        "unit_cost": 7.763,
+        "heures_cablage": 0.144,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2501,
+        "label": "Arrêt d'urgence",
+        "designation": "Coup de poing tourner pour déverrouiller \"arrêt d'urgence\"",
+        "quantity": 1,
+        "unit_cost": 15.5938,
+        "heures_cablage": 0.202,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2506,
+        "label": "Prise 230V",
+        "designation": "Prise 230VAC",
+        "quantity": 1,
+        "unit_cost": 17.7995,
+        "heures_cablage": 0.142,
+        "heures_prog": 0.0,
+        "categorie": "06.Sur porte"
+      },
+      {
+        "id": 2551,
+        "label": "Divers",
+        "designation": "divers1000",
+        "quantity": 1,
+        "unit_cost": 108.0,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "10.Emballage, port et divers"
+      },
+      {
+        "id": 1,
+        "label": "Câblage & Intégration",
+        "designation": "Câblage & Intégration",
+        "quantity": 10.4,
+        "unit_cost": 48.0,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "11.Main d'Œuvre"
+      },
+      {
+        "id": 1,
+        "label": "Programmation Automate",
+        "designation": "Programmation Automate",
+        "quantity": 0.5,
+        "unit_cost": 80.0,
+        "heures_cablage": 0.0,
+        "heures_prog": 0.0,
+        "categorie": "11.Main d'Œuvre"
+      }
+    ],
+    "configuration": {
+      "enclosure": "Coffret polyester double porte 1056x852x350",
+      "key_blocks": [
+        "Parafoudre général TRI+N avec sa protection de marque SCHNEIDER référence A9L16297",
+        "Parafoudre 230VAC pour la protection de l'alimentation 230VAC/24VDC qui alimente le Sofrel et l'afficheur de pression",
+        "Interrupteur général 4x40A avec bobine Mx pour coupure sur arrêt d'urgence",
+        "Répartiteur tétrapolaire 100A 7 connecteurs",
+        "Relais de manque et d'inversion de phases SCHNEIDER référence RM17TG20",
+        "Départ disjoncteur contacteur moteur par pompe 2kW (x2)",
+        "Départ disjoncteur 230VAC 10A protégé en 300mA sur bornes pour l'éclairage",
+        "Départ disjoncteur différentiel 16A protégé en 30mA pour l'alimentation de la prise de courant 230VAC sur porte intérieure",
+        "Transformateur 400VAC/24VAC protégé par disjoncteurs pour la commande et la signalisation",
+        "Alimentation stabilisée a découpage 230VAC/24VDC  protégé par disjoncteurs pour le S4W et l'afficheur de pression",
+        "Mise sous tension temporisée",
+        "Relais WAGO 24VDC 4 Contacts",
+        "Relais CAD32 24VDC",
+        "Temporisation pour permutation",
+        "Télérupteur pour la permutation des pompes",
+        "Relais sortie S4W",
+        "Relais pour sonde PTC par pompe (x2)",
+        "Départ disjoncteur 230VAC sur bornes pour la protection du débitmètre dont le transmetteur est extérieur à l'armoire et de votre fourniture",
+        "Batterie 12VDC / 12AH pour le S4W",
+        "S4W MEDIUM 12-2-4 - 1000I - 2MXES - GSM - ETH",
+        "Antenne GSM bi-bande 0 dB câble 4m SMA mâle pour S500 et S4W",
+        "S4W - Fonction Poste de Relevage",
+        "Afficheur 4/20mA pour l'affichage de la pression",
+        "Voltmètre 0-500V et son commutateur de phases",
+        "Voyant LED 24V blanc \"sous tension\"",
+        "Voyant LED 24V jaune \"niveau très haut\"",
+        "Commutateur \"man o auto\" par pompe (x2)",
+        "Voyant LED 24V rouge \"défaut\" par pompe (x2)",
+        "Voyant LED 24V vert \"marche\" par pompe (x2)",
+        "Compteur horaire par pompe (x2)",
+        "Ampèremètre sur TC 0-5-25A par pompe (x2)",
+        "Bouton poussoir bleu \"réarmement\"",
+        "Commutateur ''normal / secours''",
+        "Coup de poing tourner pour déverrouiller \"arrêt d'urgence\"",
+        "Prise 230VAC"
+      ],
+      "total_hours_cablage": 22.0,
+      "total_hours_prog": 1.0,
+      "estimated_material_cost": 4210.28,
+      "estimated_sale_price": 7614.0,
+      "notes": "Devis réel CETIE n°DEVIS2601137 indice 1. Commercial : Thierry GUYOT."
+    }
+  },
+  {
+    "id": 1,
+    "customer_request": "Bonjour, nous avons besoin d'une armoire de commande pour 2 pompes de relevage eaux usées, moteurs 7.5kW chacun, alimentation 400V triphasé, protection IP65 car installation en extérieur. Démarrage direct, alternance automatique des pompes, alarme niveau haut.",
+    "product_type": "Armoire commande pompes relevage",
+    "sector": "Assainissement",
+    "summary": "Armoire 2 pompes relevage eaux usées 7.5kW, IP65, alternance automatique, alarme niveau",
+    "tags": [
+      "pompe",
+      "relevage",
+      "eaux usées",
+      "7.5kW",
+      "400V",
+      "IP65",
+      "alternance",
+      "alarme"
+    ],
+    "configuration": {
+      "enclosure": "Armoire Himel 800x600x300 IP65 avec platine",
+      "key_blocks": [
+        "Départ moteur disjoncteur + contacteur 7.5kW (x2)",
+        "Alimentation 24VDC EASY LEGRAND",
+        "Arrêt d'urgence tête champignon rouge",
+        "Module alternance pompes",
+        "Capteur niveau flotteur (x3 : bas, haut, alarme)",
+        "Voyant marche vert + défaut rouge (x2)",
+        "Transformateur 400/230V"
+      ],
+      "total_hours_cablage": 18.5,
+      "total_hours_prog": 0,
+      "notes": "Prévoir bornier étanche pour câbles extérieurs. Schéma de puissance et commande fourni."
+    }
+  },
+  {
+    "id": 2,
+    "customer_request": "Demande de prix pour un coffret de commande variateur de fréquence pour pompe irrigation 11kW, 400V, communication Modbus RTU avec supervision SCADA existante. Montage en armoire existante possible.",
+    "product_type": "Coffret variateur pompe irrigation",
+    "sector": "Agriculture / Irrigation",
+    "summary": "Coffret variateur 11kW Modbus RTU pour pompe irrigation, intégration SCADA",
+    "tags": [
+      "variateur",
+      "pompe",
+      "irrigation",
+      "11kW",
+      "Modbus",
+      "SCADA",
+      "400V"
+    ],
+    "configuration": {
+      "enclosure": "Coffret Himel 600x400x200 IP55",
+      "key_blocks": [
+        "Variateur ATV320 11kW 400V",
+        "Filtre EMC classe C2",
+        "Disjoncteur de protection variateur",
+        "Module communication Modbus RTU",
+        "Fusibles ultra-rapides protection variateur",
+        "Alimentation 24VDC auxiliaire"
+      ],
+      "total_hours_cablage": 10.0,
+      "total_hours_prog": 2.0,
+      "notes": "Paramétrage variateur inclus. Protocole Modbus à configurer selon registres SCADA client."
+    }
+  },
+  {
+    "id": 3,
+    "customer_request": "TGBT pour petit bâtiment industriel 200m², puissance souscrite 36kVA, besoin de 6 départs disjoncteurs différentiels pour éclairage, prises, machines, avec jeu de barres cuivre 160A.",
+    "product_type": "TGBT bâtiment industriel",
+    "sector": "Industrie générale",
+    "summary": "TGBT 36kVA avec jeu de barres 160A, 6 départs différentiels, bâtiment 200m²",
+    "tags": [
+      "TGBT",
+      "disjoncteur",
+      "différentiel",
+      "jeu de barres",
+      "éclairage",
+      "prises",
+      "160A"
+    ],
+    "configuration": {
+      "enclosure": "Armoire TGBT 1000x800x300 IP41 avec porte vitrée",
+      "key_blocks": [
+        "Disjoncteur général 160A 4P",
+        "Jeu de barres cuivre 160A 4P",
+        "Disjoncteur différentiel 40A 30mA (x6)",
+        "Parafoudre Type 2 400V",
+        "Compteur d'énergie modulaire",
+        "Répartiteur de neutre 160A"
+      ],
+      "total_hours_cablage": 14.0,
+      "total_hours_prog": 0,
+      "notes": "Conforme NF C 15-100. Bilan de puissance joint au dossier."
+    }
+  },
+  {
+    "id": 4,
+    "customer_request": "Coffret démarrage étoile-triangle pour moteur ventilation 22kW, 400V triphasé. Temporisation réglable 5-15 secondes. Avec protection thermique et arrêt d'urgence.",
+    "product_type": "Coffret démarrage étoile-triangle",
+    "sector": "HVAC / Ventilation",
+    "summary": "Coffret étoile-triangle 22kW pour moteur ventilation, temporisation réglable, protection thermique",
+    "tags": [
+      "étoile-triangle",
+      "démarrage",
+      "22kW",
+      "ventilation",
+      "temporisation",
+      "protection thermique",
+      "400V"
+    ],
+    "configuration": {
+      "enclosure": "Coffret Himel 600x400x200 IP55",
+      "key_blocks": [
+        "Contacteur principal LC1D40 (x1)",
+        "Contacteur étoile LC1D25 (x1)",
+        "Contacteur triangle LC1D25 (x1)",
+        "Relais temporisé étoile-triangle",
+        "Disjoncteur moteur GV2 22kW",
+        "Arrêt d'urgence XB5",
+        "Voyant marche/arrêt"
+      ],
+      "total_hours_cablage": 8.0,
+      "total_hours_prog": 0,
+      "notes": "Schéma étoile-triangle standard. Vérifier résistance d'isolement moteur avant mise en service."
+    }
+  },
+  {
+    "id": 5,
+    "customer_request": "Armoire automatisme complète pour station de traitement des eaux. Automate Siemens S7-1200, 16 entrées TOR, 12 sorties TOR, 4 entrées analogiques 4-20mA pour capteurs pH, turbidité, chlore, niveau. Communication Profinet avec supervision WinCC.",
+    "product_type": "Armoire automatisme station traitement eau",
+    "sector": "Traitement des eaux",
+    "summary": "Armoire S7-1200 avec 16DI/12DO/4AI, Profinet WinCC, capteurs qualité eau",
+    "tags": [
+      "S7-1200",
+      "Siemens",
+      "automatisme",
+      "traitement eau",
+      "Profinet",
+      "WinCC",
+      "analogique",
+      "4-20mA",
+      "pH",
+      "turbidité"
+    ],
+    "configuration": {
+      "enclosure": "Armoire Rittal 1200x800x400 IP54 climatisée",
+      "key_blocks": [
+        "CPU S7-1200 1214C DC/DC/DC",
+        "Module SM1221 16DI 24VDC",
+        "Module SM1222 16DO 24VDC",
+        "Module SM1231 4AI 4-20mA",
+        "Alimentation SITOP 24VDC 10A",
+        "Switch Profinet 8 ports",
+        "Parafoudres 24VDC sur entrées capteurs",
+        "Bornier de séparation pour boucles 4-20mA"
+      ],
+      "total_hours_cablage": 32.0,
+      "total_hours_prog": 24.0,
+      "notes": "Programmation TIA Portal V17. Tests FAT en atelier inclus. Documentation complète."
+    }
+  },
+  {
+    "id": 6,
+    "customer_request": "Bonjour, nous souhaitons un coffret de commande pour 3 pompes surpresseur eau potable, moteurs 4kW, démarreur progressif souhaité pour éviter coups de bélier, avec gestion par pressostat et télégestion GSM.",
+    "product_type": "Coffret commande surpresseur eau potable",
+    "sector": "Eau potable",
+    "summary": "Coffret 3 pompes surpresseur 4kW, démarreur progressif, pressostat, télégestion GSM",
+    "tags": [
+      "surpresseur",
+      "pompe",
+      "4kW",
+      "démarreur progressif",
+      "pressostat",
+      "télégestion",
+      "GSM",
+      "eau potable"
+    ],
+    "configuration": {
+      "enclosure": "Armoire Himel 1000x800x300 IP65",
+      "key_blocks": [
+        "Démarreur progressif ATS22 4kW (x3)",
+        "Disjoncteur moteur (x3)",
+        "Module télégestion GSM/GPRS",
+        "Pressostat différentiel",
+        "Capteur pression 4-20mA",
+        "Alimentation 24VDC",
+        "Arrêt d'urgence (x1)",
+        "Voyants état pompes (x3)"
+      ],
+      "total_hours_cablage": 24.0,
+      "total_hours_prog": 4.0,
+      "notes": "Paramétrage démarreurs progressifs pour rampe 5s. Configuration SMS alarmes télégestion."
+    }
+  },
+  {
+    "id": 7,
+    "customer_request": "Besoin urgent d'un coffret démarrage direct moteur convoyeur 5.5kW avec arrêt d'urgence câblé en sécurité catégorie 3, inversion de sens de marche, 400V, IP55.",
+    "product_type": "Coffret commande convoyeur avec sécurité",
+    "sector": "Industrie / Manutention",
+    "summary": "Coffret 5.5kW convoyeur, arrêt urgence cat.3, inversion marche, IP55",
+    "tags": [
+      "convoyeur",
+      "5.5kW",
+      "arrêt urgence",
+      "catégorie 3",
+      "inversion",
+      "sécurité",
+      "IP55"
+    ],
+    "configuration": {
+      "enclosure": "Coffret Himel 600x400x200 IP55",
+      "key_blocks": [
+        "Disjoncteur moteur GV2 5.5kW",
+        "Contacteur marche avant LC1D09",
+        "Contacteur marche arrière LC1D09",
+        "Module sécurité Preventa XPS-AC catégorie 3",
+        "Arrêt d'urgence XB5 (x2 câblés en série)",
+        "Relais thermique LRD",
+        "Voyant marche vert",
+        "Bouton marche/arrêt"
+      ],
+      "total_hours_cablage": 9.0,
+      "total_hours_prog": 0,
+      "notes": "Inversion par verrouillage électrique ET mécanique. Certificat conformité directive machines."
+    }
+  },
+  {
+    "id": 8,
+    "customer_request": "Armoire commande centrale de traitement d'air CTA pour bâtiment tertiaire. Gestion vitesse variable sur ventilateurs soufflage et reprise, régulation température et hygrométrie, communication BACnet pour GTB.",
+    "product_type": "Armoire commande CTA",
+    "sector": "CVC / Bâtiment tertiaire",
+    "summary": "Armoire CTA avec variateurs, régulation T°/hygro, communication BACnet GTB",
+    "tags": [
+      "CTA",
+      "ventilation",
+      "variateur",
+      "BACnet",
+      "GTB",
+      "régulation",
+      "température",
+      "hygrométrie",
+      "CVC"
+    ],
+    "configuration": {
+      "enclosure": "Armoire Rittal 1000x800x300 IP54",
+      "key_blocks": [
+        "Variateur ATV320 soufflage (selon puissance)",
+        "Variateur ATV320 reprise (selon puissance)",
+        "Module BACnet/IP pour variateurs",
+        "Régulateur température/hygrométrie",
+        "Sonde température gaine (x2)",
+        "Sonde hygrométrie",
+        "Alimentation 24VDC",
+        "Filtre EMC variateurs"
+      ],
+      "total_hours_cablage": 20.0,
+      "total_hours_prog": 8.0,
+      "notes": "Mise en service avec prestataire GTB. Cartographie BACnet à fournir par client."
+    }
+  },
+  {
+    "id": 9,
+    "customer_request": "Petit coffret de commande pour portail coulissant et éclairage parking. Minuterie éclairage, détecteur présence, commande portail avec boucles inductives, 230V monophasé.",
+    "product_type": "Coffret commande portail et éclairage",
+    "sector": "Bâtiment / Parking",
+    "summary": "Coffret 230V portail coulissant + éclairage parking, minuterie, détecteur présence, boucles inductives",
+    "tags": [
+      "portail",
+      "éclairage",
+      "parking",
+      "minuterie",
+      "détecteur",
+      "230V",
+      "monophasé",
+      "boucle inductive"
+    ],
+    "configuration": {
+      "enclosure": "Coffret Himel 400x300x150 IP55",
+      "key_blocks": [
+        "Disjoncteur général 16A 2P différentiel 30mA",
+        "Minuterie éclairage programmable",
+        "Détecteur présence infrarouge",
+        "Télérupteur 16A pour éclairage",
+        "Relais commande portail (x2 : ouverture/fermeture)",
+        "Transformateur 230/24VAC boucles inductives"
+      ],
+      "total_hours_cablage": 5.0,
+      "total_hours_prog": 0,
+      "notes": "Réglage temporisation minuterie sur site. Câbles boucles inductives par client."
+    }
+  },
+  {
+    "id": 10,
+    "customer_request": "Nous cherchons une solution pour commander 4 pompes doseuses chimiques (soude, acide, coagulant, désinfectant) pour traitement eau industrielle. Débit réglable par signal 4-20mA depuis automate existant Allen-Bradley. IP65 impératif, environnement corrosif.",
+    "product_type": "Coffret commande pompes doseuses",
+    "sector": "Industrie chimique / Traitement eau",
+    "summary": "Coffret 4 pompes doseuses chimiques, commande 4-20mA Allen-Bradley, IP65, environnement corrosif",
+    "tags": [
+      "pompe doseuse",
+      "chimique",
+      "4-20mA",
+      "Allen-Bradley",
+      "IP65",
+      "corrosif",
+      "dosage",
+      "traitement eau"
+    ],
+    "configuration": {
+      "enclosure": "Armoire polycarbonate 600x500x200 IP65 résine",
+      "key_blocks": [
+        "Convertisseur 4-20mA vers fréquence (x4)",
+        "Relais statique 24VDC/230VAC (x4)",
+        "Alimentation 24VDC isolée",
+        "Bornier de séparation galvanique 4-20mA",
+        "Disjoncteur 2A 1P (x4)",
+        "Voyant de marche LED (x4)",
+        "Presse-étoupes PG inox (entrées câbles)"
+      ],
+      "total_hours_cablage": 10.0,
+      "total_hours_prog": 0,
+      "notes": "Matériaux résistants milieu corrosif. Visserie inox. Test étanchéité IP65 après câblage."
+    }
+  },
+  {
+    "id": 11,
+    "customer_request": "Armoire de commande pour presse hydraulique industrielle 30kW, moteur pompe hydraulique avec démarrage étoile-triangle, gestion des vélos de presse par automate Schneider M241, IHM Magelis 7 pouces, sécurités rideaux lumineux catégorie 4.",
+    "product_type": "Armoire commande presse hydraulique",
+    "sector": "Industrie / Machines spéciales",
+    "summary": "Armoire presse hydraulique 30kW, étoile-triangle, M241, IHM Magelis, sécurité catégorie 4",
+    "tags": [
+      "presse",
+      "hydraulique",
+      "30kW",
+      "étoile-triangle",
+      "M241",
+      "Magelis",
+      "IHM",
+      "rideau lumineux",
+      "catégorie 4"
+    ],
+    "configuration": {
+      "enclosure": "Armoire Rittal 1400x1000x400 IP54 avec climatiseur",
+      "key_blocks": [
+        "Disjoncteur moteur NS100 30kW",
+        "Contacteurs étoile-triangle LC1D50/D32",
+        "Automate M241 avec extensions",
+        "IHM Magelis HMIGTO 7 pouces",
+        "Module sécurité Preventa XPS-MC catégorie 4",
+        "Rideau lumineux Schneider XUSB (x2)",
+        "Alimentation PHASEO 24VDC 20A",
+        "Transformateur 400/230V 1kVA"
+      ],
+      "total_hours_cablage": 40.0,
+      "total_hours_prog": 30.0,
+      "notes": "Certification directive machines 2006/42/CE. Analyse de risques et dossier technique requis."
+    }
+  },
+  {
+    "id": 12,
+    "customer_request": "Coffret de télécommande et télésurveillance pour 3 stations de pompage distantes. Communication 4G, remontée alarmes par SMS, consultation et commande à distance via web, sans automate programmable.",
+    "product_type": "Coffret télégestion stations pompage",
+    "sector": "Eau / Assainissement",
+    "summary": "Coffret télégestion 3 stations pompage distantes, 4G, SMS alarmes, supervision web, sans API",
+    "tags": [
+      "télégestion",
+      "pompage",
+      "4G",
+      "SMS",
+      "supervision",
+      "web",
+      "remote",
+      "IoT",
+      "alarme"
+    ],
+    "configuration": {
+      "enclosure": "Coffret Himel 600x400x200 IP65",
+      "key_blocks": [
+        "Routeur 4G industriel avec SIM data",
+        "Module I/O distant 8DI/4DO/2AI",
+        "Alimentation 24VDC avec batterie secours",
+        "Relais d'interface (x4)",
+        "Parafoudre 24VDC sur entrées",
+        "Antenne 4G extérieure"
+      ],
+      "total_hours_cablage": 12.0,
+      "total_hours_prog": 6.0,
+      "notes": "Configuration plateforme cloud télégestion incluse. Abonnement SIM data à prévoir par client."
+    }
+  }
+]
