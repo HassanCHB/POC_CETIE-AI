@@ -1,0 +1,1186 @@
+[
+  {
+    "id": 11,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 430x330x200",
+    "heures_cablage": 1.0750000000000002,
+    "cout": 138.82064,
+    "label": "Coffret polyester double porte 430x330x200"
+  },
+  {
+    "id": 12,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 530x430x200",
+    "heures_cablage": 1.205,
+    "cout": 153.36195,
+    "label": "Coffret polyester double porte 530x430x200"
+  },
+  {
+    "id": 13,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 647x436x250",
+    "heures_cablage": 1.205,
+    "cout": 179.16907,
+    "label": "Coffret polyester double porte 647x436x250"
+  },
+  {
+    "id": 14,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 747x536x300",
+    "heures_cablage": 1.719,
+    "cout": 252.67962999999997,
+    "label": "Coffret polyester double porte 747x536x300"
+  },
+  {
+    "id": 15,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 847x636x300",
+    "heures_cablage": 1.719,
+    "cout": 292.56194999999997,
+    "label": "Coffret polyester double porte 847x636x300"
+  },
+  {
+    "id": 16,
+    "categorie": "Enveloppe polyester PLM avec porte intérieure",
+    "designation": "Coffret polyester double porte 1056x852x350",
+    "heures_cablage": 1.619,
+    "cout": 476.01194999999996,
+    "label": "Coffret polyester double porte 1056x852x350"
+  },
+  {
+    "id": 17,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1000x750x320",
+    "heures_cablage": 1.719,
+    "cout": 607.5445900000002,
+    "label": "Armoire polyester double porte 1000x750x320"
+  },
+  {
+    "id": 18,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x750x320",
+    "heures_cablage": 1.719,
+    "cout": 716.6313100000002,
+    "label": "Armoire polyester double porte 1250x750x320"
+  },
+  {
+    "id": 19,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x1000x320",
+    "heures_cablage": 1.9189999999999998,
+    "cout": 947.64147,
+    "label": "Armoire polyester double porte 1250x1000x320"
+  },
+  {
+    "id": 20,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x1250x320",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1122.6976300000001,
+    "label": "Armoire polyester double porte 1250x1250x320"
+  },
+  {
+    "id": 21,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x750x320",
+    "heures_cablage": 1.9190000000000003,
+    "cout": 797.6318700000002,
+    "label": "Armoire polyester double porte 1500x750x320"
+  },
+  {
+    "id": 22,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x1000x320",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1046.51379,
+    "label": "Armoire polyester double porte 1500x1000x320"
+  },
+  {
+    "id": 23,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x1250x320",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1209.6097100000002,
+    "label": "Armoire polyester double porte 1500x1250x320"
+  },
+  {
+    "id": 24,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 500x750x420",
+    "heures_cablage": 0.979,
+    "cout": 562.67259,
+    "label": "Armoire polyester double porte 500x750x420"
+  },
+  {
+    "id": 25,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 500x1000x420",
+    "heures_cablage": 1.9189999999999998,
+    "cout": 747.3312300000001,
+    "label": "Armoire polyester double porte 500x1000x420"
+  },
+  {
+    "id": 26,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 500x1250x420",
+    "heures_cablage": 2.1489999999999996,
+    "cout": 819.5571500000001,
+    "label": "Armoire polyester double porte 500x1250x420"
+  },
+  {
+    "id": 27,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 750x750x420",
+    "heures_cablage": 0.963,
+    "cout": 582.2516300000001,
+    "label": "Armoire polyester double porte 750x750x420"
+  },
+  {
+    "id": 28,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 750x1000x420",
+    "heures_cablage": 1.179,
+    "cout": 865.36291,
+    "label": "Armoire polyester double porte 750x1000x420"
+  },
+  {
+    "id": 29,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 750x1250x420",
+    "heures_cablage": 1.9189999999999998,
+    "cout": 949.0621100000001,
+    "label": "Armoire polyester double porte 750x1250x420"
+  },
+  {
+    "id": 30,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1000x750x420",
+    "heures_cablage": 1.719,
+    "cout": 588.5312300000002,
+    "label": "Armoire polyester double porte 1000x750x420"
+  },
+  {
+    "id": 31,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1000x1000x420",
+    "heures_cablage": 1.9189999999999998,
+    "cout": 899.4041900000001,
+    "label": "Armoire polyester double porte 1000x1000x420"
+  },
+  {
+    "id": 32,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1000x1250x420",
+    "heures_cablage": 1.119,
+    "cout": 991.54835,
+    "label": "Armoire polyester double porte 1000x1250x420"
+  },
+  {
+    "id": 33,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x750x420",
+    "heures_cablage": 1.719,
+    "cout": 685.55715,
+    "label": "Armoire polyester double porte 1250x750x420"
+  },
+  {
+    "id": 34,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x1000x420",
+    "heures_cablage": 1.9189999999999998,
+    "cout": 983.15475,
+    "label": "Armoire polyester double porte 1250x1000x420"
+  },
+  {
+    "id": 35,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1250x1250x420",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1075.49811,
+    "label": "Armoire polyester double porte 1250x1250x420"
+  },
+  {
+    "id": 36,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x750x420",
+    "heures_cablage": 1.9190000000000003,
+    "cout": 755.62579,
+    "label": "Armoire polyester double porte 1500x750x420"
+  },
+  {
+    "id": 37,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x1000x420",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1076.4574699999998,
+    "label": "Armoire polyester double porte 1500x1000x420"
+  },
+  {
+    "id": 38,
+    "categorie": "Enveloppe polyester PLA avec porte intérieure",
+    "designation": "Armoire polyester double porte 1500x1250x420",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 1153.4393900000002,
+    "label": "Armoire polyester double porte 1500x1250x420"
+  },
+  {
+    "id": 39,
+    "categorie": "Enveloppe polyester LEGRAND avec porte intérieure",
+    "designation": "Coffret polyester double porte LEGRAND 820x610x300",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 420.69515000000007,
+    "label": "Coffret polyester double porte LEGRAND 820x610x300"
+  },
+  {
+    "id": 40,
+    "categorie": "Enveloppe polyester LEGRAND avec porte intérieure",
+    "designation": "Coffret polyester double porte LEGRAND 1020x810x300",
+    "heures_cablage": 2.1189999999999998,
+    "cout": 659.02115,
+    "label": "Coffret polyester double porte LEGRAND 1020x810x300"
+  },
+  {
+    "id": 41,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 430x330x200",
+    "heures_cablage": 0.975,
+    "cout": 107.48544000000001,
+    "label": "Coffret polyester 430x330x200"
+  },
+  {
+    "id": 42,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 530x430x200",
+    "heures_cablage": 1.105,
+    "cout": 121.60195,
+    "label": "Coffret polyester 530x430x200"
+  },
+  {
+    "id": 43,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 647x436x250",
+    "heures_cablage": 1.105,
+    "cout": 137.07195000000002,
+    "label": "Coffret polyester 647x436x250"
+  },
+  {
+    "id": 44,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 747x536x300",
+    "heures_cablage": 1.619,
+    "cout": 204.69195,
+    "label": "Coffret polyester 747x536x300"
+  },
+  {
+    "id": 45,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 847x636x300",
+    "heures_cablage": 1.619,
+    "cout": 242.63195,
+    "label": "Coffret polyester 847x636x300"
+  },
+  {
+    "id": 46,
+    "categorie": "Enveloppe polyester PLM",
+    "designation": "Coffret polyester 1056x852x350",
+    "heures_cablage": 1.519,
+    "cout": 408.24195,
+    "label": "Coffret polyester 1056x852x350"
+  },
+  {
+    "id": 47,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1000x750x320",
+    "heures_cablage": 1.519,
+    "cout": 463.09467,
+    "label": "Armoire polyester 1000x750x320"
+  },
+  {
+    "id": 48,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x750x320",
+    "heures_cablage": 1.519,
+    "cout": 534.8213900000001,
+    "label": "Armoire polyester 1250x750x320"
+  },
+  {
+    "id": 49,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x1000x320",
+    "heures_cablage": 1.619,
+    "cout": 710.63795,
+    "label": "Armoire polyester 1250x1000x320"
+  },
+  {
+    "id": 50,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x1250x320",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 828.42835,
+    "label": "Armoire polyester 1250x1250x320"
+  },
+  {
+    "id": 51,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x750x320",
+    "heures_cablage": 1.719,
+    "cout": 604.8119500000001,
+    "label": "Armoire polyester 1500x750x320"
+  },
+  {
+    "id": 52,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x1000x320",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 782.5102700000001,
+    "label": "Armoire polyester 1500x1000x320"
+  },
+  {
+    "id": 53,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x1250x320",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 890.8304300000001,
+    "label": "Armoire polyester 1500x1250x320"
+  },
+  {
+    "id": 54,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 500x750x420",
+    "heures_cablage": 0.779,
+    "cout": 407.69179,
+    "label": "Armoire polyester 500x750x420"
+  },
+  {
+    "id": 55,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 500x1000x420",
+    "heures_cablage": 1.619,
+    "cout": 555.87971,
+    "label": "Armoire polyester 500x1000x420"
+  },
+  {
+    "id": 56,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 500x1250x420",
+    "heures_cablage": 1.8489999999999998,
+    "cout": 574.76403,
+    "label": "Armoire polyester 500x1250x420"
+  },
+  {
+    "id": 57,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 750x750x420",
+    "heures_cablage": 0.763,
+    "cout": 426.35147,
+    "label": "Armoire polyester 750x750x420"
+  },
+  {
+    "id": 58,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 750x1000x420",
+    "heures_cablage": 0.879,
+    "cout": 630.2480300000001,
+    "label": "Armoire polyester 750x1000x420"
+  },
+  {
+    "id": 59,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 750x1250x420",
+    "heures_cablage": 1.619,
+    "cout": 681.51795,
+    "label": "Armoire polyester 750x1250x420"
+  },
+  {
+    "id": 60,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1000x750x420",
+    "heures_cablage": 1.519,
+    "cout": 442.50675,
+    "label": "Armoire polyester 1000x750x420"
+  },
+  {
+    "id": 61,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1000x1000x420",
+    "heures_cablage": 1.619,
+    "cout": 661.13187,
+    "label": "Armoire polyester 1000x1000x420"
+  },
+  {
+    "id": 62,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1000x1250x420",
+    "heures_cablage": 0.8190000000000001,
+    "cout": 732.30115,
+    "label": "Armoire polyester 1000x1250x420"
+  },
+  {
+    "id": 63,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x750x420",
+    "heures_cablage": 1.519,
+    "cout": 502.1726699999999,
+    "label": "Armoire polyester 1250x750x420"
+  },
+  {
+    "id": 64,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x1000x420",
+    "heures_cablage": 1.619,
+    "cout": 741.40467,
+    "label": "Armoire polyester 1250x1000x420"
+  },
+  {
+    "id": 65,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1250x1250x420",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 777.1520300000001,
+    "label": "Armoire polyester 1250x1250x420"
+  },
+  {
+    "id": 66,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x750x420",
+    "heures_cablage": 1.719,
+    "cout": 561.2313100000001,
+    "label": "Armoire polyester 1500x750x420"
+  },
+  {
+    "id": 67,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x1000x420",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 807.70739,
+    "label": "Armoire polyester 1500x1000x420"
+  },
+  {
+    "id": 68,
+    "categorie": "Enveloppe polyester PLA",
+    "designation": "Armoire polyester 1500x1250x420",
+    "heures_cablage": 1.8189999999999997,
+    "cout": 830.5833100000001,
+    "label": "Armoire polyester 1500x1250x420"
+  },
+  {
+    "id": 69,
+    "categorie": "Enveloppe polyester LEGRAND",
+    "designation": "Coffret polyester LEGRAND 820x610x300",
+    "heures_cablage": 2.0189999999999997,
+    "cout": 342.77315000000004,
+    "label": "Coffret polyester LEGRAND 820x610x300"
+  },
+  {
+    "id": 70,
+    "categorie": "Enveloppe polyester LEGRAND",
+    "designation": "Coffret polyester LEGRAND 1020x810x300",
+    "heures_cablage": 2.0189999999999997,
+    "cout": 542.8419500000001,
+    "label": "Coffret polyester LEGRAND 1020x810x300"
+  },
+  {
+    "id": 71,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 500x400x250",
+    "heures_cablage": 0.875,
+    "cout": 124.66512,
+    "label": "Coffret acier 500x400x250"
+  },
+  {
+    "id": 72,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 600x400x250",
+    "heures_cablage": 1.005,
+    "cout": 146.53018999999998,
+    "label": "Coffret acier 600x400x250"
+  },
+  {
+    "id": 73,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 700x500x250",
+    "heures_cablage": 1.519,
+    "cout": 207.23738999999998,
+    "label": "Coffret acier 700x500x250"
+  },
+  {
+    "id": 74,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 800x600x300",
+    "heures_cablage": 1.519,
+    "cout": 259.67235,
+    "label": "Coffret acier 800x600x300"
+  },
+  {
+    "id": 75,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 800x600x400",
+    "heures_cablage": 1.519,
+    "cout": 321.78531,
+    "label": "Coffret acier 800x600x400"
+  },
+  {
+    "id": 76,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1000x600x300",
+    "heures_cablage": 1.519,
+    "cout": 344.97027,
+    "label": "Coffret acier 1000x600x300"
+  },
+  {
+    "id": 77,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1000x600x400",
+    "heures_cablage": 1.519,
+    "cout": 383.18819,
+    "label": "Coffret acier 1000x600x400"
+  },
+  {
+    "id": 78,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1000x800x300",
+    "heures_cablage": 1.519,
+    "cout": 341.25731,
+    "label": "Coffret acier 1000x800x300"
+  },
+  {
+    "id": 79,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1000x800x400",
+    "heures_cablage": 1.519,
+    "cout": 408.52659,
+    "label": "Coffret acier 1000x800x400"
+  },
+  {
+    "id": 80,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1000x1000x300",
+    "heures_cablage": 1.519,
+    "cout": 521.8825900000002,
+    "label": "Coffret acier 1000x1000x300"
+  },
+  {
+    "id": 81,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x800x300",
+    "heures_cablage": 1.719,
+    "cout": 507.20195,
+    "label": "Coffret acier 1200x800x300"
+  },
+  {
+    "id": 82,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x800x400",
+    "heures_cablage": 1.719,
+    "cout": 530.8224300000002,
+    "label": "Coffret acier 1200x800x400"
+  },
+  {
+    "id": 83,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x1000x300",
+    "heures_cablage": 1.519,
+    "cout": 577.31875,
+    "label": "Coffret acier 1200x1000x300"
+  },
+  {
+    "id": 84,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x1000x400",
+    "heures_cablage": 1.5490000000000002,
+    "cout": 632.68419,
+    "label": "Coffret acier 1200x1000x400"
+  },
+  {
+    "id": 85,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x1200x300",
+    "heures_cablage": 0.8190000000000001,
+    "cout": 631.24483,
+    "label": "Coffret acier 1200x1200x300"
+  },
+  {
+    "id": 86,
+    "categorie": "Enveloppe acier",
+    "designation": "Coffret acier 1200x1200x400",
+    "heures_cablage": 0.8330000000000001,
+    "cout": 691.1342699999999,
+    "label": "Coffret acier 1200x1200x400"
+  },
+  {
+    "id": 87,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1400x800x400",
+    "heures_cablage": 1.3190000000000002,
+    "cout": 641.5539600000001,
+    "label": "Armoire acier 1400x800x400"
+  },
+  {
+    "id": 88,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1400x1000x400",
+    "heures_cablage": 1.8190000000000002,
+    "cout": 777.5663100000002,
+    "label": "Armoire acier 1400x1000x400"
+  },
+  {
+    "id": 89,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1400x1200x400",
+    "heures_cablage": 0.819,
+    "cout": 892.55523,
+    "label": "Armoire acier 1400x1200x400"
+  },
+  {
+    "id": 90,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1600x800x400",
+    "heures_cablage": 3.819,
+    "cout": 654.7972700000001,
+    "label": "Armoire acier 1600x800x400"
+  },
+  {
+    "id": 91,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1600x1000x400",
+    "heures_cablage": 3.819,
+    "cout": 793.1151500000001,
+    "label": "Armoire acier 1600x1000x400"
+  },
+  {
+    "id": 92,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1600x1200x400",
+    "heures_cablage": 4.818999999999999,
+    "cout": 902.8799600000001,
+    "label": "Armoire acier 1600x1200x400"
+  },
+  {
+    "id": 93,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x800x400",
+    "heures_cablage": 3.819,
+    "cout": 701.5749000000001,
+    "label": "Armoire acier 1800x800x400"
+  },
+  {
+    "id": 94,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x800x500",
+    "heures_cablage": 4.219,
+    "cout": 814.4284000000001,
+    "label": "Armoire acier 1800x800x500"
+  },
+  {
+    "id": 95,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1000x400",
+    "heures_cablage": 3.819,
+    "cout": 860.79018,
+    "label": "Armoire acier 1800x1000x400"
+  },
+  {
+    "id": 96,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1000x500",
+    "heures_cablage": 4.219,
+    "cout": 935.6940300000001,
+    "label": "Armoire acier 1800x1000x500"
+  },
+  {
+    "id": 97,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1200x400",
+    "heures_cablage": 3.819,
+    "cout": 972.19745,
+    "label": "Armoire acier 1800x1200x400"
+  },
+  {
+    "id": 98,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1200x500",
+    "heures_cablage": 3.819,
+    "cout": 1071.8972500000002,
+    "label": "Armoire acier 1800x1200x500"
+  },
+  {
+    "id": 99,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1600x400",
+    "heures_cablage": 0.819,
+    "cout": 1290.09455,
+    "label": "Armoire acier 1800x1600x400"
+  },
+  {
+    "id": 100,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 1800x1600x500",
+    "heures_cablage": 1.219,
+    "cout": 1484.4481,
+    "label": "Armoire acier 1800x1600x500"
+  },
+  {
+    "id": 101,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x800x400",
+    "heures_cablage": 4.219,
+    "cout": 765.6153700000001,
+    "label": "Armoire acier 2000x800x400"
+  },
+  {
+    "id": 102,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x800x500",
+    "heures_cablage": 4.219,
+    "cout": 922.7760700000001,
+    "label": "Armoire acier 2000x800x500"
+  },
+  {
+    "id": 103,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1000x400",
+    "heures_cablage": 4.219,
+    "cout": 918.72159,
+    "label": "Armoire acier 2000x1000x400"
+  },
+  {
+    "id": 104,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1000x500",
+    "heures_cablage": 4.219,
+    "cout": 1049.36849,
+    "label": "Armoire acier 2000x1000x500"
+  },
+  {
+    "id": 105,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1200x400",
+    "heures_cablage": 3.819,
+    "cout": 1089.0023600000002,
+    "label": "Armoire acier 2000x1200x400"
+  },
+  {
+    "id": 106,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1200x500",
+    "heures_cablage": 4.219,
+    "cout": 1211.44271,
+    "label": "Armoire acier 2000x1200x500"
+  },
+  {
+    "id": 107,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1600x400",
+    "heures_cablage": 0.819,
+    "cout": 1441.117,
+    "label": "Armoire acier 2000x1600x400"
+  },
+  {
+    "id": 108,
+    "categorie": "Enveloppe acier",
+    "designation": "Armoire acier 2000x1600x500",
+    "heures_cablage": 1.219,
+    "cout": 1670.0619,
+    "label": "Armoire acier 2000x1600x500"
+  },
+  {
+    "id": 109,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x600x400",
+    "heures_cablage": 0.933,
+    "cout": 779.4459000000002,
+    "label": "Cellule acier 1800x600x400"
+  },
+  {
+    "id": 110,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x600x500",
+    "heures_cablage": 1.0190000000000001,
+    "cout": 787.7427500000002,
+    "label": "Cellule acier 1800x600x500"
+  },
+  {
+    "id": 111,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x800x400",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 802.36905,
+    "label": "Cellule acier 1800x800x400"
+  },
+  {
+    "id": 112,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x800x500",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 809.3135500000001,
+    "label": "Cellule acier 1800x800x500"
+  },
+  {
+    "id": 113,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x1000x400",
+    "heures_cablage": 4.832999999999999,
+    "cout": 1105.3483800000001,
+    "label": "Cellule acier 1800x1000x400"
+  },
+  {
+    "id": 114,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x1000x500",
+    "heures_cablage": 4.832999999999999,
+    "cout": 970.0961800000001,
+    "label": "Cellule acier 1800x1000x500"
+  },
+  {
+    "id": 115,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x1200x400",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 1241.2936,
+    "label": "Cellule acier 1800x1200x400"
+  },
+  {
+    "id": 116,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 1800x1200x500",
+    "heures_cablage": 3.919,
+    "cout": 1250.1387000000002,
+    "label": "Cellule acier 1800x1200x500"
+  },
+  {
+    "id": 117,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x600x400",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 772.6664200000001,
+    "label": "Cellule acier 2000x600x400"
+  },
+  {
+    "id": 118,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x600x500",
+    "heures_cablage": 3.919,
+    "cout": 780.9202700000002,
+    "label": "Cellule acier 2000x600x500"
+  },
+  {
+    "id": 119,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x800x400",
+    "heures_cablage": 4.832999999999999,
+    "cout": 795.3455700000001,
+    "label": "Cellule acier 2000x800x400"
+  },
+  {
+    "id": 120,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x800x500",
+    "heures_cablage": 4.832999999999999,
+    "cout": 802.2212700000001,
+    "label": "Cellule acier 2000x800x500"
+  },
+  {
+    "id": 121,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x1000x400",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 1094.70124,
+    "label": "Cellule acier 2000x1000x400"
+  },
+  {
+    "id": 122,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x1000x500",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 1109.35134,
+    "label": "Cellule acier 2000x1000x500"
+  },
+  {
+    "id": 123,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x1200x400",
+    "heures_cablage": 3.8329999999999997,
+    "cout": 1229.77361,
+    "label": "Cellule acier 2000x1200x400"
+  },
+  {
+    "id": 124,
+    "categorie": "Enveloppe acier",
+    "designation": "Cellule acier 2000x1200x500",
+    "heures_cablage": 3.919,
+    "cout": 1238.52411,
+    "label": "Cellule acier 2000x1200x500"
+  },
+  {
+    "id": 125,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium avec compartiment EDF (latéral à gauche) H : 1166 x L : 950 x P : 550 RAL1015",
+    "heures_cablage": 4.019,
+    "cout": 0.0,
+    "label": "Armoire aluminium avec compartiment EDF (latéral à gauche) H : 1166 x L : 950 x P : 550 RAL1015"
+  },
+  {
+    "id": 126,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium avec compartiment EDF (à droite) H : 1266 x L : 800+350 x P : 410 RAL1015",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 2174.22291,
+    "label": "Armoire aluminium avec compartiment EDF (à droite) H : 1266 x L : 800+350 x P : 410 RAL1015"
+  },
+  {
+    "id": 127,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium avec compartiment EDF (à gauche) H : 1266 x L : 350+800 x P : 410 RAL1015",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 2252.22291,
+    "label": "Armoire aluminium avec compartiment EDF (à gauche) H : 1266 x L : 350+800 x P : 410 RAL1015"
+  },
+  {
+    "id": 128,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium avec compartiment EDF (à droite) H : 1266 x L : 1000+350 x P : 410 RAL1015",
+    "heures_cablage": 2.4190000000000005,
+    "cout": 0.0,
+    "label": "Armoire aluminium avec compartiment EDF (à droite) H : 1266 x L : 1000+350 x P : 410 RAL1015"
+  },
+  {
+    "id": 129,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium avec compartiment EDF (à gauche) H : 1266 x L : 350+1000 x P : 410 RAL1015",
+    "heures_cablage": 2.5190000000000006,
+    "cout": 0.0,
+    "label": "Armoire aluminium avec compartiment EDF (à gauche) H : 1266 x L : 350+1000 x P : 410 RAL1015"
+  },
+  {
+    "id": 130,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1016 x L : 800 x P : 410 RAL1015",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 1579.39699,
+    "label": "Armoire aluminium H : 1016 x L : 800 x P : 410 RAL1015"
+  },
+  {
+    "id": 131,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1266 x L : 800 x P : 410 RAL1015",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 1654.74291,
+    "label": "Armoire aluminium H : 1266 x L : 800 x P : 410 RAL1015"
+  },
+  {
+    "id": 132,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1266 x L : 1000 x P : 410 RAL1015",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 1989.1549100000002,
+    "label": "Armoire aluminium H : 1266 x L : 1000 x P : 410 RAL1015"
+  },
+  {
+    "id": 133,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1016 x L : 600 x P : 410 RAL1015",
+    "heures_cablage": 1.019,
+    "cout": 0.0,
+    "label": "Armoire aluminium H : 1016 x L : 600 x P : 410 RAL1015"
+  },
+  {
+    "id": 134,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1216 x L : 900 x P : 370 RAL1015",
+    "heures_cablage": 1.6190000000000002,
+    "cout": 0.0,
+    "label": "Armoire aluminium H : 1216 x L : 900 x P : 370 RAL1015"
+  },
+  {
+    "id": 136,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 2016 x L : 1800 x P : 600 RAL1015",
+    "heures_cablage": 1.8190000000000002,
+    "cout": 0.0,
+    "label": "Armoire aluminium H : 2016 x L : 1800 x P : 600 RAL1015"
+  },
+  {
+    "id": 137,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium H : 1516 x L : 1200 x P : 410 RAL1015",
+    "heures_cablage": 4.319,
+    "cout": 0.0,
+    "label": "Armoire aluminium H : 1516 x L : 1200 x P : 410 RAL1015"
+  },
+  {
+    "id": 138,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 1 porte H : 1265 x L : 750 x P : 450 RAL1015",
+    "heures_cablage": 1.579,
+    "cout": 1970.5229100000001,
+    "label": "Armoire aluminium standard 1 porte H : 1265 x L : 750 x P : 450 RAL1015"
+  },
+  {
+    "id": 139,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 1 porte H : 1265 x L : 950 x P : 450 RAL1015",
+    "heures_cablage": 1.929,
+    "cout": 2200.06291,
+    "label": "Armoire aluminium standard 1 porte H : 1265 x L : 950 x P : 450 RAL1015"
+  },
+  {
+    "id": 140,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 1 porte H : 1550 x L : 950 x P : 450 RAL1015",
+    "heures_cablage": 2.269,
+    "cout": 2429.77155,
+    "label": "Armoire aluminium standard 1 porte H : 1550 x L : 950 x P : 450 RAL1015"
+  },
+  {
+    "id": 141,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 1265 x L : 1150 x P : 450 RAL1015",
+    "heures_cablage": 1.7389999999999999,
+    "cout": 2480.23491,
+    "label": "Armoire aluminium standard 2 portes H : 1265 x L : 1150 x P : 450 RAL1015"
+  },
+  {
+    "id": 142,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 1550 x L : 1150 x P : 450 RAL1015",
+    "heures_cablage": 2.019,
+    "cout": 2819.3350699999996,
+    "label": "Armoire aluminium standard 2 portes H : 1550 x L : 1150 x P : 450 RAL1015"
+  },
+  {
+    "id": 143,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 2000 x L : 1150 x P : 550 RAL1015",
+    "heures_cablage": 3.819,
+    "cout": 3336.9053900000004,
+    "label": "Armoire aluminium standard 2 portes H : 2000 x L : 1150 x P : 550 RAL1015"
+  },
+  {
+    "id": 144,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 1265 x L : 1500 x P : 450 RAL1015",
+    "heures_cablage": 1.879,
+    "cout": 2907.04227,
+    "label": "Armoire aluminium standard 2 portes H : 1265 x L : 1500 x P : 450 RAL1015"
+  },
+  {
+    "id": 145,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 1550 x L : 1500 x P : 450 RAL1015",
+    "heures_cablage": 2.019,
+    "cout": 3224.1035500000003,
+    "label": "Armoire aluminium standard 2 portes H : 1550 x L : 1500 x P : 450 RAL1015"
+  },
+  {
+    "id": 146,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 2000 x L : 1500 x P : 550 RAL1015",
+    "heures_cablage": 3.819,
+    "cout": 4000.778110000001,
+    "label": "Armoire aluminium standard 2 portes H : 2000 x L : 1500 x P : 550 RAL1015"
+  },
+  {
+    "id": 147,
+    "categorie": "Enveloppe aluminium GROLLEAU",
+    "designation": "Armoire aluminium standard 2 portes H : 2000 x L : 1875 x P : 550 RAL1015",
+    "heures_cablage": 1.0190000000000001,
+    "cout": 4683.83155,
+    "label": "Armoire aluminium standard 2 portes H : 2000 x L : 1875 x P : 550 RAL1015"
+  },
+  {
+    "id": 148,
+    "categorie": "Enveloppe aluminium nVent Schroff",
+    "designation": "Armoire aluminium H: 900 x L: 750 x P: 420",
+    "heures_cablage": 0.619,
+    "cout": 0.0,
+    "label": "Armoire aluminium H: 900 x L: 750 x P: 420"
+  },
+  {
+    "id": 150,
+    "categorie": "Armoire SEIFEL",
+    "designation": "Armoire SEIFEL en PVC 1015x(820+390)x450",
+    "heures_cablage": 1.4189999999999998,
+    "cout": 0.0,
+    "label": "Armoire SEIFEL en PVC 1015x(820+390)x450"
+  },
+  {
+    "id": 151,
+    "categorie": "Panneaux latéraux",
+    "designation": "Jeu de 2 panneaux latéraux pour cellule 1800x400",
+    "heures_cablage": 0.0,
+    "cout": 162.35295000000002,
+    "label": "Jeu de 2 panneaux latéraux pour cellule 1800x400"
+  },
+  {
+    "id": 152,
+    "categorie": "Panneaux latéraux",
+    "designation": "Jeu de 2 panneaux latéraux pour cellule 1800x500",
+    "heures_cablage": 0.0,
+    "cout": 165.74779999999998,
+    "label": "Jeu de 2 panneaux latéraux pour cellule 1800x500"
+  },
+  {
+    "id": 153,
+    "categorie": "Panneaux latéraux",
+    "designation": "Jeu de 2 panneaux latéraux pour cellule 2000x400",
+    "heures_cablage": 0.0,
+    "cout": 165.67685,
+    "label": "Jeu de 2 panneaux latéraux pour cellule 2000x400"
+  },
+  {
+    "id": 154,
+    "categorie": "Panneaux latéraux",
+    "designation": "Jeu de 2 panneaux latéraux pour cellule 2000x500",
+    "heures_cablage": 0.0,
+    "cout": 169.11469999999997,
+    "label": "Jeu de 2 panneaux latéraux pour cellule 2000x500"
+  },
+  {
+    "id": 155,
+    "categorie": "Kit de juxtaposition",
+    "designation": "Kit de juxtaposition pour cellule",
+    "heures_cablage": 0.3,
+    "cout": 41.48855,
+    "label": "Kit de juxtaposition pour cellule"
+  },
+  {
+    "id": 156,
+    "categorie": "Châssis intermédiaire",
+    "designation": "Châssis intermédiaire pour cellule de 1800",
+    "heures_cablage": 0.2,
+    "cout": 53.59328,
+    "label": "Châssis intermédiaire pour cellule de 1800"
+  },
+  {
+    "id": 157,
+    "categorie": "Châssis intermédiaire",
+    "designation": "Châssis intermédiaire pour cellule de 2000",
+    "heures_cablage": 0.2,
+    "cout": 54.67488,
+    "label": "Châssis intermédiaire pour cellule de 2000"
+  },
+  {
+    "id": 158,
+    "categorie": "Système de levage",
+    "designation": "Anneaux de levage pour cellule acier",
+    "heures_cablage": 0.1,
+    "cout": 36.90905,
+    "label": "Anneaux de levage pour cellule acier"
+  },
+  {
+    "id": 159,
+    "categorie": "Système de levage",
+    "designation": "Equerres de levage pour cellule acier",
+    "heures_cablage": 0.1,
+    "cout": 53.539300000000004,
+    "label": "Equerres de levage pour cellule acier"
+  },
+  {
+    "id": 160,
+    "categorie": "Système de levage",
+    "designation": "Anneaux de levage pour armoire acier",
+    "heures_cablage": 0.1,
+    "cout": 43.65145,
+    "label": "Anneaux de levage pour armoire acier"
+  }
+]
