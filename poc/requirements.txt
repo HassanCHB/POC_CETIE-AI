@@ -1,0 +1,11 @@
+flask>=3.0.0
+gunicorn>=21.2.0
+anthropic>=0.40.0
+openpyxl>=3.1.0
+pandas>=2.0.0
+openai>=1.30.0
+chromadb>=0.5.0
+json-repair>=0.25.0
+extract-msg>=0.45.0
+python-docx>=1.1.0
+pypdf>=4.0.0
