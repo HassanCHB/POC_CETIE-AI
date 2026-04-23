@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CETIE – Technical Pre-Configuration</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #eef0f4;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  background: #0f1225;
+  color: white;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; }
+.logo { font-size: 20px; font-weight: 800; letter-spacing: 3px; color: #4fc3f7; }
+.logo-divider { width: 1px; height: 24px; background: #2a2a4a; }
+.logo-sub { font-size: 12px; color: #7a8aaa; font-weight: 500; letter-spacing: 0.5px; line-height: 1.3; }
+.logo-sub strong { color: #b0c4de; display: block; font-weight: 600; font-size: 13px; }
+.header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.badge { background: #1e3a5f; color: #4fc3f7; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 1.5px; border: 1px solid #2a5a8a; }
+.lang-toggle { display: flex; background: #1a1a35; border-radius: 20px; padding: 3px; gap: 2px; border: 1px solid #2a2a4a; }
+.lang-btn { background: transparent; border: none; color: #7a8aaa; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 16px; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+.lang-btn.active { background: #4fc3f7; color: #0f1225; }
+.lang-btn:hover:not(.active) { color: white; }
+
+/* ── Navbar ── */
+.navbar {
+  background: #151930;
+  border-bottom: 1px solid #1e2440;
+  padding: 0 32px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: sticky;
+  top: 60px;
+  z-index: 190;
+}
+.nav-item { background: transparent; border: none; color: #7a8aaa; font-size: 13px; font-weight: 500; padding: 6px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.15s; white-space: nowrap; }
+.nav-item:hover { background: #1e2440; color: #c8d4e8; }
+.nav-item.active { background: #1e3a5f; color: #4fc3f7; }
+.nav-item .nav-icon { font-size: 15px; }
+.nav-divider { width: 1px; height: 20px; background: #1e2440; margin: 0 6px; }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.current-user-btn { background: #1a2240; border: 1px solid #2a3460; color: #c8d4e8; font-size: 12px; font-weight: 500; padding: 5px 14px 5px 10px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.15s; }
+.current-user-btn:hover { background: #1e3a5f; border-color: #4fc3f7; color: white; }
+.user-avatar { width: 22px; height: 22px; background: #2a4a7a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #4fc3f7; flex-shrink: 0; }
+
+/* ── Overlay panels (History, Users) ── */
+.ovl-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 500; }
+.ovl-backdrop.open { display: block; }
+.ovl-panel { position: fixed; top: 0; right: -480px; width: 460px; max-width: 96vw; height: 100vh; background: white; box-shadow: -4px 0 32px rgba(0,0,0,0.2); z-index: 501; display: flex; flex-direction: column; transition: right 0.28s cubic-bezier(.4,0,.2,1); }
+.ovl-backdrop.open .ovl-panel { right: 0; }
+.ovl-header { background: #0f1225; color: white; padding: 0 20px; height: 56px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.ovl-title { font-size: 15px; font-weight: 700; color: white; flex: 1; }
+.ovl-close { background: none; border: none; color: #7a8aaa; font-size: 20px; cursor: pointer; padding: 4px; line-height: 1; }
+.ovl-close:hover { color: white; }
+.ovl-body { flex: 1; overflow-y: auto; padding: 20px; }
+.ovl-footer { padding: 16px 20px; border-top: 1px solid #eef0f4; flex-shrink: 0; }
+
+/* ── History panel ── */
+.history-save-btn { width: 100%; background: #0f1225; color: white; border: none; padding: 11px 20px; border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; margin-bottom: 20px; }
+.history-save-btn:hover { background: #1e2a4a; }
+.history-save-btn:disabled { background: #b0b8c8; cursor: not-allowed; }
+.history-empty { text-align: center; color: #b0b8c8; font-size: 13px; font-style: italic; padding: 40px 0; }
+.history-item { border: 1px solid #e8ecf4; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; position: relative; }
+.history-item:hover { border-color: #4fc3f7; box-shadow: 0 2px 10px rgba(79,195,247,0.12); }
+.history-item-title { font-size: 13px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; padding-right: 28px; }
+.history-item-meta { font-size: 11px; color: #8a94a6; display: flex; gap: 12px; flex-wrap: wrap; }
+.history-item-del { position: absolute; top: 10px; right: 12px; background: none; border: none; color: #c8d0de; font-size: 16px; cursor: pointer; padding: 2px; }
+.history-item-del:hover { color: #c00; }
+.hist-tag { background: #f0f4ff; color: #3a5080; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+
+/* ── Users panel ── */
+.users-list { margin-bottom: 24px; }
+.user-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid #e8ecf4; border-radius: 10px; margin-bottom: 8px; transition: border-color 0.15s; }
+.user-item-avatar { width: 36px; height: 36px; background: #1a3a6a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #4fc3f7; flex-shrink: 0; }
+.user-item-info { flex: 1; }
+.user-item-name { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.user-item-role { font-size: 11px; color: #8a94a6; }
+.user-item-actions { display: flex; gap: 6px; }
+.user-del-btn { background: none; border: none; color: #c8d0de; font-size: 15px; cursor: pointer; padding: 2px; }
+.user-del-btn:hover { color: #c00; }
+.add-user-form { background: #f8faff; border: 1px solid #dde4f0; border-radius: 10px; padding: 16px; }
+.add-user-form h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #8a94a6; margin-bottom: 14px; }
+.form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.form-input { flex: 1; border: 1.5px solid #dde2ec; border-radius: 8px; padding: 9px 12px; font-size: 13px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+.form-input:focus { border-color: #4fc3f7; }
+.form-select { border: 1.5px solid #dde2ec; border-radius: 8px; padding: 9px 12px; font-size: 13px; font-family: inherit; outline: none; background: white; }
+.btn-add-user { background: #0f1225; color: white; border: none; padding: 9px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.btn-add-user:hover { background: #1e2a4a; }
+.role-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.role-badge.admin    { background: #fef3c7; color: #92400e; }
+.role-badge.engineer { background: #e0f2f1; color: #004d40; }
+.role-badge.manager  { background: #ede7f6; color: #4527a0; }
+.role-badge.technician { background: #e8f5e9; color: #1b5e20; }
+.form-error { color: #c00; font-size: 12px; margin-top: 6px; display: none; }
+
+/* ── Login screen ── */
+.login-screen { position: fixed; inset: 0; background: #0a0d1a; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+.login-card { background: #111628; border: 1px solid #1e2440; border-radius: 18px; padding: 44px 44px 36px; width: 380px; max-width: 92vw; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.login-logo { font-size: 26px; font-weight: 800; letter-spacing: 4px; color: #4fc3f7; margin-bottom: 4px; }
+.login-sub { font-size: 12px; color: #5a6a8a; margin-bottom: 32px; font-weight: 500; letter-spacing: 0.3px; }
+.login-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #5a6a8a; margin-bottom: 6px; }
+.login-input { width: 100%; background: #0f1225; border: 1.5px solid #1e2a4a; border-radius: 9px; padding: 12px 14px; font-size: 14px; font-family: inherit; color: white; outline: none; margin-bottom: 16px; transition: border-color 0.2s; }
+.login-input:focus { border-color: #4fc3f7; }
+.login-input::placeholder { color: #3a4a6a; }
+.btn-login { width: 100%; background: #4fc3f7; color: #0f1225; border: none; padding: 13px; border-radius: 9px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 4px; letter-spacing: 0.3px; }
+.btn-login:hover { background: #81d4fa; }
+.btn-login:disabled { background: #1e2a4a; color: #3a4a6a; cursor: not-allowed; }
+.login-error { color: #f87171; font-size: 13px; margin-top: 12px; text-align: center; min-height: 20px; }
+.logout-btn { background: none; border: 1px solid #2a3460; color: #7a8aaa; font-size: 12px; padding: 5px 12px; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+.logout-btn:hover { border-color: #f87171; color: #f87171; }
+
+/* ── Main ── */
+main {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 24px 40px;
+}
+
+/* ── Input card ── */
+.input-card { background: white; border-radius: 14px; padding: 30px; box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 20px; }
+.section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #8a94a6; margin-bottom: 14px; }
+.examples { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+.examples-label { font-size: 12px; color: #aaa; margin-right: 2px; }
+.example-btn { background: #f4f6fa; border: 1px solid #dde2ec; color: #3a5080; padding: 5px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.18s; font-weight: 500; }
+.example-btn:hover { background: #1a3a6a; color: white; border-color: #1a3a6a; }
+textarea { width: 100%; border: 1.5px solid #dde2ec; border-radius: 10px; padding: 16px; font-size: 14px; font-family: inherit; resize: vertical; min-height: 130px; line-height: 1.7; outline: none; transition: border-color 0.2s, box-shadow 0.2s; color: #1a1a2e; background: #fafbfd; }
+textarea:focus { border-color: #4fc3f7; box-shadow: 0 0 0 3px rgba(79,195,247,0.1); background: white; }
+.btn-row { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+.btn-analyze { background: #0f1225; color: white; border: none; padding: 12px 32px; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; display: flex; align-items: center; gap: 8px; letter-spacing: 0.3px; }
+.btn-analyze:hover { background: #1e2a4a; }
+.btn-analyze:active { transform: scale(0.98); }
+.btn-analyze:disabled { background: #b0b8c8; cursor: not-allowed; transform: none; }
+.btn-hint { font-size: 12px; color: #aaa; }
+.spinner { width: 15px; height: 15px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: none; }
+.btn-analyze.loading .spinner { display: block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── File attachments ── */
+.attach-zone { margin-top: 12px; border: 1.5px dashed #c8d0de; border-radius: 10px; padding: 12px 16px; background: #fafbfd; transition: border-color 0.2s, background 0.2s; cursor: pointer; }
+.attach-zone:hover, .attach-zone.drag-over { border-color: #4fc3f7; background: #f0f9ff; }
+.attach-zone-inner { display: flex; align-items: center; gap: 10px; color: #8a94a6; font-size: 13px; }
+.attach-icon { font-size: 18px; }
+.attach-label { flex: 1; }
+.attach-label strong { color: #4a6080; }
+.attach-input { display: none; }
+.file-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.file-chip { display: flex; align-items: center; gap: 7px; background: #eef2f8; border: 1px solid #d0d8ea; border-radius: 20px; padding: 5px 12px 5px 10px; font-size: 12px; color: #2a3a5a; }
+.file-chip.parsing { opacity: 0.6; }
+.file-chip.error { background: #fff0f0; border-color: #ffcccc; color: #a00; }
+.file-chip.ok { background: #f0faf4; border-color: #a8dbb8; }
+.chip-icon { font-size: 14px; }
+.chip-name { max-width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip-chars { font-size: 11px; color: #8a94a6; }
+.chip-remove { background: none; border: none; cursor: pointer; color: #8a94a6; font-size: 14px; padding: 0; line-height: 1; margin-left: 2px; }
+.chip-remove:hover { color: #c00; }
+
+/* ── Progress ── */
+#progressPanel { display: none; background: white; border-radius: 14px; padding: 28px 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 20px; }
+.progress-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #8a94a6; margin-bottom: 22px; }
+.step-row { display: flex; align-items: flex-start; gap: 16px; padding: 13px 0; border-bottom: 1px solid #f0f2f6; opacity: 0.3; transition: opacity 0.4s ease; }
+.step-row:last-child { border-bottom: none; }
+.step-row.active, .step-row.done, .step-row.error { opacity: 1; }
+.step-icon { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; background: #f0f2f6; color: #b0b8c8; transition: all 0.3s ease; }
+.step-row.active .step-icon { background: #e3f2fd; color: #1565c0; }
+.step-row.done   .step-icon { background: #e8f5e9; color: #2e7d32; }
+.step-row.error  .step-icon { background: #ffebee; color: #c62828; }
+.step-body { flex: 1; }
+.step-label { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 3px; }
+.step-detail { font-size: 12px; color: #8a94a6; line-height: 1.5; min-height: 16px; }
+.step-detail.typing::after { content: '▋'; animation: blink 0.7s step-end infinite; color: #4fc3f7; margin-left: 2px; }
+@keyframes blink { 50% { opacity: 0; } }
+.step-time { font-size: 11px; color: #c8ccd8; white-space: nowrap; align-self: center; }
+.spin-ring { width: 17px; height: 17px; border: 2px solid #c5dff8; border-top-color: #1565c0; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+.progress-bar-wrap { height: 3px; background: #eef0f4; border-radius: 2px; margin-top: 20px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, #4fc3f7, #1565c0); border-radius: 2px; width: 0%; transition: width 0.6s ease; }
+
+/* ── Demo banner ── */
+#demoBanner { display: none; background: #fff8e1; border: 1px solid #ffe082; border-left: 4px solid #f9a825; border-radius: 10px; padding: 12px 18px; margin-bottom: 18px; font-size: 13px; color: #6d4c00; }
+
+/* ── Results ── */
+#results { display: none; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+#results.animate { animation: fadeUp 0.45s ease forwards; }
+
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+@media (max-width: 768px) { .results-grid { grid-template-columns: 1fr; } }
+
+.card { background: white; border-radius: 14px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); }
+.card-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #8a94a6; margin-bottom: 16px; display: flex; align-items: center; gap: 7px; }
+.summary-box { background: #f4f8ff; border-left: 3px solid #4fc3f7; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.6; margin-bottom: 16px; color: #1a2a4a; }
+.req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.req-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+.req-value { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.req-value.null { color: #ccc; font-style: italic; font-weight: 400; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 12px; padding: 4px 12px; border-radius: 12px; font-weight: 500; line-height: 1.4; }
+.tag.warning    { background: #fff3e0; color: #bf5000; }
+.tag.assumption { background: #f3f0ff; color: #5a3ea0; }
+
+/* ── Clarification panel ── */
+#clarificationPanel { display: none; background: white; border-radius: 14px; padding: 28px 30px; box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 18px; border-top: 3px solid #f59e0b; }
+.clarif-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px; }
+.clarif-icon { width: 42px; height: 42px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.clarif-title { font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+.clarif-sub   { font-size: 13px; color: #8a94a6; line-height: 1.5; }
+.clarif-questions { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+.clarif-q { display: flex; flex-direction: column; gap: 6px; }
+.clarif-q label { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.clarif-q input[type="text"] { border: 1.5px solid #dde2ec; border-radius: 8px; padding: 10px 14px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s; background: #fafbfd; }
+.clarif-q input[type="text"]:focus { border-color: #f59e0b; background: white; }
+.clarif-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.clarif-choice { border: 1.5px solid #dde2ec; background: #fafbfd; color: #3a5080; border-radius: 8px; padding: 8px 18px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.18s; }
+.clarif-choice.selected { background: #f59e0b; color: white; border-color: #f59e0b; }
+.clarif-choice:hover:not(.selected) { border-color: #f59e0b; color: #b45309; }
+.clarif-actions { display: flex; gap: 12px; align-items: center; }
+.btn-refine { background: #f59e0b; color: white; border: none; padding: 11px 28px; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
+.btn-refine:hover { background: #d97706; }
+.btn-skip-clarif { background: none; border: none; color: #aaa; font-size: 13px; cursor: pointer; text-decoration: underline; }
+
+/* ── Config card ── */
+.config-card { background: white; border-radius: 14px; padding: 26px; box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 18px; }
+.enclosure-block { background: #f8fafd; border: 1.5px solid #e4e8f0; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 14px; }
+.enc-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+.enc-info { flex: 1; }
+.enc-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #8a94a6; margin-bottom: 4px; }
+.enc-title { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+.enc-justif { font-size: 13px; color: #6a7a94; line-height: 1.5; }
+
+/* Scrollable blocks */
+.blocks-scroll-wrap { max-height: 420px; overflow-y: auto; border: 1px solid #e4e8f0; border-radius: 10px; scrollbar-width: thin; scrollbar-color: #c0c8d8 #f4f6fa; }
+.blocks-scroll-wrap::-webkit-scrollbar { width: 7px; }
+.blocks-scroll-wrap::-webkit-scrollbar-track { background: #f4f6fa; border-radius: 0 10px 10px 0; }
+.blocks-scroll-wrap::-webkit-scrollbar-thumb { background: #c0c8d8; border-radius: 4px; }
+.blocks-scroll-wrap::-webkit-scrollbar-thumb:hover { background: #8a94a6; }
+.blocks-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.blocks-table thead th { position: sticky; top: 0; z-index: 1; text-align: left; padding: 9px 12px; background: #f4f6fa; font-weight: 700; font-size: 11px; color: #8a94a6; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 2px solid #e4e8f0; box-shadow: 0 1px 0 #e4e8f0; }
+.blocks-table td { padding: 11px 12px; border-bottom: 1px solid #f0f2f6; vertical-align: top; }
+.blocks-table tr:last-child td { border-bottom: none; }
+.blocks-table tr:hover td { background: #fafbfd; }
+.block-id { font-family: monospace; color: #c0c8d8; font-size: 11px; }
+.block-name { font-weight: 600; color: #1a1a2e; margin-bottom: 2px; }
+.block-justif { font-size: 12px; color: #8a94a6; font-style: italic; }
+.block-qty { display: inline-block; background: #eef4ff; color: #1565c0; border-radius: 5px; padding: 2px 10px; font-weight: 700; font-size: 13px; text-align: center; }
+.block-hours { text-align: center; font-weight: 600; color: #3a5080; }
+.block-cost  { text-align: right; font-weight: 700; color: #1a3a6a; }
+.totals-row { background: #0f1225; color: white; border-radius: 10px; padding: 18px 22px; margin-top: 14px; display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
+.total-label { font-size: 10px; color: #7a8aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.total-value { font-size: 22px; font-weight: 800; color: #4fc3f7; }
+.notes-card { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; color: #78490a; margin-bottom: 18px; }
+.notes-label { font-weight: 700; color: #b45309; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+.disclaimer { text-align: center; font-size: 12px; color: #b0b8c8; margin-top: 28px; padding-bottom: 36px; line-height: 1.7; }
+
+/* ═══════════════════════════════════════════════════════
+   RIGHT DRAWER SYSTEM
+═══════════════════════════════════════════════════════ */
+
+/* Tab strip — fixed right edge */
+.drawer-strip {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #0f1225;
+  border-radius: 12px 0 0 12px;
+  padding: 8px 0;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.18);
+}
+.strip-btn {
+  width: 60px;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #5a6a8a;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+.strip-btn:hover { color: #b0c4de; background: rgba(255,255,255,0.05); }
+.strip-btn.active { color: #4fc3f7; }
+.strip-btn.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 12px; bottom: 12px;
+  width: 3px;
+  background: #4fc3f7;
+  border-radius: 0 3px 3px 0;
+}
+.strip-btn .s-icon { font-size: 18px; line-height: 1; }
+.strip-btn .s-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+.strip-divider { height: 1px; background: #1e2a45; margin: 4px 10px; }
+
+/* Backdrop */
+.drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 30, 0.35);
+  z-index: 290;
+  backdrop-filter: blur(1px);
+}
+.drawer-backdrop.open { display: block; }
+
+/* Drawer panel */
+.drawer-panel {
+  position: fixed;
+  top: 60px; /* below sticky header */
+  right: 60px; /* leave room for strip */
+  bottom: 0;
+  width: 400px;
+  background: white;
+  z-index: 295;
+  box-shadow: -4px 0 32px rgba(0,0,0,0.15);
+  transform: translateX(calc(100% + 60px));
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.drawer-panel.open { transform: translateX(0); }
+
+.drawer-header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #f0f2f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.drawer-title { font-size: 14px; font-weight: 700; color: #1a1a2e; display: flex; align-items: center; gap: 8px; }
+.drawer-title span { font-size: 18px; }
+.btn-close-drawer {
+  width: 30px; height: 30px;
+  background: #f4f6fa;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #8a94a6;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.18s, color 0.18s;
+}
+.btn-close-drawer:hover { background: #e4e8f0; color: #1a1a2e; }
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #c0c8d8 #f4f6fa;
+}
+.drawer-body::-webkit-scrollbar { width: 6px; }
+.drawer-body::-webkit-scrollbar-track { background: transparent; }
+.drawer-body::-webkit-scrollbar-thumb { background: #c0c8d8; border-radius: 3px; }
+
+/* ── Why / RAG pane ── */
+.rag-section-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.1px;
+  color: #7c3aed; margin-bottom: 6px;
+}
+.rag-section-sub { font-size: 12px; color: #8a94a6; margin-bottom: 16px; line-height: 1.5; }
+.rag-card {
+  background: #faf8ff;
+  border: 1px solid #e0d8f8;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.rag-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.rag-score {
+  background: #7c3aed;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+.rag-score.high   { background: #059669; }
+.rag-score.medium { background: #d97706; }
+.rag-score.low    { background: #6b7280; }
+.rag-type { font-size: 13px; font-weight: 700; color: #1a1a2e; flex: 1; padding-right: 8px; }
+.rag-row { display: flex; gap: 6px; margin-bottom: 5px; align-items: baseline; }
+.rag-key { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #9a8ab8; min-width: 58px; }
+.rag-val { font-size: 12px; color: #3a3a5a; line-height: 1.4; }
+.rag-divider { height: 1px; background: #f0ebff; margin: 12px 0 0; }
+
+/* ── Rationale pane ── */
+.rationale-enc {
+  background: #faf8ff;
+  border: 1px solid #e0d8f8;
+  border-radius: 9px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.r-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; margin-bottom: 6px; }
+.r-name  { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+.r-why   { font-size: 13px; color: #5a4a7a; line-height: 1.5; }
+.rationale-blocks-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; margin-bottom: 10px; }
+.rationale-block { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #f4f2ff; }
+.rationale-block:last-child { border-bottom: none; }
+.rb-id   { font-family: monospace; font-size: 11px; color: #c0b8d8; flex-shrink: 0; min-width: 38px; padding-top: 2px; }
+.rb-name { font-size: 13px; font-weight: 600; color: #1a1a2e; margin-bottom: 2px; }
+.rb-why  { font-size: 12px; color: #7a6a9a; font-style: italic; }
+.drawer-empty { font-size: 13px; color: #b0b8c8; font-style: italic; text-align: center; padding: 40px 0; }
+
+/* ── Feedback pane ── */
+.feedback-rating-row { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn-fb {
+  flex: 1;
+  border: 1.5px solid #dde2ec;
+  background: #fafbfd;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #6a7a94;
+}
+.btn-fb .fb-icon { font-size: 22px; }
+.btn-fb:hover { border-color: #4fc3f7; color: #1a1a2e; }
+.btn-fb.good.selected    { background: #d1fae5; border-color: #10b981; color: #065f46; }
+.btn-fb.correct.selected { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+.feedback-form-pane { display: none; }
+.feedback-form-pane.open { display: block; }
+.fb-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #8a94a6; margin-bottom: 6px; margin-top: 16px; display: block; }
+.fb-label:first-child { margin-top: 0; }
+.fb-textarea { width: 100%; border: 1.5px solid #dde2ec; border-radius: 8px; padding: 12px 14px; font-size: 13px; font-family: inherit; resize: vertical; min-height: 100px; outline: none; transition: border-color 0.2s; background: #fafbfd; line-height: 1.6; }
+.fb-textarea:focus { border-color: #10b981; background: white; }
+.rule-toggle-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; padding: 12px 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; }
+.rule-toggle-row input[type="checkbox"] { width: 16px; height: 16px; accent-color: #10b981; cursor: pointer; flex-shrink: 0; margin-top: 2px; }
+.rule-toggle-row label { font-size: 13px; font-weight: 600; color: #065f46; cursor: pointer; line-height: 1.4; }
+.rule-scope-select { margin-top: 10px; width: 100%; border: 1.5px solid #dde2ec; border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; outline: none; color: #3a5080; background: white; }
+.btn-save-fb { width: 100%; background: #0f1225; color: white; border: none; border-radius: 9px; padding: 12px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 16px; transition: background 0.2s; }
+.btn-save-fb:hover { background: #1e2a4a; }
+.fb-saved { display: none; align-items: center; gap: 8px; font-size: 13px; color: #065f46; font-weight: 600; margin-top: 12px; padding: 10px 14px; background: #d1fae5; border-radius: 8px; }
+
+/* ── Rules pane ── */
+.rule-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f2f6; }
+.rule-item:last-child { border-bottom: none; }
+.rule-item.inactive { opacity: 0.4; }
+.rule-scope-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: #f5f3ff; color: #6d28d9; border-radius: 5px; padding: 2px 8px; flex-shrink: 0; margin-top: 2px; }
+.rule-text { flex: 1; font-size: 13px; color: #2a2a4a; line-height: 1.5; }
+.rule-meta { font-size: 11px; color: #b0b8c8; margin-top: 3px; }
+.rule-actions { display: flex; gap: 5px; flex-shrink: 0; }
+.btn-rule-toggle, .btn-rule-delete { border: none; border-radius: 6px; padding: 5px 10px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.18s; }
+.btn-rule-toggle { background: #f0f2f6; color: #6a7a94; }
+.btn-rule-toggle:hover { background: #e0e7ff; color: #4338ca; }
+.btn-rule-delete  { background: #fee2e2; color: #991b1b; }
+.btn-rule-delete:hover  { background: #ef4444; color: white; }
+.rules-empty { font-size: 13px; color: #b0b8c8; font-style: italic; text-align: center; padding: 40px 0; }
+
+/* ── 12-Category BoM Accordion ── */
+.bom-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #8a94a6; margin-bottom: 12px; margin-top: 20px; display: flex; align-items: center; gap: 7px; }
+.bom-accordion { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+.bom-group-label { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #a0aab8; padding: 10px 4px 2px; }
+.bom-cat { border: 1px solid #e4e8f0; border-radius: 10px; overflow: hidden; }
+.bom-cat-header { display: flex; align-items: center; gap: 10px; padding: 11px 16px; cursor: pointer; background: #fafbfd; transition: background 0.15s; user-select: none; }
+.bom-cat-header:hover { background: #f0f4ff; }
+.bom-cat-badge { font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 9px; border-radius: 10px; flex-shrink: 0; }
+.bom-cat-name { font-size: 13px; font-weight: 600; flex: 1; color: #1a1a2e; }
+.bom-cat-count { font-size: 11px; color: #8a94a6; background: #f0f2f6; padding: 2px 8px; border-radius: 10px; }
+.bom-cat-chevron { font-size: 10px; color: #c0c8d8; transition: transform 0.2s; margin-left: 4px; }
+.bom-cat.open .bom-cat-chevron { transform: rotate(180deg); }
+.bom-cat-body { display: none; border-top: 1px solid #f0f2f6; background: #fff; }
+.bom-cat.open .bom-cat-body { display: block; }
+.bom-item { display: flex; align-items: center; gap: 10px; padding: 9px 16px; border-bottom: 1px solid #f8f9fc; font-size: 13px; }
+.bom-item:last-child { border-bottom: none; }
+.bom-item-name { flex: 1; color: #2a2a4a; line-height: 1.4; }
+.bom-item-src { font-size: 10px; background: #e8f0fe; color: #1565c0; border-radius: 4px; padding: 1px 5px; font-style: normal; font-weight: 600; }
+.bom-item-qty { background: #eef4ff; color: #1565c0; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 5px; min-width: 28px; text-align: center; flex-shrink: 0; }
+.bom-item-price { font-size: 12px; color: #6a7a94; min-width: 65px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.bom-item-match { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 8px; flex-shrink: 0; white-space: nowrap; }
+.bom-item-match.verified  { background: #dcfce7; color: #166534; }
+.bom-item-match.suggested { background: #fef9c3; color: #854d0e; }
+.bom-item-match.not_found { background: #fee2e2; color: #991b1b; }
+.bom-item-match.skipped   { display: none; }
+.bom-cat-stats { font-size: 11px; color: #94a3b8; margin: 4px 16px 8px; }
+.bom-cat-stats span { margin-right: 8px; }
+/* ── BoM editing ── */
+.bom-item { position: relative; }
+.bom-item-actions { display: none; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0; }
+.bom-item:hover .bom-item-actions { display: flex; }
+.bom-act-btn { background: none; border: 1px solid #d0d8e8; border-radius: 5px; font-size: 11px; padding: 2px 7px; cursor: pointer; color: #6a7a94; transition: all 0.15s; }
+.bom-act-btn:hover { background: #f0f4ff; border-color: #4a7adf; color: #1a3a8f; }
+.bom-act-btn.del:hover { background: #fff0f0; border-color: #e07070; color: #c00; }
+.bom-edit-row { display: flex; align-items: center; gap: 6px; padding: 7px 12px; background: #f0f6ff; border-bottom: 1px solid #c8d8f0; }
+.bom-edit-qty  { width: 52px; padding: 4px 6px; border: 1px solid #aac0e0; border-radius: 5px; font-size: 13px; text-align: center; }
+.bom-edit-name { flex: 1; padding: 4px 8px; border: 1px solid #aac0e0; border-radius: 5px; font-size: 13px; }
+.bom-edit-price { width: 80px; padding: 4px 6px; border: 1px solid #aac0e0; border-radius: 5px; font-size: 13px; text-align: right; }
+.bom-edit-save  { background: #1a3a8f; color: white; border: none; border-radius: 5px; padding: 4px 12px; font-size: 12px; font-weight: 600; cursor: pointer; }
+.bom-edit-cancel { background: none; border: 1px solid #c0c8d8; border-radius: 5px; padding: 4px 10px; font-size: 12px; cursor: pointer; color: #6a7a94; }
+.bom-add-btn { display: flex; align-items: center; gap: 6px; width: 100%; background: none; border: 1px dashed #c8d8e8; border-radius: 6px; margin: 6px 12px 10px; width: calc(100% - 24px); padding: 6px 12px; font-size: 12px; color: #6a9adf; cursor: pointer; transition: all 0.15s; }
+.bom-add-btn:hover { background: #f0f6ff; border-color: #4a7adf; }
+/* ── Export dropdown ── */
+.export-wrap { position: relative; display: inline-block; }
+.export-dropdown { position: absolute; right: 0; top: calc(100% + 4px); background: white; border: 1px solid #dde4f0; border-radius: 9px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); min-width: 160px; z-index: 100; overflow: hidden; display: none; }
+.export-wrap.open .export-dropdown { display: block; }
+.export-opt { display: block; width: 100%; background: none; border: none; padding: 10px 16px; text-align: left; font-size: 13px; cursor: pointer; color: #1a1a2e; transition: background 0.12s; }
+.export-opt:hover { background: #f0f6ff; }
+/* ── Print styles ── */
+@media print {
+  header, nav, .navbar, #loginScreen, .ovl-backdrop, #resultsForm, .drawer-container,
+  .lang-toggle, .badge, #attachZone, .file-chips, #clarifications,
+  .result-toolbar-wrap, #progressSection, .tab-bar, .drawer-toggle-btn,
+  .bom-item-actions, .bom-add-btn, .bom-act-btn { display: none !important; }
+  body { background: white; }
+  #results { display: block !important; padding: 0; }
+  .card { box-shadow: none; border: 1px solid #dde; page-break-inside: avoid; }
+  .bom-cat-body { display: block !important; }
+}
+.bom-details-toggle { width: 100%; background: none; border: 1px dashed #dde2ec; border-radius: 8px; padding: 9px; font-size: 12px; color: #8a94a6; cursor: pointer; margin-top: 8px; transition: all 0.18s; }
+.bom-details-toggle:hover { background: #f4f6fa; color: #1a1a2e; }
+
+/* ── Real DEVIS References ── */
+.devis-refs-wrap { margin-bottom: 18px; }
+.devis-refs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+@media(max-width:860px){ .devis-refs-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:560px){ .devis-refs-grid { grid-template-columns: 1fr; } }
+.devis-ref-card { background: white; border: 1px solid #e4e8f0; border-radius: 12px; padding: 14px 16px; position: relative; overflow: hidden; }
+.devis-ref-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.devis-ref-card.high::before   { background: linear-gradient(90deg,#059669,#4fc3f7); }
+.devis-ref-card.medium::before { background: linear-gradient(90deg,#f59e0b,#fb923c); }
+.devis-ref-card.low::before    { background: linear-gradient(90deg,#9ca3af,#cbd5e1); }
+.devis-ref-score { display: inline-block; font-size: 10px; font-weight: 800; padding: 3px 9px; border-radius: 12px; margin-bottom: 7px; }
+.devis-ref-score.high   { background:#d1fae5; color:#065f46; }
+.devis-ref-score.medium { background:#fef3c7; color:#92400e; }
+.devis-ref-score.low    { background:#f1f5f9; color:#64748b; }
+.devis-ref-id   { font-family: monospace; font-size: 10px; color: #b0b8c8; margin-bottom: 3px; }
+.devis-ref-client { font-size: 11px; font-weight: 700; color: #4a6a9a; margin-bottom: 4px; }
+.devis-ref-desc { font-size: 12px; color: #1a1a2e; line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
+.devis-ref-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.drs { background: #f4f6fa; border-radius: 6px; padding: 5px 8px; }
+.drs-lbl { font-size: 9px; color: #9a9aaa; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.drs-val { font-size: 13px; font-weight: 800; color: #1a1a2e; }
+
+</style>
+</head>
+<body>
+
+<!-- ══ Login screen ════════════════════════════════════════════════ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">CETIE</div>
+    <div class="login-sub">Technical Pre-Configuration — Internal tool</div>
+    <div class="login-label" data-i18n="loginUsernameLabel">Username</div>
+    <input class="login-input" id="loginUsername" type="text" placeholder="username"
+           autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()">
+    <div class="login-label" data-i18n="loginPasswordLabel">Password</div>
+    <input class="login-input" id="loginPassword" type="password" placeholder="••••••••"
+           autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn-login" id="loginBtn" onclick="doLogin()" data-i18n="loginBtn">Sign in</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<!-- ══ Header ══════════════════════════════════════════════════════ -->
+<header>
+  <div class="logo-wrap">
+    <div class="logo">CETIE</div>
+    <div class="logo-divider"></div>
+    <div class="logo-sub">
+      <strong data-i18n="headerTitle">Technical Pre-Configuration</strong>
+      <span data-i18n="headerSub">AI-assisted — Internal tool</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnFR" onclick="setLang('fr')">FR</button>
+    </div>
+    <div class="badge">BETA</div>
+  </div>
+</header>
+
+<!-- ══ Navbar ══════════════════════════════════════════════════════ -->
+<nav class="navbar">
+  <button class="nav-item active" id="navHome" onclick="navTo('home')">
+    <span class="nav-icon">⚙️</span> <span data-i18n="navConfigurator">Configurator</span>
+  </button>
+  <div class="nav-divider"></div>
+  <button class="nav-item" id="navHistory" onclick="openHistoryPanel()">
+    <span class="nav-icon">📋</span> <span data-i18n="navHistory">History</span>
+    <span id="historyBadge" style="display:none;background:#4fc3f7;color:#0f1225;font-size:10px;font-weight:700;padding:1px 7px;border-radius:10px;margin-left:2px">0</span>
+  </button>
+  <button class="nav-item" id="navUsers" onclick="openUsersPanel()">
+    <span class="nav-icon">👥</span> <span data-i18n="navUsers">Users</span>
+  </button>
+  <div class="nav-divider"></div>
+  <!-- RAG status pill -->
+  <div id="ragStatusPill" title="Indexed data years" style="display:flex;align-items:center;gap:6px;font-size:11px;color:#7a8aaa;padding:0 6px">
+    <span id="ragStatusDot" style="width:8px;height:8px;border-radius:50%;background:#f0a500;display:inline-block;flex-shrink:0"></span>
+    <span id="ragStatusText">Indexing…</span>
+  </div>
+  <div class="nav-right">
+    <div class="current-user-btn" id="currentUserBtn" style="cursor:default">
+      <div class="user-avatar" id="currentUserAvatar">?</div>
+      <span id="currentUserName">—</span>
+      <span id="currentUserRoleBadge"></span>
+    </div>
+    <button class="logout-btn" onclick="doLogout()" data-i18n="signOut">Sign out</button>
+  </div>
+</nav>
+
+<!-- ══ History overlay ══════════════════════════════════════════════ -->
+<div class="ovl-backdrop" id="historyBackdrop" onclick="closeHistoryPanel()">
+  <div class="ovl-panel" onclick="event.stopPropagation()">
+    <div class="ovl-header">
+      <span class="ovl-title" data-i18n="historyPanelTitle">📋 Analysis History</span>
+      <button class="ovl-close" onclick="closeHistoryPanel()">✕</button>
+    </div>
+    <div class="ovl-body">
+      <button class="history-save-btn" id="historySaveBtn" onclick="saveAnalysis()" disabled data-i18n="historySaveBtn">
+        💾 Save current analysis
+      </button>
+      <div id="historyList"><div class="history-empty" data-i18n="noHistory">No saved analyses yet.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Users overlay ═══════════════════════════════════════════════ -->
+<div class="ovl-backdrop" id="usersBackdrop" onclick="closeUsersPanel()">
+  <div class="ovl-panel" onclick="event.stopPropagation()">
+    <div class="ovl-header">
+      <span class="ovl-title" data-i18n="usersPanelTitle">👥 User Management</span>
+      <button class="ovl-close" onclick="closeUsersPanel()">✕</button>
+    </div>
+    <div class="ovl-body">
+      <!-- DB status section (admin only) -->
+      <div id="ragAdminSection" style="display:none;margin-bottom:18px;background:#f0f6ff;border:1px solid #c8d8f0;border-radius:10px;padding:14px 16px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#5a7aaa;margin-bottom:10px" data-i18n="ragAdminTitle">🗄 Database / RAG Index</div>
+        <div style="font-size:12px;color:#445;margin-bottom:6px" id="ragAdminInfo">—</div>
+        <button onclick="adminReindex()" id="reindexBtn" style="background:#1a3a6f;color:white;border:none;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;margin-top:6px">↺ Re-scan &amp; Reindex</button>
+        <span id="reindexStatus" style="font-size:11px;color:#5a7aaa;margin-left:10px;display:none"></span>
+      </div>
+      <div class="users-list" id="usersList"></div>
+      <!-- Add user form — only rendered for admin -->
+      <div class="add-user-form" id="addUserForm" style="display:none">
+        <h4 data-i18n="addUserFormTitle">Create new user</h4>
+        <div class="form-row">
+          <input class="form-input" id="newUserUsername" data-i18n-placeholder="addUserUsernamePh" placeholder="Username" style="flex:1">
+          <input class="form-input" id="newUserName" data-i18n-placeholder="addUserNamePh" placeholder="Full name" style="flex:1.5">
+        </div>
+        <div class="form-row">
+          <input class="form-input" id="newUserPassword" type="password" data-i18n-placeholder="addUserPasswordPh" placeholder="Password" style="flex:1">
+          <select class="form-select" id="newUserRole">
+            <option value="engineer">Engineer</option>
+            <option value="manager">Manager</option>
+            <option value="technician">Technician</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button class="btn-add-user" onclick="addUser()" data-i18n="addUserBtn">+ Create user</button>
+        <div class="form-error" id="addUserError"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Right drawer strip ══════════════════════════════════════════ -->
+<div class="drawer-strip" id="drawerStrip">
+  <button class="strip-btn" id="tab-rationale" onclick="openDrawer('rationale')" title="Configuration Context">
+    <span class="s-icon">🔗</span>
+    <span class="s-label" data-i18n="tabRationale">Context</span>
+  </button>
+  <div class="strip-divider"></div>
+  <button class="strip-btn" id="tab-feedback" onclick="openDrawer('feedback')" title="Expert Feedback">
+    <span class="s-icon">💬</span>
+    <span class="s-label" data-i18n="tabFeedback">Feedback</span>
+  </button>
+  <div class="strip-divider"></div>
+  <button class="strip-btn" id="tab-rules" onclick="openDrawer('rules')" title="Learned Rules">
+    <span class="s-icon">📋</span>
+    <span class="s-label" data-i18n="tabRules">Rules</span>
+  </button>
+</div>
+
+<!-- ══ Drawer backdrop + panel ════════════════════════════════════= -->
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+
+<div class="drawer-panel" id="drawerPanel">
+  <div class="drawer-header">
+    <div class="drawer-title" id="drawerTitleEl"><span id="drawerTitleIcon"></span><span id="drawerTitleText"></span></div>
+    <button class="btn-close-drawer" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body">
+
+    <!-- Rationale pane -->
+    <div id="pane-rationale" style="display:none">
+      <div id="rationaleContent"><p class="drawer-empty" data-i18n="rationaleEmpty">Run an analysis first to see the AI's reasoning.</p></div>
+    </div>
+
+    <!-- Feedback pane -->
+    <div id="pane-feedback" style="display:none">
+      <div class="feedback-rating-row">
+        <button class="btn-fb good" id="btnApprove" onclick="setFeedbackRating('good')">
+          <span class="fb-icon">✅</span>
+          <span data-i18n="feedbackGood">Looks good</span>
+        </button>
+        <button class="btn-fb correct" id="btnCorrect" onclick="setFeedbackRating('needs_correction')">
+          <span class="fb-icon">✏️</span>
+          <span data-i18n="feedbackCorrect">Needs correction</span>
+        </button>
+      </div>
+      <div class="fb-saved" id="feedbackSaved">
+        <span>✓</span><span id="feedbackSavedMsg"></span>
+      </div>
+      <div class="feedback-form-pane" id="feedbackFormPane">
+        <span class="fb-label" data-i18n="feedbackNoteLabel">Correction / Expert note</span>
+        <textarea class="fb-textarea" id="feedbackNote" data-i18n-placeholder="feedbackNotePlaceholder"
+          placeholder="Describe what should be changed. Be specific — this guides future AI suggestions."></textarea>
+
+        <div class="rule-toggle-row">
+          <input type="checkbox" id="saveAsRule" />
+          <label for="saveAsRule" data-i18n="feedbackRuleLabel">Save as a permanent rule — apply to all future configurations</label>
+        </div>
+        <select class="rule-scope-select" id="ruleScope">
+          <option value="general"  data-i18n-opt="scopeGeneral">General</option>
+          <option value="pompes"   data-i18n-opt="scopePumps">Pumps</option>
+          <option value="moteurs"  data-i18n-opt="scopeMotors">Motors</option>
+          <option value="tgbt"     data-i18n-opt="scopeTGBT">TGBT</option>
+          <option value="s4w"      data-i18n-opt="scopeS4W">S4W</option>
+        </select>
+
+        <button class="btn-save-fb" onclick="saveFeedback()" data-i18n="feedbackSave">Save feedback</button>
+      </div>
+      <div id="noResultYet" style="display:none"><p class="drawer-empty" data-i18n="feedbackEmpty">Run an analysis first to leave feedback.</p></div>
+    </div>
+
+    <!-- Rules pane -->
+    <div id="pane-rules" style="display:none">
+      <div id="rulesList"><p class="rules-empty" data-i18n="rulesEmpty">No rules yet. Corrections saved as rules will appear here.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ Main content ════════════════════════════════════════════════ -->
+<main>
+  <!-- Input -->
+  <div class="input-card">
+    <div class="section-label" data-i18n="inputTitle">Customer Request</div>
+    <div class="examples">
+      <span class="examples-label" data-i18n="examplesLabel">Quick examples:</span>
+      <button class="example-btn" onclick="setExample(0)" data-i18n-ex="0">2-pump panel 2kW</button>
+      <button class="example-btn" onclick="setExample(1)" data-i18n-ex="1">Motor starter 7.5kW</button>
+      <button class="example-btn" onclick="setExample(2)" data-i18n-ex="2">TGBT + Siemens S7-1200</button>
+      <button class="example-btn" onclick="setExample(3)" data-i18n-ex="3">Vague customer email</button>
+    </div>
+    <textarea id="customerRequest" data-i18n-placeholder="inputPlaceholder"
+      placeholder="Paste the customer email, technical specification or tender document here…"></textarea>
+
+    <!-- File attachments -->
+    <div class="attach-zone" id="attachZone" onclick="document.getElementById('attachInput').click()"
+         ondragover="event.preventDefault();this.classList.add('drag-over')"
+         ondragleave="this.classList.remove('drag-over')"
+         ondrop="handleFileDrop(event)">
+      <div class="attach-zone-inner">
+        <span class="attach-icon">📎</span>
+        <span class="attach-label" data-i18n="attachLabel"><strong>Attach CCTP, emails, specs…</strong> — PDF, DOCX, XLSX, MSG/EML, images, TXT/CSV</span>
+        <span style="font-size:11px;color:#b0b8c8">click or drop</span>
+      </div>
+      <input type="file" id="attachInput" class="attach-input" multiple
+             accept=".pdf,.docx,.doc,.xlsx,.xlsm,.xls,.csv,.msg,.eml,.png,.jpg,.jpeg,.webp,.gif,.txt"
+             onchange="handleFileSelect(this.files)">
+    </div>
+    <div class="file-chips" id="fileChips"></div>
+
+    <div class="btn-row">
+      <button class="btn-analyze" id="analyzeBtn" onclick="analyze()">
+        <span data-i18n="analyzeBtn">Analyze & Pre-Configure</span>
+        <div class="spinner"></div>
+      </button>
+      <span class="btn-hint" data-i18n="btnHint">or Ctrl+Enter</span>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div id="progressPanel">
+    <div class="progress-title" data-i18n="progressTitle">CETIE AI — Processing your request</div>
+    <div class="step-row" id="step-1">
+      <div class="step-icon" id="step-1-icon">1</div>
+      <div class="step-body">
+        <div class="step-label" data-i18n="step1Label">Extracting technical requirements</div>
+        <div class="step-detail" id="step-1-detail"></div>
+      </div>
+      <div class="step-time" id="step-1-time"></div>
+    </div>
+    <div class="step-row" id="step-2">
+      <div class="step-icon" id="step-2-icon">2</div>
+      <div class="step-body">
+        <div class="step-label" data-i18n="step2Label">Retrieving similar CETIE projects</div>
+        <div class="step-detail" id="step-2-detail"></div>
+      </div>
+      <div class="step-time" id="step-2-time"></div>
+    </div>
+    <div class="step-row" id="step-3">
+      <div class="step-icon" id="step-3-icon">3</div>
+      <div class="step-body">
+        <div class="step-label" data-i18n="step3Label">Generating preliminary configuration</div>
+        <div class="step-detail" id="step-3-detail"></div>
+      </div>
+      <div class="step-time" id="step-3-time"></div>
+    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+  </div>
+
+  <!-- Demo banner -->
+  <div id="demoBanner">
+    <strong data-i18n="demoTitle">Demo mode — AI inactive.</strong>
+    <span data-i18n="demoMsg"> Configuration generated by heuristic rules.</span>
+  </div>
+
+  <!-- Results -->
+  <div id="results">
+
+    <!-- Results toolbar -->
+    <div class="result-toolbar-wrap" style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:14px;gap:10px;">
+      <span id="resultSavedTag" style="display:none;font-size:12px;color:#166534;background:#f0faf4;border:1px solid #a8dbb8;padding:4px 12px;border-radius:20px;">✓ Saved</span>
+      <!-- Export dropdown -->
+      <div class="export-wrap" id="exportWrap">
+        <button onclick="toggleExportMenu()" style="background:#1e2a4a;color:#c8d4e8;border:none;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px;">
+          ↓ <span data-i18n="exportBtn">Export</span>
+        </button>
+        <div class="export-dropdown" id="exportDropdown">
+          <button class="export-opt" onclick="exportToPdf()">🖨 <span data-i18n="exportPdf">Print / PDF</span></button>
+          <button class="export-opt" onclick="exportToExcel()">📊 <span data-i18n="exportCsv">Excel (.xlsx)</span></button>
+        </div>
+      </div>
+      <button id="saveAnalysisBtn" onclick="saveAnalysis()"
+        style="background:#0f1225;color:white;border:none;padding:9px 22px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px;transition:background 0.2s;"
+        onmouseover="this.style.background='#1e2a4a'" onmouseout="this.style.background='#0f1225'">
+        💾 <span data-i18n="saveAnalysis">Save analysis</span>
+      </button>
+    </div>
+
+    <!-- Requirements grid -->
+    <div class="results-grid">
+      <div class="card">
+        <div class="card-title">🔍 <span data-i18n="needsTitle">Technical Requirements</span></div>
+        <div class="summary-box" id="summaryBox"></div>
+        <div class="req-grid" id="reqGrid"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚠️ <span data-i18n="missingTitle">Information Required</span></div>
+        <div id="missingInfo" style="margin-bottom:18px;"></div>
+        <div class="card-title" style="margin-top:8px;">💡 <span data-i18n="assumptionsTitle">Engineering Assumptions</span></div>
+        <div id="assumptions"></div>
+      </div>
+    </div>
+
+    <!-- Clarification -->
+    <div id="clarificationPanel">
+      <div class="clarif-header">
+        <div class="clarif-icon">❓</div>
+        <div>
+          <div class="clarif-title" data-i18n="clarifTitle">A few clarifications could improve this configuration</div>
+          <div class="clarif-sub" data-i18n="clarifSub">Answer below and click Refine — or skip to keep the current result.</div>
+        </div>
+      </div>
+      <div class="clarif-questions" id="clarifQuestions"></div>
+      <div class="clarif-actions">
+        <button class="btn-refine" onclick="refineWithClarifications()">
+          <span>↺</span> <span data-i18n="clarifBtn">Refine Configuration</span>
+        </button>
+        <button class="btn-skip-clarif" onclick="skipClarification()" data-i18n="clarifSkip">Skip</button>
+      </div>
+    </div>
+
+    <!-- Real DEVIS references -->
+    <div id="devisRefsSection" class="devis-refs-wrap" style="display:none">
+      <div class="card" style="padding:20px 24px">
+        <div class="card-title">🗂️ <span id="devisRefsTitle" data-i18n="devisTitle">Real DEVIS Projects</span></div>
+        <div class="devis-refs-grid" id="devisRefsGrid"></div>
+      </div>
+    </div>
+
+    <!-- Configuration -->
+    <div class="config-card">
+      <div class="card-title">⚡ <span data-i18n="configTitle">Preliminary Technical Configuration</span></div>
+      <div class="enclosure-block" id="enclosureBlock"></div>
+
+      <!-- 12-category BoM (primary view) -->
+      <div class="bom-section-title">📋 <span data-i18n="bomTitle">Bill of Materials — 12 Categories</span></div>
+      <div class="bom-accordion" id="bomAccordion"></div>
+
+      <!-- Flat component list (collapsible detail) -->
+      <div id="flatBlocksWrap">
+        <button class="bom-details-toggle" id="flatToggleBtn" onclick="toggleFlatBlocks()">▼ <span data-i18n="flatBlocksShow">Show</span> <span data-i18n="flatBlocksLabel">raw component list</span> (<span id="flatBlockCount">0</span> <span data-i18n="flatBlocksUnit">blocks</span>)</button>
+        <div id="flatBlocksDetail" style="display:none;margin-top:8px">
+          <div class="blocks-scroll-wrap">
+            <table class="blocks-table">
+              <thead><tr>
+                <th>ID</th>
+                <th data-i18n="colBlock">Block / Component</th>
+                <th style="text-align:center" data-i18n="colQty">Qty</th>
+                <th style="text-align:center" data-i18n="colHours">Wiring h.</th>
+                <th style="text-align:right" data-i18n="colCost">Mat. Cost</th>
+              </tr></thead>
+              <tbody id="blocksBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="totals-row" id="totalsRow"></div>
+    </div>
+
+    <!-- Expert notes -->
+    <div class="notes-card" id="expertNotes" style="display:none"></div>
+
+    <div class="disclaimer">
+      <span data-i18n="disclaimer">Preliminary configuration — mandatory expert validation before client submission.</span><br>
+      <span data-i18n="disclaimerPricing">Pricing excluded — managed in Divalto ERP.</span>
+    </div>
+  </div>
+</main>
+
+<script>
+// ── Translations ──────────────────────────────────────────────────────────────
+const T = {
+  en: {
+    headerTitle:'Technical Pre-Configuration', headerSub:'AI-assisted — Internal tool',
+    inputTitle:'Customer Request', examplesLabel:'Quick examples:',
+    inputPlaceholder:'Paste the customer email, technical specification or tender document here…',
+    analyzeBtn:'Analyze & Pre-Configure', analyzingBtn:'Processing…', btnHint:'or Ctrl+Enter',
+    demoTitle:'Demo mode — AI inactive.', demoMsg:' Configuration generated by heuristic rules.',
+    needsTitle:'Technical Requirements', missingTitle:'Information Required', assumptionsTitle:'Engineering Assumptions',
+    configTitle:'Preliminary Technical Configuration',
+    colBlock:'Block / Component', colQty:'Qty', colHours:'Wiring h.', colCost:'Mat. Cost',
+    disclaimer:'Preliminary configuration — mandatory expert validation before client submission.',
+    disclaimerPricing:'Pricing excluded — managed in Divalto ERP.',
+    noMissing:'No critical information missing', noAssumptions:'No assumptions required',
+    noEnclosure:'Enclosure not yet determined', expertNotesLabel:'Expert Notes',
+    totalWiringHours:'Est. Wiring Hours', totalProgHours:'Automation Hours', totalMatCost:'Est. Material Cost',
+    divaltoNote:'Final pricing in Divalto. Expert sign-off required.',
+    progressTitle:'CETIE AI — Processing your request',
+    step1Label:'Extracting technical requirements', step2Label:'Retrieving similar CETIE projects', step3Label:'Generating preliminary configuration',
+    clarifTitle:'A few clarifications could improve this configuration',
+    clarifSub:'Answer below and click Refine — or skip to keep the current result.',
+    clarifBtn:'Refine Configuration', clarifSkip:'Skip',
+    enclosureLabel:'Main Enclosure',
+    // Drawer tabs
+    tabRationale:'Context', tabFeedback:'Feedback', tabRules:'Rules',
+    drawerRationale:'Configuration Context', drawerFeedback:'Expert Feedback', drawerRules:'Learned Rules',
+    rationaleEncLabel:'Selected Enclosure', rationaleBlkLabel:'Selected Components',
+    rationaleEmpty:'Run an analysis first to see how the AI reached this configuration.',
+    ragSectionTitle:'Similar past CETIE projects',
+    ragSectionSub:'These historical quotes were retrieved and used as context for this configuration.',
+    ragNoMatch:'No similar projects found — configuration based on component library only.',
+    ragSimilarity:'Similarity',
+    ragType:'Type', ragSector:'Sector', ragSolution:'Solution',
+    ragHours:'Wiring / Prog.',
+    contextSectionTitle:'Configuration context',
+    feedbackEmpty:'Run an analysis first to leave feedback.',
+    feedbackGood:'Looks good', feedbackCorrect:'Needs correction',
+    feedbackNoteLabel:'Correction / Expert note',
+    feedbackNotePlaceholder:'Describe what should be changed. Be specific — this guides future AI suggestions.',
+    feedbackRuleLabel:'Save as a permanent rule — apply to all future configurations',
+    feedbackSave:'Save feedback', feedbackSavedOk:'Feedback saved. Thank you.',
+    feedbackSavedRule:'Rule saved — will apply to all future runs.',
+    rulesEmpty:'No rules yet. Corrections saved as rules will appear here.',
+    ruleDeactivate:'Disable', ruleActivate:'Enable', ruleDeleteConfirm:'Delete this rule permanently?',
+    scopeGeneral:'General', scopePumps:'Pumps', scopeMotors:'Motors', scopeTGBT:'TGBT', scopeS4W:'S4W',
+    examples:[
+      "Hello, we need a control panel for 2 x 2kW pumps with an S4W remote monitoring system. 400V three-phase. Client HYDRELEC, project Bisinchi.",
+      "Quote request for a 7.5kW motor starter cabinet with thermal protection, emergency stop and run indicator. IP65 required.",
+      "Pump station automation project. TGBT with Siemens S7-1200 PLC, Modbus TCP, 3 Schneider ATV312 variable speed drives.",
+      "Hello, following our meeting, could you quote to equip our machine room? We need to control 2 or 3 motors with some automation. Budget not yet defined."
+    ],
+    exampleBtns:['2-pump panel 2kW','Motor starter 7.5kW','TGBT + Siemens S7-1200','Vague customer email'],
+    reqFields:['Product Type','Power (kW)','No. Pumps','No. Motors','Voltage','Protection (IP)','Automation','Communication'],
+    // Toolbar
+    saveAnalysis:'Save analysis', exportBtn:'Export', exportPdf:'Print / PDF', exportCsv:'Excel (.xlsx)',
+    // DEVIS refs
+    devisTitle:'Real DEVIS Projects', devisSub:'Actual CETIE quotations ({years}) used as primary BoM reference.',
+    // History
+    noHistory:'No saved analyses yet.',
+    // Attachment
+    attachLabel:'Attach files — PDF, DOCX, XLSX, images (PNG/JPG), TXT/CSV',
+    // BoM editing
+    editItem:'Edit', deleteItem:'Delete', addItem:'+ Add item',
+    saveEdit:'Save', cancelEdit:'Cancel',
+    editQtyLabel:'Qty', editNameLabel:'Designation', editPriceLabel:'Unit price (€)',
+    // BoM rendering
+    bomTitle:'Bill of Materials — 12 Categories',
+    bomEmpty:'BoM categories not yet generated — see component list below',
+    bomMatchVerified:'✓ catalogue', bomMatchSuggested:'~ approx', bomMatchNotFound:'? unverified',
+    bomStatCatalogue:'catalogue', bomStatApprox:'approx', bomStatUnverified:'unverified',
+    bomItem:'item', bomItems:'items',
+    // Flat blocks toggle
+    flatBlocksHide:'▲ Hide', flatBlocksShow:'▼ Show',
+    flatBlocksLabel:'raw component list', flatBlocksUnit:'blocks',
+    // DEVIS reference cards
+    devisMatchLabel:'match', devisStatFab:'Fab.', devisStatProg:'Prog.',
+    devisStatComps:'Components', devisStatPrice:'Quote',
+    // Drawer DEVIS section labels
+    drawerClient:'Client', drawerRef:'Ref', drawerHoursLabel:'Hours', drawerQuoteLabel:'Quote',
+    // Cabinet sizing
+    cabinetSizing:'Cabinet sizing:', spareLabel:'% spare',
+    // Navbar
+    navConfigurator:'Configurator', navHistory:'History', navUsers:'Users', signOut:'Sign out',
+    // Login
+    loginUsernameLabel:'Username', loginPasswordLabel:'Password',
+    loginBtn:'Sign in', loginSigningIn:'Signing in…',
+    loginErrorRequired:'Please enter username and password.',
+    loginErrorFailed:'Login failed.',
+    loginErrorNetwork:'Connection error. Is the server running?',
+    sessionExpired:'Session expired. Please sign in again.',
+    // History panel
+    historyPanelTitle:'📋 Analysis History',
+    historySaveBtn:'💾 Save current analysis',
+    historyUntitled:'Untitled', historyRestored:'📂 Restored from history',
+    historyDeleteConfirm:'Delete this analysis from history?',
+    // Users panel
+    usersPanelTitle:'👥 User Management',
+    ragAdminTitle:'🗄 Database / RAG Index',
+    ragAdminReady:'✓ Ready',
+    ragAdminReindexStart:'✓ Started — watch DB pill in navbar',
+    ragAdminAlreadyRunning:'⏳ Already running…',
+    addUserFormTitle:'Create new user', addUserBtn:'+ Create user',
+    addUserUsernamePh:'Username', addUserNamePh:'Full name', addUserPasswordPh:'Password',
+    addUserErrorRequired:'All fields are required.',
+    addUserErrorFailed:'Failed to create user.',
+    deleteUserConfirm:'Delete this user? This cannot be undone.',
+    deleteUserError:'Could not delete.',
+    noUsersFound:'No users found.', roleYou:'you',
+    // RAG pill
+    ragNoData:'No DB data', ragIndexing:'Indexing…',
+    // Analyze
+    additionalInfo:'Additional information:', networkError:'Network error — please retry',
+    uploadFailed:'Upload failed', rulesLoadError:'Error loading rules.',
+    // File chips
+    fileCharsLabel:'chars', fileParsing:'parsing…', fileError:'⚠ error',
+    // Clarification
+    clarifAnswerPlaceholder:'Your answer…',
+    // Export
+    exportGenerating:'⏳ Generating…',
+    // PDF export labels
+    pdfTitle:'Technical Pre-Configuration Report — AI Assisted',
+    pdfStatusVal:'PRELIMINARY — Expert review required',
+    pdfDateLabel:'Date', pdfStatusLabel:'Status', pdfTypeLabel:'Type',
+    pdfSectionRequest:'Customer Request', pdfSectionRequirements:'Technical Requirements',
+    pdfSectionBom:'Bill of Materials — by Category',
+    pdfColDesig:'Designation', pdfColQty:'Qty', pdfColUnit:'Unit Price', pdfColTotal:'Total',
+    pdfGrandTotal:'Total Material Cost (estimated)',
+    pdfSectionInfo:'Information Required', pdfSectionAssumps:'Engineering Assumptions',
+    pdfSectionNotes:'Expert Notes',
+    pdfDisclaimer:'⚠ This document is a <strong>preliminary AI-assisted pre-configuration</strong>. It must be reviewed and validated by a qualified CETIE engineer before any client submission. Pricing is indicative only and must be confirmed in Divalto ERP.',
+    pdfPrintBtn:'🖨 Print / Save PDF',
+  },
+  fr: {
+    headerTitle:'Pré-configuration technique', headerSub:'Assistée par IA — Outil interne',
+    inputTitle:'Demande client', examplesLabel:'Exemples rapides :',
+    inputPlaceholder:'Collez ici l\'email client, le descriptif technique ou le cahier des charges…',
+    analyzeBtn:'Analyser et pré-configurer', analyzingBtn:'Traitement en cours…', btnHint:'ou Ctrl+Entrée',
+    demoTitle:'Mode démo — IA inactive.', demoMsg:' Configuration générée par règles heuristiques.',
+    needsTitle:'Exigences techniques', missingTitle:'Informations requises', assumptionsTitle:'Hypothèses d\'ingénierie',
+    configTitle:'Configuration technique préliminaire',
+    colBlock:'Bloc / Composant', colQty:'Qté', colHours:'H. câblage', colCost:'Coût mat.',
+    disclaimer:'Configuration préliminaire — validation expert obligatoire avant envoi au client.',
+    disclaimerPricing:'Tarification exclue — gérée dans Divalto ERP.',
+    noMissing:'Aucune information critique manquante', noAssumptions:'Aucune hypothèse nécessaire',
+    noEnclosure:'Enveloppe non encore déterminée', expertNotesLabel:'Notes expert',
+    totalWiringHours:'H. câblage estimées', totalProgHours:'H. automatisme', totalMatCost:'Coût matière estimé',
+    divaltoNote:'Tarification finale dans Divalto. Validation expert requise.',
+    progressTitle:'CETIE AI — Traitement de votre demande',
+    step1Label:'Extraction des exigences techniques', step2Label:'Recherche de projets CETIE similaires', step3Label:'Génération de la configuration préliminaire',
+    clarifTitle:'Quelques précisions amélioreraient cette configuration',
+    clarifSub:'Répondez ci-dessous puis cliquez sur Affiner — ou ignorez pour garder le résultat.',
+    clarifBtn:'Affiner la configuration', clarifSkip:'Ignorer',
+    enclosureLabel:'Enveloppe principale',
+    tabRationale:'Contexte', tabFeedback:'Retour', tabRules:'Règles',
+    drawerRationale:'Contexte de configuration', drawerFeedback:'Retour expert', drawerRules:'Règles apprises',
+    rationaleEncLabel:'Enveloppe sélectionnée', rationaleBlkLabel:'Composants sélectionnés',
+    rationaleEmpty:'Lancez une analyse pour voir comment l\'IA a construit cette configuration.',
+    ragSectionTitle:'Projets CETIE similaires',
+    ragSectionSub:'Ces devis historiques ont été récupérés et utilisés comme contexte pour cette configuration.',
+    ragNoMatch:'Aucun projet similaire trouvé — configuration basée sur la bibliothèque de composants uniquement.',
+    ragSimilarity:'Similarité',
+    ragType:'Type', ragSector:'Secteur', ragSolution:'Solution',
+    ragHours:'Câblage / Prog.',
+    contextSectionTitle:'Contexte de configuration',
+    feedbackEmpty:'Lancez une analyse avant de laisser un retour.',
+    feedbackGood:'Correct', feedbackCorrect:'À corriger',
+    feedbackNoteLabel:'Correction / Note expert',
+    feedbackNotePlaceholder:'Décrivez ce qui doit être modifié. Soyez précis — cela guidera les suggestions IA futures.',
+    feedbackRuleLabel:'Enregistrer comme règle permanente — appliquer à toutes les configurations futures',
+    feedbackSave:'Enregistrer le retour', feedbackSavedOk:'Retour enregistré. Merci.',
+    feedbackSavedRule:'Règle enregistrée — appliquée à toutes les exécutions futures.',
+    rulesEmpty:'Aucune règle. Les corrections enregistrées comme règles apparaîtront ici.',
+    ruleDeactivate:'Désactiver', ruleActivate:'Activer', ruleDeleteConfirm:'Supprimer définitivement cette règle ?',
+    scopeGeneral:'Général', scopePumps:'Pompes', scopeMotors:'Moteurs', scopeTGBT:'TGBT', scopeS4W:'S4W',
+    examples:[
+      "Bonjour, nous avons besoin d'une armoire de commande pour 2 pompes de 2kW chacune avec un système S4W. Alimentation 400V triphasé. Client HYDRELEC, affaire Bisinchi.",
+      "Demande de devis pour un coffret de démarrage moteur 7.5kW avec protection thermique, arrêt d'urgence et voyant de marche. IP65 souhaité.",
+      "Projet automatisation station de pompage. Armoire TGBT avec automate Siemens S7-1200, communication Modbus TCP, 3 variateurs Schneider ATV312.",
+      "Bonjour, suite à notre réunion, pourriez-vous nous faire une offre pour équiper notre salle des machines ? On aurait besoin de commander 2 ou 3 moteurs, avec un peu d'automatisme. Budget pas encore défini."
+    ],
+    exampleBtns:['Armoire 2 pompes 2kW','Coffret démarrage 7.5kW','Armoire TGBT + Siemens S7-1200','Email client vague'],
+    reqFields:['Type produit','Puissance (kW)','Nb pompes','Nb moteurs','Tension','Protection (IP)','Automatisme','Communication'],
+    // Toolbar
+    saveAnalysis:'Sauvegarder', exportBtn:'Exporter', exportPdf:'Imprimer / PDF', exportCsv:'Excel (.xlsx)',
+    // DEVIS refs
+    devisTitle:'Projets DEVIS réels', devisSub:'Devis CETIE réels ({years}) utilisés comme référence principale.',
+    // History
+    noHistory:'Aucune analyse sauvegardée.',
+    // Attachment
+    attachLabel:'Joindre des fichiers — PDF, DOCX, XLSX, images (PNG/JPG), TXT/CSV',
+    // BoM editing
+    editItem:'Modifier', deleteItem:'Supprimer', addItem:'+ Ajouter un article',
+    saveEdit:'Enregistrer', cancelEdit:'Annuler',
+    editQtyLabel:'Qté', editNameLabel:'Désignation', editPriceLabel:'Prix unitaire (€)',
+    // BoM rendering
+    bomTitle:'Nomenclature — 12 Catégories',
+    bomEmpty:'Catégories nomenclature non générées — voir liste ci-dessous',
+    bomMatchVerified:'✓ catalogue', bomMatchSuggested:'~ approx', bomMatchNotFound:'? non vérifié',
+    bomStatCatalogue:'catalogue', bomStatApprox:'approx', bomStatUnverified:'non vérifié',
+    bomItem:'article', bomItems:'articles',
+    // Flat blocks toggle
+    flatBlocksHide:'▲ Masquer', flatBlocksShow:'▼ Afficher',
+    flatBlocksLabel:'liste brute des composants', flatBlocksUnit:'blocs',
+    // DEVIS reference cards
+    devisMatchLabel:'correspond.', devisStatFab:'Fab.', devisStatProg:'Prog.',
+    devisStatComps:'Composants', devisStatPrice:'Devis',
+    // Drawer DEVIS section labels
+    drawerClient:'Client', drawerRef:'Réf', drawerHoursLabel:'Heures', drawerQuoteLabel:'Devis',
+    // Cabinet sizing
+    cabinetSizing:'Dimensionnement armoire :', spareLabel:'% de réserve',
+    // Navbar
+    navConfigurator:'Configurateur', navHistory:'Historique', navUsers:'Utilisateurs', signOut:'Déconnexion',
+    // Login
+    loginUsernameLabel:'Identifiant', loginPasswordLabel:'Mot de passe',
+    loginBtn:'Se connecter', loginSigningIn:'Connexion…',
+    loginErrorRequired:'Veuillez saisir votre identifiant et mot de passe.',
+    loginErrorFailed:'Échec de la connexion.',
+    loginErrorNetwork:'Erreur de connexion. Le serveur est-il démarré ?',
+    sessionExpired:'Session expirée. Veuillez vous reconnecter.',
+    // History panel
+    historyPanelTitle:'📋 Historique des analyses',
+    historySaveBtn:"💾 Sauvegarder l'analyse",
+    historyUntitled:'Sans titre', historyRestored:"📂 Restauré depuis l'historique",
+    historyDeleteConfirm:"Supprimer cette analyse de l'historique ?",
+    // Users panel
+    usersPanelTitle:'👥 Gestion des utilisateurs',
+    ragAdminTitle:'🗄 Base de données / Index RAG',
+    ragAdminReady:'✓ Prêt',
+    ragAdminReindexStart:'✓ Lancé — suivez le voyant DB dans la barre',
+    ragAdminAlreadyRunning:'⏳ Déjà en cours…',
+    addUserFormTitle:'Créer un utilisateur', addUserBtn:"+ Créer l'utilisateur",
+    addUserUsernamePh:'Identifiant', addUserNamePh:'Nom complet', addUserPasswordPh:'Mot de passe',
+    addUserErrorRequired:'Tous les champs sont requis.',
+    addUserErrorFailed:"Impossible de créer l'utilisateur.",
+    deleteUserConfirm:'Supprimer cet utilisateur ? Cette action est irréversible.',
+    deleteUserError:'Impossible de supprimer.',
+    noUsersFound:'Aucun utilisateur trouvé.', roleYou:'vous',
+    // RAG pill
+    ragNoData:'Pas de données DB', ragIndexing:'Indexation…',
+    // Analyze
+    additionalInfo:'Informations complémentaires :', networkError:'Erreur réseau — veuillez réessayer',
+    uploadFailed:'Échec du téléchargement', rulesLoadError:'Erreur de chargement des règles.',
+    // File chips
+    fileCharsLabel:'car.', fileParsing:'analyse…', fileError:'⚠ erreur',
+    // Clarification
+    clarifAnswerPlaceholder:'Votre réponse…',
+    // Export
+    exportGenerating:'⏳ Génération…',
+    // PDF export labels
+    pdfTitle:'Rapport de pré-configuration technique — IA assistée',
+    pdfStatusVal:'PRÉLIMINAIRE — Validation expert requise',
+    pdfDateLabel:'Date', pdfStatusLabel:'Statut', pdfTypeLabel:'Type',
+    pdfSectionRequest:'Demande client', pdfSectionRequirements:'Exigences techniques',
+    pdfSectionBom:'Nomenclature — par catégorie',
+    pdfColDesig:'Désignation', pdfColQty:'Qté', pdfColUnit:'Prix unitaire', pdfColTotal:'Total',
+    pdfGrandTotal:'Coût matière total (estimé)',
+    pdfSectionInfo:'Informations requises', pdfSectionAssumps:"Hypothèses d'ingénierie",
+    pdfSectionNotes:'Notes expert',
+    pdfDisclaimer:'⚠ Ce document est une <strong>pré-configuration préliminaire assistée par IA</strong>. Il doit être revu et validé par un ingénieur CETIE qualifié avant toute transmission au client. La tarification est indicative et doit être confirmée dans Divalto ERP.',
+    pdfPrintBtn:'🖨 Imprimer / Sauvegarder PDF',
+  }
+};
+
+// ── BoM Categories ────────────────────────────────────────────────────────────
+const BOM_CATS = {
+  '01_cabinet_enclosure':            { label:'01 — Enveloppe / Armoire',        fr:'01 — Enveloppe / Armoire',        color:'#1565c0', bg:'#e3f2fd' },
+  '02_equipment_on_side':            { label:'02 — Side Equipment',              fr:'02 — Équip. sur côté',            color:'#00695c', bg:'#e0f2f1' },
+  '04_internal_chassis':             { label:'04 — Internal Chassis',            fr:'04 — Châssis intérieur',          color:'#4527a0', bg:'#ede7f6' },
+  '04_internal_chassis_power':       { label:'04a — Chassis / Power',            fr:'04a — Châssis / Puissance',       color:'#e65100', bg:'#fff3e0' },
+  '04_internal_chassis_control':     { label:'04b — Chassis / Control',          fr:'04b — Châssis / Contrôle',        color:'#1b5e20', bg:'#e8f5e9' },
+  '04_internal_chassis_automation':  { label:'04c — Chassis / Automation',       fr:'04c — Châssis / Automatisme',     color:'#6a1b9a', bg:'#f3e5f5' },
+  '05_equipment_on_top':             { label:'05 — Top Equipment',               fr:'05 — Équip. en toiture',          color:'#f57f17', bg:'#fffde7' },
+  '06_door_controls':                { label:'06 — Door Controls',               fr:'06 — Commandes façade',           color:'#283593', bg:'#e8eaf6' },
+  '06_door_controls_power':          { label:'06a — Door / Power',               fr:'06a — Façade / Puissance',        color:'#1a237e', bg:'#e8eaf6' },
+  '07_supplied_separately':          { label:'07 — Supplied Separately',         fr:'07 — Fournitures séparées',       color:'#37474f', bg:'#eceff1' },
+  '08_electrical_note':              { label:'08 — Electrical Note',             fr:'08 — Note de calcul',             color:'#3e2723', bg:'#efebe9' },
+  '09_commissioning':                { label:'09 — Commissioning',               fr:'09 — Mise en service',            color:'#b71c1c', bg:'#ffebee' },
+  '10_packaging':                    { label:'10 — Packaging & Shipping',        fr:'10 — Emballage & transport',      color:'#4e342e', bg:'#fbe9e7' },
+  '11_labor':                        { label:'11 — Labor',                       fr:'11 — Main d\'œuvre',              color:'#1a1a2e', bg:'#f0f2f6' },
+  '12_options':                      { label:'12 — Options & Variants',          fr:'12 — Options & variantes',        color:'#546e7a', bg:'#eceff1' },
+};
+
+// ── State ──────────────────────────────────────────────────────────────────────
+let lang         = 'en';
+let _lastData    = null;
+let _clarifData  = [];
+let _activePane  = null;
+let _hasResult   = false;
+let _feedRating  = null;
+let _feedCtx     = {};
+let _flatBlockCount = 0;
+let _refinementContext = [];   // accumulates clarification answers across successive refines
+
+// ── i18n ──────────────────────────────────────────────────────────────────────
+function setLang(l) {
+  lang = l;
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnFR').classList.toggle('active', l === 'fr');
+  const t = T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (t[k] !== undefined) el.textContent = t[k];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const k = el.getAttribute('data-i18n-placeholder');
+    if (t[k] !== undefined) el.placeholder = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ex]').forEach(el => {
+    const i = parseInt(el.getAttribute('data-i18n-ex'));
+    el.textContent = t.exampleBtns[i];
+  });
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+    const k = el.getAttribute('data-i18n-opt');
+    if (t[k] !== undefined) el.textContent = t[k];
+  });
+  const btn = document.getElementById('analyzeBtn');
+  if (!btn.disabled) btn.querySelector('span').textContent = t.analyzeBtn;
+
+  if (_lastData && document.getElementById('results').style.display !== 'none') renderResults(_lastData);
+  if (_activePane === 'rules') renderRules();
+  if (_activePane && document.getElementById('drawerPanel').classList.contains('open')) updateDrawerTitle(_activePane);
+}
+
+function setExample(i) { document.getElementById('customerRequest').value = T[lang].examples[i]; }
+
+// ── Export ────────────────────────────────────────────────────────────────────
+function toggleExportMenu() {
+  document.getElementById('exportWrap').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  if (!document.getElementById('exportWrap')?.contains(e.target))
+    document.getElementById('exportWrap')?.classList.remove('open');
+});
+
+function exportToPdf() {
+  document.getElementById('exportWrap').classList.remove('open');
+  if (!_lastData) return;
+  const cfg  = _lastData.configuration || {};
+  const reqs = _lastData.requirements  || {};
+  const bom  = cfg.bom_categories || {};
+  const t    = T[lang];
+  const date = new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', {day:'2-digit', month:'long', year:'numeric'});
+  const request = document.getElementById('customerRequest').value.trim();
+
+  // ── Requirements rows ──
+  const reqLabels = t.reqFields;
+  const reqKeys   = ['product_type','power_kw','nb_pumps','nb_motors','voltage','protection_ip','automation','communication'];
+  const reqRows   = reqKeys.map((k,i) => {
+    const v = reqs[k]; if (!v) return '';
+    return `<tr><td class="req-key">${reqLabels[i]}</td><td class="req-val">${v}</td></tr>`;
+  }).filter(Boolean).join('');
+
+  // ── BoM table rows ──
+  let bomRows = '';
+  let grandTotal = 0;
+  for (const catKey of Object.keys(BOM_CATS)) {
+    const items = (bom[catKey] || []).filter(it => it && it.designation);
+    if (!items.length || catKey === '_match_stats') continue;
+    const def = BOM_CATS[catKey];
+    const catLabel = lang === 'fr' ? def.fr : def.label;
+    const catTotal = items.reduce((s, it) => s + ((it.unit_price || it.cost || 0) * (it.quantity || 1)), 0);
+    grandTotal += catTotal;
+    bomRows += `<tr class="cat-hdr"><td colspan="4" style="background:${def.bg};color:${def.color};font-weight:700;padding:7px 10px">${catLabel}</td></tr>`;
+    for (const it of items) {
+      const price  = it.unit_price ?? it.cost ?? 0;
+      const total  = price * (it.quantity || 1);
+      const name   = ((it.match_status === 'verified' || it.match_status === 'suggested') && it.catalogue_designation) ? it.catalogue_designation : it.designation;
+      const badge  = {verified:'✓', suggested:'~', not_found:'?', skipped:''}[it.match_status || 'not_found'] || '';
+      bomRows += `<tr>
+        <td style="padding-left:18px">${name}</td>
+        <td style="text-align:center">${it.quantity || 1}</td>
+        <td style="text-align:right">${price > 0 ? '€'+price.toFixed(2) : '—'}</td>
+        <td style="text-align:right;color:#555">${total > 0 ? '€'+total.toFixed(2) : '—'} <span style="font-size:9px;color:#999">${badge}</span></td>
+      </tr>`;
+    }
+  }
+
+  // ── Missing / Assumptions ──
+  const missing = (cfg.missing_info || []).map(m => `<li>${m}</li>`).join('');
+  const assumps = (cfg.assumptions  || []).map(a => `<li>${a}</li>`).join('');
+  const notes   = cfg.expert_notes || '';
+
+  const html = `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8">
+<title>CETIE — Pre-Configuration Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; background: white; }
+  .page { max-width: 900px; margin: 0 auto; padding: 32px; }
+  /* Header */
+  .doc-header { background: #0f1225; color: white; padding: 28px 32px; margin: -32px -32px 28px; display: flex; align-items: center; justify-content: space-between; }
+  .doc-logo   { font-size: 26px; font-weight: 800; letter-spacing: 4px; color: #4fc3f7; }
+  .doc-title  { font-size: 13px; color: #7a9abf; margin-top: 3px; letter-spacing: 0.5px; }
+  .doc-meta   { text-align: right; font-size: 12px; color: #7a9abf; line-height: 1.7; }
+  .doc-meta strong { color: #c8d4e8; }
+  /* Sections */
+  .sec { margin-bottom: 24px; }
+  .sec-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #4fc3f7; border-bottom: 1px solid #e0e8f0; padding-bottom: 6px; margin-bottom: 12px; }
+  .request-box { background: #f4f7ff; border-left: 3px solid #4fc3f7; padding: 12px 16px; font-size: 13px; line-height: 1.6; color: #2a2a4a; border-radius: 0 6px 6px 0; white-space: pre-wrap; }
+  /* Requirements */
+  .req-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .req-table .req-key { color: #6a7a94; padding: 5px 10px 5px 0; width: 160px; font-weight: 500; }
+  .req-table .req-val { color: #1a1a2e; padding: 5px 0; font-weight: 600; }
+  /* BoM */
+  .bom-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .bom-table th { background: #1e2a4a; color: white; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.5px; }
+  .bom-table th:last-child, .bom-table th:nth-child(2), .bom-table th:nth-child(3) { text-align: right; }
+  .bom-table td { padding: 6px 10px; border-bottom: 1px solid #f0f2f6; vertical-align: top; }
+  .bom-table tr:hover td { background: #fafbff; }
+  /* Totals */
+  .totals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 10px; }
+  .total-box { background: #f4f7ff; border: 1px solid #dde8f8; border-radius: 8px; padding: 14px 16px; }
+  .total-box .lbl { font-size: 11px; color: #6a7a94; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; margin-bottom: 4px; }
+  .total-box .val { font-size: 22px; font-weight: 700; color: #1a1a2e; }
+  .total-box .unit { font-size: 12px; color: #8a94a6; margin-left: 3px; }
+  /* Lists */
+  .info-list { font-size: 12px; color: #4a5568; padding-left: 18px; line-height: 1.8; }
+  .notes-box { background: #fffbf0; border: 1px solid #f0d8a0; border-radius: 6px; padding: 12px 16px; font-size: 13px; line-height: 1.6; color: #5a4a0a; }
+  /* Disclaimer */
+  .disclaimer { margin-top: 30px; padding: 12px 16px; background: #fff0f0; border: 1px solid #ffd0d0; border-radius: 6px; font-size: 11px; color: #8a2020; line-height: 1.6; }
+  /* Print btn */
+  .print-btn { position: fixed; top: 20px; right: 20px; background: #1a3a8f; color: white; border: none; padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 999; }
+  .grand-total-row td { background: #1e2a4a; color: white; font-weight: 700; font-size: 13px; padding: 9px 10px; }
+  @media print {
+    .print-btn { display: none; }
+    .page { padding: 0; max-width: 100%; }
+    .doc-header { margin: 0 0 24px; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head><body>
+<button class="print-btn" onclick="window.print()">${t.pdfPrintBtn}</button>
+<div class="page">
+
+  <div class="doc-header">
+    <div>
+      <div class="doc-logo">CETIE</div>
+      <div class="doc-title">${t.pdfTitle}</div>
+    </div>
+    <div class="doc-meta">
+      <div><strong>${t.pdfDateLabel}</strong> ${date}</div>
+      <div><strong>${t.pdfStatusLabel}</strong> ${t.pdfStatusVal}</div>
+      ${reqs.product_type ? `<div><strong>${t.pdfTypeLabel}</strong> ${reqs.product_type}</div>` : ''}
+    </div>
+  </div>
+
+  ${request ? `<div class="sec">
+    <div class="sec-title">${t.pdfSectionRequest}</div>
+    <div class="request-box">${request.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+  </div>` : ''}
+
+  ${reqRows ? `<div class="sec">
+    <div class="sec-title">${t.pdfSectionRequirements}</div>
+    <table class="req-table"><tbody>${reqRows}</tbody></table>
+  </div>` : ''}
+
+  <div class="sec">
+    <div class="sec-title">${t.pdfSectionBom}</div>
+    <table class="bom-table">
+      <thead><tr>
+        <th>${t.pdfColDesig}</th>
+        <th style="text-align:right;width:50px">${t.pdfColQty}</th>
+        <th style="text-align:right;width:90px">${t.pdfColUnit}</th>
+        <th style="text-align:right;width:100px">${t.pdfColTotal}</th>
+      </tr></thead>
+      <tbody>
+        ${bomRows}
+        <tr class="grand-total-row">
+          <td colspan="3">${t.pdfGrandTotal}</td>
+          <td style="text-align:right">${grandTotal > 0 ? '€'+grandTotal.toFixed(2) : '—'}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="totals-grid">
+    <div class="total-box">
+      <div class="lbl">${t.totalWiringHours}</div>
+      <div class="val">${cfg.total_hours_cablage || 0}<span class="unit">h</span></div>
+    </div>
+    <div class="total-box">
+      <div class="lbl">${t.totalProgHours}</div>
+      <div class="val">${cfg.total_hours_prog || 0}<span class="unit">h</span></div>
+    </div>
+    <div class="total-box">
+      <div class="lbl">${t.totalMatCost}</div>
+      <div class="val">${cfg.estimated_material_cost ? '€'+(cfg.estimated_material_cost).toFixed(0) : '—'}</div>
+    </div>
+  </div>
+
+  ${missing ? `<div class="sec" style="margin-top:20px">
+    <div class="sec-title">${t.pdfSectionInfo}</div>
+    <ul class="info-list">${missing}</ul>
+  </div>` : ''}
+
+  ${assumps ? `<div class="sec">
+    <div class="sec-title">${t.pdfSectionAssumps}</div>
+    <ul class="info-list">${assumps}</ul>
+  </div>` : ''}
+
+  ${notes ? `<div class="sec">
+    <div class="sec-title">${t.pdfSectionNotes}</div>
+    <div class="notes-box">${notes}</div>
+  </div>` : ''}
+
+  <div class="disclaimer">
+    ${t.pdfDisclaimer}
+  </div>
+
+</div>
+</body></html>`;
+
+  const w = window.open('', '_blank');
+  w.document.write(html);
+  w.document.close();
+}
+
+async function exportToExcel() {
+  document.getElementById('exportWrap').classList.remove('open');
+  if (!_lastData) return;
+  const btn = document.querySelector('[onclick="exportToExcel()"]');
+  if (btn) { btn.textContent = T[lang].exportGenerating; btn.disabled = true; }
+  try {
+    const res = await _apiFetch('/api/export/excel', {
+      method: 'POST',
+      body: JSON.stringify({
+        request:       document.getElementById('customerRequest').value.trim(),
+        configuration: _lastData.configuration,
+        requirements:  _lastData.requirements,
+        lang,
+      }),
+    });
+    if (!res || !res.ok) { alert(T[lang].exportBtn + ' — failed'); return; }
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url;
+    a.download = `CETIE_config_${new Date().toISOString().slice(0,10)}.xlsx`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } finally {
+    if (btn) { btn.innerHTML = '📊 <span data-i18n="exportCsv">Excel (.xlsx)</span>'; btn.disabled = false; }
+  }
+}
+
+// ── Drawer ────────────────────────────────────────────────────────────────────
+const DRAWER_CFG = {
+  rationale: { icon: '🔗', titleKey: 'drawerRationale' },
+  feedback:  { icon: '💬', titleKey: 'drawerFeedback'  },
+  rules:     { icon: '📋', titleKey: 'drawerRules'     },
+};
+
+function openDrawer(pane) {
+  if (_activePane === pane && document.getElementById('drawerPanel').classList.contains('open')) {
+    closeDrawer(); return;
+  }
+  _activePane = pane;
+  document.querySelectorAll('.strip-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`tab-${pane}`).classList.add('active');
+  ['rationale','feedback','rules'].forEach(p => {
+    document.getElementById(`pane-${p}`).style.display = p === pane ? 'block' : 'none';
+  });
+  updateDrawerTitle(pane);
+  if (pane === 'rationale') renderRationale();
+  if (pane === 'rules')     renderRules();
+  if (pane === 'feedback')  renderFeedbackPane();
+  document.getElementById('drawerPanel').classList.add('open');
+  document.getElementById('drawerBackdrop').classList.add('open');
+}
+
+function closeDrawer() {
+  document.getElementById('drawerPanel').classList.remove('open');
+  document.getElementById('drawerBackdrop').classList.remove('open');
+  document.querySelectorAll('.strip-btn').forEach(b => b.classList.remove('active'));
+  _activePane = null;
+}
+
+function updateDrawerTitle(pane) {
+  const cfg = DRAWER_CFG[pane];
+  document.getElementById('drawerTitleIcon').textContent = cfg.icon + ' ';
+  document.getElementById('drawerTitleText').textContent = T[lang][cfg.titleKey];
+}
+
+// ── Progress ──────────────────────────────────────────────────────────────────
+const _st = {};
+function resetProgress() {
+  [1,2,3].forEach(i => {
+    document.getElementById(`step-${i}`).className = 'step-row';
+    document.getElementById(`step-${i}-icon`).innerHTML = i;
+    document.getElementById(`step-${i}-detail`).textContent = '';
+    document.getElementById(`step-${i}-detail`).classList.remove('typing');
+    document.getElementById(`step-${i}-time`).textContent = '';
+  });
+  document.getElementById('progressBar').style.width = '0%';
+}
+function setStepActive(s) {
+  _st[s] = Date.now();
+  document.getElementById(`step-${s}`).className = 'step-row active';
+  document.getElementById(`step-${s}-icon`).innerHTML = '<div class="spin-ring"></div>';
+  const d = document.getElementById(`step-${s}-detail`);
+  d.textContent = '…'; d.classList.add('typing');
+  document.getElementById('progressBar').style.width = `${((s-1)/3)*100}%`;
+  document.getElementById(`step-${s}`).scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function setStepDone(s, detail) {
+  const el = ((Date.now()-(_st[s]||Date.now()))/1000).toFixed(1);
+  document.getElementById(`step-${s}`).className = 'step-row done';
+  document.getElementById(`step-${s}-icon`).innerHTML = '✓';
+  const d = document.getElementById(`step-${s}-detail`);
+  d.classList.remove('typing'); d.textContent = detail||'';
+  document.getElementById(`step-${s}-time`).textContent = `${el}s`;
+  document.getElementById('progressBar').style.width = `${(s/3)*100}%`;
+}
+function setStepError(s, msg) {
+  document.getElementById(`step-${s}`).className = 'step-row error';
+  document.getElementById(`step-${s}-icon`).innerHTML = '✕';
+  const d = document.getElementById(`step-${s}-detail`);
+  d.classList.remove('typing'); d.textContent = msg||'Error';
+}
+
+// ── File attachments ──────────────────────────────────────────────────────────
+const _parsedFiles = {};  // filename → {name, type, text, error, char_count}
+
+function _extIcon(type) {
+  const icons = {pdf:'📄', docx:'📝', doc:'📝', xlsx:'📊', xlsm:'📊', xls:'📊', csv:'📊', png:'🖼️', jpg:'🖼️', jpeg:'🖼️', webp:'🖼️', gif:'🖼️', txt:'📃'};
+  return icons[type] || '📎';
+}
+
+function _renderChips() {
+  const el = document.getElementById('fileChips');
+  el.innerHTML = '';
+  for (const [name, f] of Object.entries(_parsedFiles)) {
+    const chip = document.createElement('div');
+    const statusClass = f._parsing ? 'parsing' : f.error ? 'error' : 'ok';
+    chip.className = `file-chip ${statusClass}`;
+    chip.dataset.name = name;
+    const chars = f.char_count ? `${(f.char_count/1000).toFixed(1)}k chars` : '';
+    const tc = T[lang];
+    chip.innerHTML = `
+      <span class="chip-icon">${_extIcon(f.type||'')}</span>
+      <span class="chip-name" title="${name}">${name}</span>
+      ${chars ? `<span class="chip-chars">${(f.char_count/1000).toFixed(1)}k ${tc.fileCharsLabel}</span>` : ''}
+      ${f._parsing ? `<span class="chip-chars">${tc.fileParsing}</span>` : ''}
+      ${f.error ? `<span class="chip-chars" title="${f.error}">${tc.fileError}</span>` : ''}
+      <button class="chip-remove" onclick="removeAttachment('${name.replace(/'/g,"\\'")}')">×</button>`;
+    el.appendChild(chip);
+  }
+}
+
+function removeAttachment(name) {
+  delete _parsedFiles[name];
+  _renderChips();
+}
+
+async function _parseFiles(files) {
+  const formData = new FormData();
+  for (const f of files) {
+    if (_parsedFiles[f.name]) continue;  // already uploaded
+    _parsedFiles[f.name] = {name: f.name, type: f.name.split('.').pop().toLowerCase(), _parsing: true};
+    formData.append('files', f);
+  }
+  _renderChips();
+  if (!formData.has('files')) return;
+
+  try {
+    const res = await fetch('/api/parse-attachments', {method: 'POST', body: formData});
+    const data = await res.json();
+    for (const f of (data.files || [])) {
+      _parsedFiles[f.name] = f;
+    }
+  } catch(e) {
+    for (const f of files) {
+      if (_parsedFiles[f.name] && _parsedFiles[f.name]._parsing) {
+        _parsedFiles[f.name] = {name: f.name, type: f.name.split('.').pop().toLowerCase(), error: T[lang].uploadFailed, char_count: 0};
+      }
+    }
+  }
+  _renderChips();
+}
+
+function handleFileSelect(files) {
+  _parseFiles(Array.from(files));
+  document.getElementById('attachInput').value = '';
+}
+
+function handleFileDrop(event) {
+  event.preventDefault();
+  document.getElementById('attachZone').classList.remove('drag-over');
+  _parseFiles(Array.from(event.dataTransfer.files));
+}
+
+function _getAttachmentsText() {
+  const parts = [];
+  for (const f of Object.values(_parsedFiles)) {
+    if (f.text && !f.error) parts.push(`=== ${f.name} ===\n${f.text}`);
+  }
+  return parts.join('\n\n');
+}
+
+// ── Analyze ───────────────────────────────────────────────────────────────────
+async function analyze(extraContext='') {
+  const base = document.getElementById('customerRequest').value.trim();
+  if (!base) return;
+  if (!extraContext) _refinementContext = [];   // fresh run — clear accumulated answers
+  const req = extraContext ? `${base}\n\n${T[lang].additionalInfo} ${extraContext}` : base;
+  const t   = T[lang];
+  const btn = document.getElementById('analyzeBtn');
+  btn.classList.add('loading'); btn.disabled = true;
+  btn.querySelector('span').textContent = t.analyzingBtn;
+
+  closeDrawer();
+  resetProgress();
+  document.getElementById('progressPanel').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('demoBanner').style.display = 'none';
+  document.getElementById('clarificationPanel').style.display = 'none';
+  document.getElementById('progressPanel').scrollIntoView({behavior:'smooth',block:'start'});
+
+  try {
+    const attachmentsText = _getAttachmentsText();
+    const res    = await fetch('/api/analyze/stream', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({request:req, attachments_text: attachmentsText})});
+    const reader = res.body.getReader();
+    const dec    = new TextDecoder();
+    let   buf    = '';
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, {stream:true});
+      const lines = buf.split('\n'); buf = lines.pop();
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        let evt; try { evt = JSON.parse(line.slice(6)); } catch { continue; }
+        if      (evt.type==='step_start') setStepActive(evt.step);
+        else if (evt.type==='step_done')  setStepDone(evt.step, evt.detail||'');
+        else if (evt.type==='error')      setStepError(1, evt.msg);
+        else if (evt.type==='result') {
+          await new Promise(r=>setTimeout(r,500));
+          document.getElementById('progressPanel').style.display = 'none';
+          document.getElementById('demoBanner').style.display = evt.data.demo_mode ? 'block' : 'none';
+          renderResults(evt.data);
+          const el = document.getElementById('results');
+          el.style.display='block'; el.classList.remove('animate'); void el.offsetWidth; el.classList.add('animate');
+          el.scrollIntoView({behavior:'smooth',block:'start'});
+          _hasResult = true;
+        }
+      }
+    }
+  } catch(e) { setStepError(1, T[lang].networkError); console.error(e); }
+  finally {
+    btn.classList.remove('loading'); btn.disabled=false;
+    btn.querySelector('span').textContent = T[lang].analyzeBtn;
+  }
+}
+
+// ── Render results ─────────────────────────────────────────────────────────────
+function renderResults(data) {
+  _lastData = data;
+  const t   = T[lang];
+  const {requirements:req, configuration:cfg} = data;
+
+  document.getElementById('summaryBox').textContent = req.summary || '—';
+
+  const keys   = ['product_type','power_kw','nb_pumps','nb_motors','voltage','protection_ip','automation','communication'];
+  document.getElementById('reqGrid').innerHTML = keys.map((k,i) => {
+    const v = k==='power_kw' && req[k]!=null ? req[k]+' kW' : req[k];
+    return `<div><div class="req-label">${t.reqFields[i]}</div><div class="req-value ${!v?'null':''}">${v||'—'}</div></div>`;
+  }).join('');
+
+  const missing = cfg.missing_info||[];
+  document.getElementById('missingInfo').innerHTML = missing.length
+    ? `<div class="tag-list">${missing.map(m=>`<span class="tag warning">${m}</span>`).join('')}</div>`
+    : `<span style="color:#c0c8d8;font-size:13px">${t.noMissing}</span>`;
+
+  const assumptions = cfg.assumptions||[];
+  document.getElementById('assumptions').innerHTML = assumptions.length
+    ? `<div class="tag-list">${assumptions.map(a=>`<span class="tag assumption">${a}</span>`).join('')}</div>`
+    : `<span style="color:#c0c8d8;font-size:13px">${t.noAssumptions}</span>`;
+
+  const enc     = cfg.enclosure || {};
+  const sizing  = cfg.cabinet_sizing || {};
+  const fit     = sizing.smallest_fit || {};
+  const spare   = cfg.spare_reserve_pct || sizing.spare_reserve_pct_llm || 20;
+
+  // Build sizing pill if we have a recommended model
+  let sizingHtml = '';
+  if (fit.model) {
+    const spareActual = fit.spare_percentage != null ? fit.spare_percentage : spare;
+    const spareColor  = spareActual >= 20 ? '#166534' : spareActual >= 10 ? '#854d0e' : '#991b1b';
+    const spareBg     = spareActual >= 20 ? '#dcfce7'  : spareActual >= 10 ? '#fef9c3'  : '#fee2e2';
+    sizingHtml = `
+      <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+        <span style="font-size:11px;color:#6a7a94">${t.cabinetSizing}</span>
+        <span style="font-size:11px;font-weight:700;color:#1565c0;background:#e3f2fd;padding:2px 8px;border-radius:8px">
+          ${fit.model}
+        </span>
+        <span style="font-size:11px;color:#6a7a94">${fit.dimensions||''}</span>
+        <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;color:${spareColor};background:${spareBg}">
+          ${spareActual.toFixed ? spareActual.toFixed(0) : spareActual}${t.spareLabel} (LLM: ${spare}%)
+        </span>
+      </div>`;
+  }
+
+  document.getElementById('enclosureBlock').innerHTML = `
+    <div class="enc-icon">🗄️</div>
+    <div class="enc-info" style="flex:1">
+      <div class="enc-badge">${t.enclosureLabel}</div>
+      <div class="enc-title">${enc.designation || t.noEnclosure}</div>
+      <div class="enc-justif">${enc.justification || ''}</div>
+      ${sizingHtml}
+    </div>`;
+
+  const blocks = cfg.blocks||[];
+  let totalH=0, totalCost=0;
+  document.getElementById('blocksBody').innerHTML = blocks.map(b => {
+    totalH    += (b.heures_cablage||0)*(b.quantity||1);
+    totalCost += (b.cost||0)*(b.quantity||1);
+    return `<tr>
+      <td><span class="block-id">#${b.id||'—'}</span></td>
+      <td><div class="block-name">${b.designation||'—'}</div><div class="block-justif">${b.justification||''}</div></td>
+      <td style="text-align:center"><span class="block-qty">${b.quantity||1}</span></td>
+      <td class="block-hours">${b.heures_cablage!=null?b.heures_cablage+'h':'—'}</td>
+      <td class="block-cost">${b.cost?'€'+b.cost.toFixed(2):'—'}</td>
+    </tr>`;
+  }).join('');
+
+  const hCabRaw = cfg.total_hours_cablage||totalH;
+  const hCab    = Math.ceil(hCabRaw);
+  const hProg   = cfg.total_hours_prog||0;
+  const mat     = cfg.estimated_material_cost||totalCost;
+  const progBlock = hProg > 0
+    ? `<div><div class="total-label">${t.totalProgHours}</div><div class="total-value">${hProg}h</div></div>`
+    : '';
+  document.getElementById('totalsRow').innerHTML = `
+    <div><div class="total-label">${t.totalWiringHours}</div><div class="total-value">${hCab}h</div></div>
+    ${progBlock}
+    <div><div class="total-label">${t.totalMatCost}</div><div class="total-value">€${mat.toFixed?mat.toFixed(0):mat}</div></div>
+    <div style="margin-left:auto;font-size:12px;color:#7a8aaa;max-width:240px;line-height:1.5">${t.divaltoNote}</div>`;
+
+  const notes = cfg.expert_notes||'';
+  const notesEl = document.getElementById('expertNotes');
+  notesEl.style.display = notes ? 'block' : 'none';
+  if (notes) notesEl.innerHTML = `<div class="notes-label">${t.expertNotesLabel}</div>${notes}`;
+
+  buildClarificationPanel(cfg.clarification_questions);
+  renderBomCategories(cfg);
+  renderDevisRefs(data.similar_projects || []);
+
+  // Refresh drawer panes if open
+  if (_activePane==='rationale') renderRationale();
+  if (_activePane==='feedback')  renderFeedbackPane();
+}
+
+// ── Rationale pane ────────────────────────────────────────────────────────────
+function renderRationale() {
+  const t  = T[lang];
+  const el = document.getElementById('rationaleContent');
+  if (!_lastData) { el.innerHTML=`<p class="drawer-empty">${t.rationaleEmpty}</p>`; return; }
+
+  const similar = _lastData.similar_quotes || [];
+  const req     = _lastData.requirements   || {};
+  const cfg     = _lastData.configuration  || {};
+
+  let html = '';
+
+  // ── Similar projects from RAG ──
+  html += `<div class="rag-section-title">🔗 ${t.ragSectionTitle}</div>`;
+  html += `<div class="rag-section-sub">${t.ragSectionSub}</div>`;
+
+  if (!similar.length) {
+    html += `<p class="drawer-empty" style="padding:16px 0;text-align:left">${t.ragNoMatch}</p>`;
+  } else {
+    html += similar.map(q => {
+      const pct   = Math.round((q.similarity_score||0)*100);
+      const tier  = pct >= 75 ? 'high' : pct >= 50 ? 'medium' : 'low';
+      const hWire = q.configuration?.total_hours_cablage ?? '?';
+      const hProg = q.configuration?.total_hours_prog    ?? 0;
+      const hoursStr = hProg > 0 ? `${hWire}h / ${hProg}h` : `${hWire}h`;
+      const solution = q.configuration?.notes || q.summary || '—';
+      return `<div class="rag-card">
+        <div class="rag-card-header">
+          <div class="rag-type">${q.product_type||'—'}</div>
+          <div class="rag-score ${tier}">${pct}% ${t.ragSimilarity}</div>
+        </div>
+        ${q.sector ? `<div class="rag-row"><span class="rag-key">${t.ragSector}</span><span class="rag-val">${q.sector}</span></div>` : ''}
+        <div class="rag-row"><span class="rag-key">${t.ragSolution}</span><span class="rag-val">${solution}</span></div>
+        <div class="rag-row"><span class="rag-key">${t.ragHours}</span><span class="rag-val">${hoursStr}</span></div>
+        <div class="rag-divider"></div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Key decisions summary ──
+  if (req.summary) {
+    html += `<div class="rag-section-title" style="margin-top:20px">📋 ${t.contextSectionTitle}</div>`;
+    html += `<div class="rag-card">
+      <div class="rag-row"><span class="rag-key">${t.ragType}</span><span class="rag-val">${req.product_type||'—'}</span></div>
+      ${req.voltage    ? `<div class="rag-row"><span class="rag-key">${t.reqFields[4]}</span><span class="rag-val">${req.voltage}</span></div>` : ''}
+      ${req.protection_ip ? `<div class="rag-row"><span class="rag-key">${t.reqFields[5]}</span><span class="rag-val">${req.protection_ip}</span></div>` : ''}
+      ${req.automation ? `<div class="rag-row"><span class="rag-key">${t.reqFields[6]}</span><span class="rag-val">${req.automation}</span></div>` : ''}
+      ${cfg.expert_notes ? `<div class="rag-row" style="margin-top:8px"><span class="rag-key">${t.expertNotesLabel}</span><span class="rag-val">${cfg.expert_notes}</span></div>` : ''}
+    </div>`;
+  }
+
+  // ── Real DEVIS projects section ──
+  const realProjects = _lastData.similar_projects || [];
+  if (realProjects.length) {
+    const usedYears = [...new Set(realProjects.map(p => p.year).filter(Boolean))].sort();
+    const yearsLabel = usedYears.length ? usedYears.join(', ') : 'historical';
+    const t = T[lang];
+    html += `<div class="rag-section-title" style="margin-top:18px">🗂️ ${t.devisTitle}</div>`;
+    html += `<div class="rag-section-sub">${t.devisSub.replace('{years}', yearsLabel)}</div>`;
+    html += realProjects.slice(0,3).map(p => {
+      const pct  = Math.round((p.similarity_score||0)*100);
+      const tier = pct >= 75 ? 'high' : pct >= 55 ? 'medium' : 'low';
+      const yearBadge = p.year ? `<span style="font-size:10px;font-weight:600;background:#e8f0fe;color:#3a5aad;border-radius:4px;padding:1px 5px;margin-left:5px">${p.year}</span>` : '';
+      return `<div class="rag-card">
+        <div class="rag-card-header">
+          <div class="rag-type">${p.description || p.product_type || '—'}</div>
+          <div class="rag-score ${tier}">${pct}%</div>
+        </div>
+        <div class="rag-row"><span class="rag-key">${t.drawerClient}</span><span class="rag-val">${p.client||'—'}</span></div>
+        <div class="rag-row"><span class="rag-key">${t.drawerRef}</span><span class="rag-val">${p.id||'—'}${yearBadge}</span></div>
+        <div class="rag-row"><span class="rag-key">${t.drawerHoursLabel}</span><span class="rag-val">${p.hours_fabrication||0}h fab / ${p.hours_programmation||0}h prog</span></div>
+        <div class="rag-row"><span class="rag-key">${t.drawerQuoteLabel}</span><span class="rag-val">${p.base_price ? '€'+Math.round(p.base_price) : '—'}</span></div>
+        <div class="rag-divider"></div>
+      </div>`;
+    }).join('');
+  }
+
+  el.innerHTML = html;
+}
+
+// ── BoM editing state ─────────────────────────────────────────────────────────
+let _bomEditing = null;  // {catKey, idx} or null
+
+function bomEditItem(catKey, idx) {
+  _bomEditing = {catKey, idx};
+  renderBomCategories(_lastData.configuration);
+}
+function bomCancelEdit() {
+  _bomEditing = null;
+  renderBomCategories(_lastData.configuration);
+}
+function bomSaveItem(catKey, idx) {
+  const qty   = parseFloat(document.getElementById('bomEditQty').value) || 1;
+  const name  = document.getElementById('bomEditName').value.trim();
+  const price = parseFloat(document.getElementById('bomEditPrice').value) || 0;
+  if (!name) return;
+  const items = _lastData.configuration.bom_categories[catKey];
+  items[idx] = {...items[idx], designation: name, quantity: qty, unit_price: price, match_status: 'skipped'};
+  _bomEditing = null;
+  renderBomCategories(_lastData.configuration);
+}
+function bomDeleteItem(catKey, idx) {
+  _lastData.configuration.bom_categories[catKey].splice(idx, 1);
+  if (_bomEditing && _bomEditing.catKey === catKey && _bomEditing.idx === idx) _bomEditing = null;
+  renderBomCategories(_lastData.configuration);
+}
+function bomAddItem(catKey) {
+  if (!_lastData.configuration.bom_categories[catKey]) _lastData.configuration.bom_categories[catKey] = [];
+  _lastData.configuration.bom_categories[catKey].push({designation: '', quantity: 1, unit_price: 0, match_status: 'skipped'});
+  _bomEditing = {catKey, idx: _lastData.configuration.bom_categories[catKey].length - 1};
+  renderBomCategories(_lastData.configuration);
+  // Ensure category is open and scroll to edit row
+  const el = document.getElementById(`bom-${catKey}`);
+  if (el && !el.classList.contains('open')) el.classList.add('open');
+  setTimeout(() => document.getElementById('bomEditName')?.focus(), 50);
+}
+
+// ── BoM Categories render ─────────────────────────────────────────────────────
+function renderBomCategories(cfg) {
+  const t   = T[lang];
+  const bom    = cfg.bom_categories || {};
+  const blocks = cfg.blocks || [];
+  const accordion = document.getElementById('bomAccordion');
+
+  // Update flat block count
+  _flatBlockCount = blocks.length;
+  const flatCountEl = document.getElementById('flatBlockCount');
+  if (flatCountEl) flatCountEl.textContent = _flatBlockCount;
+
+  // If no bom_categories from LLM, hide accordion
+  const hasBom = Object.entries(bom).some(([k, arr]) => k !== '_match_stats' && Array.isArray(arr) && arr.length > 0);
+  if (!hasBom) {
+    accordion.innerHTML = `<div style="font-size:13px;color:#b0b8c8;padding:16px;text-align:center;font-style:italic">${t.bomEmpty}</div>`;
+    return;
+  }
+
+  const GROUP_LABELS = new Set(['04_internal_chassis']);
+  let chassis04LabelShown = false;
+  const chassis04Sub = ['04_internal_chassis_power','04_internal_chassis_control','04_internal_chassis_automation'];
+
+  const parts = [];
+
+  for (const catKey of Object.keys(BOM_CATS)) {
+    const def   = BOM_CATS[catKey];
+    const items = (bom[catKey] || []).filter(it => it && it.designation !== undefined);
+    const lbl   = lang === 'fr' ? def.fr : def.label;
+
+    if (GROUP_LABELS.has(catKey)) continue;
+    if (items.length === 0 && !(_bomEditing && _bomEditing.catKey === catKey)) continue;
+
+    if (chassis04Sub.includes(catKey) && !chassis04LabelShown) {
+      const g04 = BOM_CATS['04_internal_chassis'];
+      parts.push(`<div class="bom-group-label" style="color:${g04.color}">▸ ${lang==='fr'?g04.fr:g04.label}</div>`);
+      chassis04LabelShown = true;
+    }
+
+    let nVerified = 0, nSuggested = 0, nNotFound = 0;
+    const itemsHtml = items.map((it, idx) => {
+      const isEditing = _bomEditing && _bomEditing.catKey === catKey && _bomEditing.idx === idx;
+      const status = it.match_status || 'not_found';
+      const price  = it.unit_price != null && it.unit_price > 0
+        ? `€${Number(it.unit_price).toFixed(2)}`
+        : (it.cost != null && it.cost > 0 ? `€${Number(it.cost).toFixed(2)}` : '—');
+      const displayName = (status === 'verified' || status === 'suggested') && it.catalogue_designation
+        ? it.catalogue_designation : (it.designation || '—');
+      const matchLabel = { verified: t.bomMatchVerified, suggested: t.bomMatchSuggested, not_found: t.bomMatchNotFound, skipped: '' }[status] || '';
+      const matchBadge = matchLabel ? `<span class="bom-item-match ${status}">${matchLabel}</span>` : '';
+      if (status === 'verified')  nVerified++;
+      else if (status === 'suggested') nSuggested++;
+      else if (status === 'not_found') nNotFound++;
+
+      if (isEditing) {
+        return `<div class="bom-edit-row">
+          <input id="bomEditQty"   class="bom-edit-qty"   type="number" min="0.1" step="0.1" value="${it.quantity||1}" placeholder="${t.editQtyLabel}">
+          <input id="bomEditName"  class="bom-edit-name"  type="text"  value="${(it.designation||'').replace(/"/g,'&quot;')}" placeholder="${t.editNameLabel}">
+          <input id="bomEditPrice" class="bom-edit-price" type="number" min="0" step="0.01" value="${it.unit_price||0}" placeholder="${t.editPriceLabel}">
+          <button class="bom-edit-save"   onclick="bomSaveItem('${catKey}',${idx})">${t.saveEdit}</button>
+          <button class="bom-edit-cancel" onclick="bomCancelEdit()">${t.cancelEdit}</button>
+        </div>`;
+      }
+      return `<div class="bom-item">
+        <span class="bom-item-qty">${it.quantity || 1}</span>
+        <span class="bom-item-name">${displayName}</span>
+        ${matchBadge}
+        <span class="bom-item-price">${price}</span>
+        <div class="bom-item-actions">
+          <button class="bom-act-btn" onclick="bomEditItem('${catKey}',${idx})">${t.editItem}</button>
+          <button class="bom-act-btn del" onclick="bomDeleteItem('${catKey}',${idx})">${t.deleteItem}</button>
+        </div>
+      </div>`;
+    }).join('');
+
+    const statParts = [];
+    if (nVerified)  statParts.push(`<span style="color:#166534">✓ ${nVerified} ${t.bomStatCatalogue}</span>`);
+    if (nSuggested) statParts.push(`<span style="color:#854d0e">~ ${nSuggested} ${t.bomStatApprox}</span>`);
+    if (nNotFound)  statParts.push(`<span style="color:#991b1b">? ${nNotFound} ${t.bomStatUnverified}</span>`);
+    const statsHtml = statParts.length ? `<div class="bom-cat-stats">${statParts.join(' · ')}</div>` : '';
+
+    const count = items.length;
+    parts.push(`<div class="bom-cat open" id="bom-${catKey}">
+      <div class="bom-cat-header" onclick="toggleBomCat('${catKey}')">
+        <span class="bom-cat-badge" style="color:${def.color};background:${def.bg}">${lbl.split('—')[0].trim()}</span>
+        <span class="bom-cat-name">${lbl.split('—').slice(1).join('—').trim()}</span>
+        <span class="bom-cat-count">${count} ${count !== 1 ? t.bomItems : t.bomItem}</span>
+        <span class="bom-cat-chevron">▼</span>
+      </div>
+      <div class="bom-cat-body">
+        ${itemsHtml}${statsHtml}
+        <button class="bom-add-btn" onclick="bomAddItem('${catKey}')">${t.addItem}</button>
+      </div>
+    </div>`);
+  }
+
+  accordion.innerHTML = parts.join('');
+}
+
+function toggleBomCat(catKey) {
+  document.getElementById(`bom-${catKey}`).classList.toggle('open');
+}
+
+function toggleFlatBlocks() {
+  const detail = document.getElementById('flatBlocksDetail');
+  const btn    = document.getElementById('flatToggleBtn');
+  const t      = T[lang];
+  const open   = detail.style.display === 'none';
+  detail.style.display = open ? 'block' : 'none';
+  btn.innerHTML = (open ? t.flatBlocksHide : t.flatBlocksShow) + ` ${t.flatBlocksLabel} (<span id="flatBlockCount">${_flatBlockCount}</span> ${t.flatBlocksUnit})`;
+}
+
+// ── DEVIS References render ───────────────────────────────────────────────────
+function renderDevisRefs(projects) {
+  const section = document.getElementById('devisRefsSection');
+  const grid    = document.getElementById('devisRefsGrid');
+  if (!projects || !projects.length) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  const t = T[lang];
+  grid.innerHTML = projects.slice(0,3).map(p => {
+    const pct  = Math.round((p.similarity_score || 0) * 100);
+    const tier = pct >= 75 ? 'high' : pct >= 55 ? 'medium' : 'low';
+    const fab  = p.hours_fabrication   || 0;
+    const prog = p.hours_programmation || 0;
+    const price = p.base_price || 0;
+    const desc  = (p.description || p.product_type || '').slice(0, 55);
+    const year  = p.year ? `<span style="font-size:10px;font-weight:600;background:#e8f0fe;color:#3a5aad;border-radius:5px;padding:1px 6px;margin-left:6px">${p.year}</span>` : '';
+    return `<div class="devis-ref-card ${tier}">
+      <div class="devis-ref-id">${p.id || ''}${year}</div>
+      <span class="devis-ref-score ${tier}">${pct}% ${t.devisMatchLabel}</span>
+      <div class="devis-ref-client">📍 ${p.client || '—'}</div>
+      <div class="devis-ref-desc">${desc}</div>
+      <div class="devis-ref-stats">
+        <div class="drs"><div class="drs-lbl">${t.devisStatFab}</div><div class="drs-val">${fab}h</div></div>
+        <div class="drs"><div class="drs-lbl">${t.devisStatProg}</div><div class="drs-val">${prog}h</div></div>
+        <div class="drs"><div class="drs-lbl">${t.devisStatComps}</div><div class="drs-val">${p.nb_components || '—'}</div></div>
+        <div class="drs"><div class="drs-lbl">${t.devisStatPrice}</div><div class="drs-val">${price ? '€'+Math.round(price) : '—'}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Feedback pane ──────────────────────────────────────────────────────────────
+function renderFeedbackPane() {
+  const t = T[lang];
+  document.getElementById('noResultYet').style.display     = _hasResult ? 'none' : 'block';
+  document.getElementById('feedbackFormPane').style.display = 'none';
+  document.getElementById('btnApprove').classList.remove('selected');
+  document.getElementById('btnCorrect').classList.remove('selected');
+  document.getElementById('feedbackSaved').style.display    = 'none';
+  if (!_hasResult) return;
+
+  _feedCtx = {
+    product_type:    _lastData?.requirements?.product_type||'',
+    request_summary: _lastData?.requirements?.summary||'',
+  };
+  _feedRating = null;
+  document.getElementById('feedbackNote').value='';
+  document.getElementById('saveAsRule').checked=false;
+}
+
+function setFeedbackRating(rating) {
+  if (_feedRating===rating && rating==='needs_correction') {
+    _feedRating=null;
+    document.getElementById('btnCorrect').classList.remove('selected');
+    document.getElementById('feedbackFormPane').style.display='none';
+    return;
+  }
+  _feedRating=rating;
+  document.getElementById('btnApprove').classList.toggle('selected', rating==='good');
+  document.getElementById('btnCorrect').classList.toggle('selected', rating==='needs_correction');
+  if (rating==='good') {
+    _doSaveFeedback('good','',false,'general');
+    document.getElementById('feedbackFormPane').style.display='none';
+    setTimeout(closeDrawer, 1600);
+  } else {
+    document.getElementById('feedbackFormPane').style.display='block';
+    document.getElementById('feedbackSaved').style.display='none';
+  }
+}
+
+async function saveFeedback() {
+  await _doSaveFeedback('needs_correction', document.getElementById('feedbackNote').value.trim(), document.getElementById('saveAsRule').checked, document.getElementById('ruleScope').value);
+}
+
+async function _doSaveFeedback(rating, note, saveAsRule, scope) {
+  const t=T[lang];
+  try {
+    const res  = await fetch('/api/feedback', {method:'POST',headers:{'Content-Type':'application/json'}, body:JSON.stringify({..._feedCtx,rating,correction_note:note,save_as_rule:saveAsRule,rule_scope:scope})});
+    const json = await res.json();
+    const el   = document.getElementById('feedbackSaved');
+    document.getElementById('feedbackSavedMsg').textContent = json.saved_as_rule ? t.feedbackSavedRule : t.feedbackSavedOk;
+    el.style.display='flex';
+    if (json.saved_as_rule && _activePane==='rules') renderRules();
+  } catch(e) { console.error('Feedback save failed',e); }
+}
+
+// ── Rules pane ────────────────────────────────────────────────────────────────
+async function renderRules() {
+  const t   = T[lang];
+  const el  = document.getElementById('rulesList');
+  try {
+    const rules = await (await fetch('/api/rules')).json();
+    if (!rules.length) { el.innerHTML=`<p class="rules-empty">${t.rulesEmpty}</p>`; return; }
+    el.innerHTML = rules.map(r=>`
+      <div class="rule-item ${r.active?'':'inactive'}" id="rule-${r.id}">
+        <span class="rule-scope-badge">${r.scope}</span>
+        <div class="rule-text">${r.rule}<div class="rule-meta">${(r.timestamp||'').slice(0,10)} · ${r.source||'expert'}</div></div>
+        <div class="rule-actions">
+          <button class="btn-rule-toggle" onclick="toggleRule('${r.id}',${!r.active})">${r.active?t.ruleDeactivate:t.ruleActivate}</button>
+          <button class="btn-rule-delete"  onclick="deleteRule('${r.id}')">✕</button>
+        </div>
+      </div>`).join('');
+  } catch(e) { el.innerHTML=`<p class="rules-empty">${T[lang].rulesLoadError}</p>`; }
+}
+
+async function toggleRule(id,active) { await fetch(`/api/rules/${id}`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({active})}); renderRules(); }
+async function deleteRule(id) { if (!confirm(T[lang].ruleDeleteConfirm)) return; await fetch(`/api/rules/${id}`,{method:'DELETE'}); renderRules(); }
+
+// ── Clarification ─────────────────────────────────────────────────────────────
+function buildClarificationPanel(questions) {
+  const panel = document.getElementById('clarificationPanel');
+  if (!questions||!questions.length) { panel.style.display='none'; return; }
+  _clarifData = questions.map(q=>({...q,value:''}));
+  const t = T[lang];
+  document.getElementById('clarifQuestions').innerHTML = _clarifData.map((q,i)=>{
+    if (q.type==='choice'&&q.options) return `<div class="clarif-q"><label>${q.question}</label><div class="clarif-choices">${q.options.map(o=>`<button class="clarif-choice" onclick="selectChoice(${i},'${o}',this)">${o}</button>`).join('')}</div></div>`;
+    return `<div class="clarif-q"><label>${q.question}</label><input type="text" placeholder="${T[lang].clarifAnswerPlaceholder}" oninput="_clarifData[${i}].value=this.value"/></div>`;
+  }).join('');
+  panel.style.display='block';
+}
+function selectChoice(i,val,el) { _clarifData[i].value=val; el.closest('.clarif-choices').querySelectorAll('.clarif-choice').forEach(b=>b.classList.remove('selected')); el.classList.add('selected'); }
+function refineWithClarifications() {
+  const p = _clarifData.filter(q=>q.value).map(q=>`${q.question} → ${q.value}`);
+  if (!p.length) { skipClarification(); return; }
+  _refinementContext.push(...p);   // accumulate — don't replace
+  analyze(_refinementContext.join(' | '));
+}
+function skipClarification() { document.getElementById('clarificationPanel').style.display='none'; }
+
+// ── Auth ──────────────────────────────────────────────────────────────────────
+let _authToken = null;
+let _currentUser = null;
+
+function _userInitials(name) {
+  return (name || '?').split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+}
+
+function _authHeaders() {
+  return {'Content-Type': 'application/json', 'X-Auth-Token': _authToken || ''};
+}
+
+// Central fetch wrapper — redirects to login on 401 (session expired after restart)
+async function _apiFetch(url, opts = {}) {
+  opts.headers = {..._authHeaders(), ...(opts.headers || {})};
+  const res = await fetch(url, opts);
+  if (res.status === 401) {
+    // Session expired — clear token and show login screen
+    _authToken = null; _currentUser = null;
+    localStorage.removeItem('cetie_token');
+    document.getElementById('loginScreen').style.display = 'flex';
+    document.getElementById('loginError').textContent = T[lang].sessionExpired;
+    return null;
+  }
+  return res;
+}
+
+function _applySession(token, user) {
+  _authToken   = token;
+  _currentUser = user;
+  localStorage.setItem('cetie_token', token);
+  // Update navbar
+  document.getElementById('currentUserAvatar').textContent = _userInitials(user.name);
+  document.getElementById('currentUserName').textContent   = user.name;
+  const rb = document.getElementById('currentUserRoleBadge');
+  rb.innerHTML = `<span class="role-badge ${user.role}">${user.role}</span>`;
+  // Hide login screen, show app
+  document.getElementById('loginScreen').style.display = 'none';
+  // Show/hide admin-only nav items
+  document.getElementById('navUsers').style.display = user.role === 'admin' ? '' : 'none';
+  // Load initial data
+  loadHistory();
+}
+
+async function doLogin() {
+  const username = document.getElementById('loginUsername').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const errEl    = document.getElementById('loginError');
+  const btn      = document.getElementById('loginBtn');
+  const t = T[lang];
+  if (!username || !password) { errEl.textContent = t.loginErrorRequired; return; }
+  btn.disabled = true; btn.textContent = t.loginSigningIn;
+  errEl.textContent = '';
+  try {
+    const res  = await fetch('/api/auth/login', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({username, password})});
+    const data = await res.json();
+    if (!res.ok) { errEl.textContent = data.error || t.loginErrorFailed; return; }
+    _applySession(data.token, data.user);
+  } catch(e) {
+    errEl.textContent = t.loginErrorNetwork;
+  } finally {
+    btn.disabled = false; btn.textContent = T[lang].loginBtn;
+  }
+}
+
+async function doLogout() {
+  if (_authToken) await fetch('/api/auth/logout', {method:'POST', headers: _authHeaders()}).catch(()=>{});
+  _authToken = null; _currentUser = null;
+  localStorage.removeItem('cetie_token');
+  // Show login screen, reset UI
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('loginPassword').value = '';
+  document.getElementById('loginError').textContent = '';
+  document.getElementById('results').style.display = 'none';
+}
+
+async function _restoreSession() {
+  const token = localStorage.getItem('cetie_token');
+  if (!token) return false;
+  try {
+    const res  = await fetch('/api/auth/me', {headers: {'X-Auth-Token': token}});
+    if (!res.ok) {
+      // Token invalid (server restarted) — clear it silently
+      localStorage.removeItem('cetie_token');
+      return false;
+    }
+    const user = await res.json();
+    _authToken = token;
+    _applySession(token, user);
+    return true;
+  } catch(e) { return false; }
+}
+
+// ── User management (admin only) ──────────────────────────────────────────────
+async function loadUsers() {
+  const res   = await _apiFetch('/api/users');
+  if (!res || !res.ok) return;
+  const users = await res.json();
+  const el    = document.getElementById('usersList');
+  const t = T[lang];
+  if (!Array.isArray(users) || !users.length) {
+    el.innerHTML = `<div style="font-size:13px;color:#b0b8c8;font-style:italic;padding:12px 0 16px;">${t.noUsersFound}</div>`;
+    return;
+  }
+  el.innerHTML = users.map(u => {
+    const isMe = _currentUser && _currentUser.id === u.id;
+    const canDel = u.id !== 'admin';
+    return `<div class="user-item">
+      <div class="user-item-avatar">${_userInitials(u.name)}</div>
+      <div class="user-item-info">
+        <div class="user-item-name">${u.name} ${isMe ? `<span class="role-badge admin" style="font-size:9px">${t.roleYou}</span>` : ''}</div>
+        <div class="user-item-role">@${u.username} · <span class="role-badge ${u.role}">${u.role}</span></div>
+      </div>
+      <div class="user-item-actions">
+        ${canDel ? `<button class="user-del-btn" onclick="deleteUser('${u.id}')" title="Delete">🗑</button>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function addUser() {
+  const username = document.getElementById('newUserUsername').value.trim();
+  const name     = document.getElementById('newUserName').value.trim();
+  const password = document.getElementById('newUserPassword').value;
+  const role     = document.getElementById('newUserRole').value;
+  const errEl    = document.getElementById('addUserError');
+  errEl.style.display = 'none';
+  const t = T[lang];
+  if (!username || !name || !password) { errEl.textContent = t.addUserErrorRequired; errEl.style.display = 'block'; return; }
+  const res  = await _apiFetch('/api/users', {method:'POST', body: JSON.stringify({username, name, password, role})});
+  const data = await res.json();
+  if (!res.ok) { errEl.textContent = data.error || t.addUserErrorFailed; errEl.style.display = 'block'; return; }
+  document.getElementById('newUserUsername').value = '';
+  document.getElementById('newUserName').value     = '';
+  document.getElementById('newUserPassword').value = '';
+  loadUsers();
+}
+
+async function deleteUser(userId) {
+  const t = T[lang];
+  if (!confirm(t.deleteUserConfirm)) return;
+  const res = await _apiFetch(`/api/users/${userId}`, {method:'DELETE'});
+  if (!res.ok) { const d = await res.json(); alert(d.error || t.deleteUserError); return; }
+  loadUsers();
+}
+
+async function openUsersPanel() {
+  if (_currentUser?.role !== 'admin') return;
+  document.getElementById('addUserForm').style.display = 'block';
+  document.getElementById('ragAdminSection').style.display = 'block';
+  document.getElementById('usersBackdrop').classList.add('open');
+  loadUsers();
+  // Load RAG status for admin
+  try {
+    const r = await fetch('/api/rag-status');
+    const d = await r.json();
+    const t2 = T[lang];
+    const info = document.getElementById('ragAdminInfo');
+    info.innerHTML =
+      `<b>Path:</b> <code style="font-size:11px">${d.yearly_data_path}</code><br>` +
+      `<b>Folders found:</b> ${d.discovered_years?.join(', ') || 'none'}<br>` +
+      `<b>Indexed:</b> ${d.active_years?.join(', ') || 'none'} &nbsp;` +
+      `<span style="color:${d.boot_complete?'#2a7a2a':'#b07000'}">${d.boot_complete ? t2.ragAdminReady : '⏳ ' + d.boot_status}</span>`;
+  } catch(_) {}
+}
+function closeUsersPanel() { document.getElementById('usersBackdrop').classList.remove('open'); }
+
+async function adminReindex() {
+  const btn    = document.getElementById('reindexBtn');
+  const status = document.getElementById('reindexStatus');
+  btn.disabled = true;
+  status.style.display = 'inline';
+  status.textContent   = '⏳ Reindexing…';
+  try {
+    const res = await _apiFetch('/api/admin/reindex', {method:'POST', body: JSON.stringify({})});
+    if (!res) return;
+    const d = await res.json();
+    const t = T[lang];
+    if (d.status === 'already_running') {
+      status.textContent = t.ragAdminAlreadyRunning;
+    } else {
+      status.textContent = t.ragAdminReindexStart;
+      // Resume polling
+      if (!_ragPollTimer) _ragPollTimer = setInterval(_pollRagStatus, 2000);
+      _pollRagStatus();
+    }
+  } catch(e) {
+    status.textContent = '✗ ' + T[lang].networkError.split('—')[0].trim();
+  }
+  setTimeout(() => { btn.disabled = false; status.style.display = 'none'; }, 5000);
+}
+
+// ── History ───────────────────────────────────────────────────────────────────
+async function loadHistory() {
+  if (!_authToken) return;
+  const res = await _apiFetch('/api/history');
+  if (!res || !res.ok) return;
+  const items = await res.json();
+  const badge = document.getElementById('historyBadge');
+  badge.textContent = items.length;
+  badge.style.display = items.length ? 'inline' : 'none';
+  const el = document.getElementById('historyList');
+  const t = T[lang];
+  if (!items.length) { el.innerHTML = `<div class="history-empty">${t.noHistory}</div>`; return; }
+  const isAdmin = _currentUser?.role === 'admin';
+  el.innerHTML = items.map(h => {
+    const date  = h.saved_at ? new Date(h.saved_at).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+    const price = h.estimated_price ? `€${Number(h.estimated_price).toLocaleString('fr-FR')}` : '';
+    return `<div class="history-item" onclick="loadHistoryItem('${h.id}')">
+      <div class="history-item-title">${h.title || t.historyUntitled}</div>
+      <div class="history-item-meta">
+        ${isAdmin && h.user_name ? `<span>👤 ${h.user_name}</span>` : ''}
+        ${h.product_type ? `<span class="hist-tag">${h.product_type}</span>` : ''}
+        ${price ? `<span>${price}</span>` : ''}
+        <span>🕐 ${date}</span>
+      </div>
+      <button class="history-item-del" onclick="event.stopPropagation();deleteHistoryItem('${h.id}')" title="Delete">🗑</button>
+    </div>`;
+  }).join('');
+}
+
+async function saveAnalysis() {
+  if (!_lastData || !_authToken) return;
+  const btn  = document.getElementById('saveAnalysisBtn');
+  const hBtn = document.getElementById('historySaveBtn');
+  btn.disabled = true; if (hBtn) hBtn.disabled = true;
+  const payload = {
+    request:          document.getElementById('customerRequest').value.trim(),
+    requirements:     _lastData.requirements    || {},
+    configuration:    _lastData.configuration   || {},
+    similar_projects: _lastData.similar_projects || [],
+  };
+  const res  = await _apiFetch('/api/history', {method:'POST', body: JSON.stringify(payload)});
+  if (!res) return;
+  const data = await res.json();
+  if (data.status === 'ok') {
+    const tag = document.getElementById('resultSavedTag');
+    tag.style.display = 'inline';
+    setTimeout(() => { tag.style.display = 'none'; btn.disabled = false; if(hBtn) hBtn.disabled = false; }, 3000);
+    loadHistory();
+  } else {
+    btn.disabled = false; if (hBtn) hBtn.disabled = false;
+  }
+}
+
+async function loadHistoryItem(id) {
+  const res  = await _apiFetch(`/api/history/${id}`);
+  if (!res || !res.ok) return;
+  const item = await res.json();
+  if (item.error) return;
+  if (item.request) document.getElementById('customerRequest').value = item.request;
+  const data = {requirements: item.requirements || {}, configuration: item.configuration || {}, similar_projects: item.similar_projects || [], similar_quotes: [], demo_mode: false};
+  _lastData = data;
+  renderResults(data);
+  document.getElementById('results').style.display = 'block';
+  closeHistoryPanel();
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+  const tag = document.getElementById('resultSavedTag');
+  tag.textContent = T[lang].historyRestored;
+  tag.style.display = 'inline';
+  setTimeout(() => { tag.style.display = 'none'; tag.textContent = '✓ Saved'; }, 3000);
+}
+
+async function deleteHistoryItem(id) {
+  if (!confirm(T[lang].historyDeleteConfirm)) return;
+  await _apiFetch(`/api/history/${id}`, {method:'DELETE'});
+  loadHistory();
+}
+
+function openHistoryPanel() {
+  document.getElementById('historyBackdrop').classList.add('open');
+  const hBtn = document.getElementById('historySaveBtn');
+  if (hBtn) hBtn.disabled = !_lastData;
+  loadHistory();
+}
+function closeHistoryPanel() { document.getElementById('historyBackdrop').classList.remove('open'); }
+
+function navTo(page) {
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('navHome').classList.add('active');
+}
+
+// ── RAG status pill ───────────────────────────────────────────────────────────
+let _ragPollTimer = null;
+async function _pollRagStatus() {
+  try {
+    const r = await fetch('/api/rag-status');
+    const d = await r.json();
+    const dot  = document.getElementById('ragStatusDot');
+    const txt  = document.getElementById('ragStatusText');
+    if (!dot || !txt) return;
+
+    const t = T[lang];
+    if (d.boot_complete) {
+      dot.style.background = d.active_years?.length ? '#4caf50' : '#e53935';
+      txt.textContent = d.active_years?.length ? `DB: ${d.active_years.join(', ')}` : t.ragNoData;
+      txt.title = `Path: ${d.yearly_data_path}\nFound: ${d.discovered_years?.join(', ')||'none'}\nIndexed: ${d.active_years?.join(', ')||'none'}`;
+    } else {
+      dot.style.background = '#f0a500';
+      const step = d.boot_status && d.boot_status !== 'starting' ? d.boot_status : t.ragIndexing;
+      txt.textContent = d.active_years?.length
+        ? `DB: ${d.active_years.join(', ')} · ${step}`
+        : step;
+      txt.title = `Still indexing...\nPath: ${d.yearly_data_path}\nFound: ${d.discovered_years?.join(', ')||'none'}\nIndexed so far: ${d.active_years?.join(', ')||'none'}`;
+    }
+
+    // Stop polling only when the boot thread has fully finished
+    if (d.boot_complete) {
+      clearInterval(_ragPollTimer);
+      _ragPollTimer = null;
+      if (!d.active_years || d.active_years.length === 0) {
+        dot.style.background = '#e53935';
+        txt.textContent = t.ragNoData;
+      }
+    }
+  } catch(_) {}
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', async () => {
+  setLang('en');
+  document.getElementById('customerRequest').addEventListener('keydown', e => { if (e.key==='Enter'&&e.ctrlKey) analyze(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeDrawer(); closeHistoryPanel(); closeUsersPanel(); }
+  });
+  // Hide Users nav until we know role
+  document.getElementById('navUsers').style.display = 'none';
+  // Try to restore session from localStorage
+  const restored = await _restoreSession();
+  if (!restored) {
+    document.getElementById('loginScreen').style.display = 'flex';
+  }
+  // Enable save button when results appear
+  const saveBtn = document.getElementById('saveAnalysisBtn');
+  new MutationObserver(() => {
+    const visible = document.getElementById('results').style.display !== 'none';
+    if (saveBtn) saveBtn.disabled = !visible || !_lastData;
+  }).observe(document.getElementById('results'), {attributes: true, attributeFilter: ['style']});
+
+  // Poll RAG status until ready
+  _pollRagStatus();
+  _ragPollTimer = setInterval(_pollRagStatus, 3000);
+});
+</script>
+</body>
+</html>

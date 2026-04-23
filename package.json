@@ -1,0 +1,16 @@
+{
+  "name": "projectcetie",
+  "version": "1.0.0",
+  "main": "make_pptx.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "docx": "^9.6.1",
+    "pptxgenjs": "^4.0.1"
+  }
+}

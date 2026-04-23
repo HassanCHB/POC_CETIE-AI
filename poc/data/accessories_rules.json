@@ -1,0 +1,255 @@
+{
+  "$schema_version": "1.0",
+  "description": "Knowledge rules capturing implicit accessory + sizing knowledge from CETIE estimators. When a customer request contains any of the `match` keywords, the associated implications should be considered in the BoM and cabinet sizing. These rules are INJECTED AS CONTEXT into the LLM prompt — they are not hard-coded if/then logic. Estimators can add, edit, or remove rules freely; see README section 'Editing accessory rules'.",
+  "updated_at": "2026-04-21",
+  "maintainers": ["CETIE estimators (Thierry G., Yohann)"],
+  "rules": [
+
+    {
+      "id": "outdoor_installation",
+      "label": "Installation extérieure",
+      "match": ["extérieur", "exterieur", "outdoor", "en extérieur", "plein air"],
+      "description": "Cabinet is installed outside — requires weather protection, base, and ventilation adapted to outdoor conditions.",
+      "implies": [
+        {"category": "01_cabinet_enclosure", "item": "Socle aluminium 200 à 400 mm", "why": "surélévation contre inondation / intempéries"},
+        {"category": "01_cabinet_enclosure", "item": "Joint d'étanchéité renforcé IP65+", "why": "étanchéité pluie"},
+        {"category": "04_internal_chassis", "item": "Ventilation avec filtres IP55 (toit ou côté)", "why": "régulation thermique en plein soleil"},
+        {"category": "04_internal_chassis", "item": "Résistance de chauffage anti-condensation", "why": "éviter la condensation matinale"}
+      ],
+      "sizing_impact": "Prévoir +15% de volume pour ventilation + chauffage. Hauteur totale inclut le socle (ajouter 200-400 mm à la hauteur nominale)."
+    },
+
+    {
+      "id": "double_enclosure",
+      "label": "Double enveloppe",
+      "match": ["double enveloppe", "double-enveloppe", "enveloppe thermique", "isotherme"],
+      "description": "Thermal double-wall enclosure — used for outdoor cabinets exposed to temperature extremes or for condensation control.",
+      "implies": [
+        {"category": "01_cabinet_enclosure", "item": "Enveloppe externe + enveloppe interne avec isolation", "why": "isolation thermique"},
+        {"category": "04_internal_chassis", "item": "Thermostat de régulation interne", "why": "pilotage chauffage/ventilation"},
+        {"category": "04_internal_chassis", "item": "Ventilation forcée avec échangeur air/air", "why": "évacuation chaleur sans ouverture sur extérieur"}
+      ],
+      "sizing_impact": "Dimensions externes +30% par rapport à la dimension utile interne. Prévoir ~10 cm d'isolation sur tous les côtés."
+    },
+
+    {
+      "id": "remote_transmitter",
+      "label": "Équipement déporté",
+      "match": ["déporté", "deporte", "transmetteur déporté", "remote transmitter", "boîtier déporté", "coffret déporté"],
+      "description": "A sensor, transmitter or instrument is installed separately from the main cabinet. Requires its own small enclosure and cabling.",
+      "implies": [
+        {"category": "07_supplied_separately", "item": "Coffret polyester IP65 147x147x90 pour transmetteur déporté", "why": "protection transmetteur"},
+        {"category": "07_supplied_separately", "item": "Kit de fixation murale ou sur mât", "why": "installation terrain"},
+        {"category": "04_internal_chassis_control", "item": "Bornier de raccordement dédié + presse-étoupe", "why": "liaison déportée dans l'armoire principale"}
+      ],
+      "sizing_impact": "Aucun impact direct sur la dimension de l'armoire principale, mais PRÉVOIR une ligne dédiée dans 07_supplied_separately. NE PAS intégrer le transmetteur dans le chassis interne."
+    },
+
+    {
+      "id": "piezo_sensor",
+      "label": "Sonde Piézo / Sonde de pression",
+      "match": ["sonde piézo", "sonde piezo", "sonde pression", "pressure sensor", "sonde immergée"],
+      "description": "Immersible piezoresistive pressure probe — used for level measurement in water/effluent applications.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 24 VDC isolée pour transmetteur 4-20 mA", "why": "alim de la boucle de mesure"},
+        {"category": "04_internal_chassis_automation", "item": "Parafoudre pour entrée 4-20 mA", "why": "protection contre les surtensions de la ligne immergée"},
+        {"category": "02_equipment_on_side", "item": "Presse-étoupe IP68 pour câble de sonde", "why": "étanchéité du passage de câble"}
+      ]
+    },
+
+    {
+      "id": "ultrasonic_sensor",
+      "label": "Sonde ultrason",
+      "match": ["sonde ultrason", "ultrason", "sonde US", "ultrasonic sensor", "Datalogger LT", "DL4W"],
+      "description": "Non-contact ultrasonic level sensor.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 24 VDC pour sonde ultrason", "why": "alim mesure"},
+        {"category": "04_internal_chassis_automation", "item": "Entrée analogique 4-20 mA ou entrée fréquence", "why": "signal de mesure"}
+      ]
+    },
+
+    {
+      "id": "promag_flowmeter",
+      "label": "Débitmètre électromagnétique (Promag / Siemens)",
+      "match": ["Promag", "débitmètre", "debitmetre", "flowmeter", "E+H", "Endress", "MAG 5100", "SITRANS"],
+      "description": "Electromagnetic flowmeter — typically E+H Promag or Siemens SITRANS MAG. Often includes a remote transmitter.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Module entrée analogique pour signal débit 4-20 mA", "why": "lecture débit"},
+        {"category": "04_internal_chassis_automation", "item": "Module entrée impulsion pour totalisation volume", "why": "comptage volume cumulé"},
+        {"category": "07_supplied_separately", "item": "Coffret transmetteur déporté (si installation déportée)", "why": "protection transmetteur hors armoire"}
+      ],
+      "sizing_impact": "Si le débitmètre est DÉPORTÉ : appliquer aussi la règle 'remote_transmitter'. Le transmetteur n'occupe PAS d'espace dans l'armoire principale."
+    },
+
+    {
+      "id": "sofrel_s4w_telemetry",
+      "label": "Télégestion Sofrel S4W",
+      "match": ["Sofrel", "S4W", "S550", "télégestion", "telegestion", "SG4000"],
+      "description": "Sofrel telemetry module — sends alerts and data over GSM/4G/radio.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Sofrel S4W (ou équivalent S550)", "why": "module télégestion"},
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 24 VDC dédiée avec batterie de secours", "why": "fonctionnement en coupure réseau"},
+        {"category": "05_equipment_on_top", "item": "Antenne GSM/4G sur toit d'armoire (ou déportée)", "why": "couverture réseau"},
+        {"category": "04_internal_chassis_automation", "item": "Carte SIM M2M activée", "why": "abonnement opérateur télégestion"},
+        {"category": "04_internal_chassis", "item": "Afficheur local de supervision (option)", "why": "diagnostic local si demandé"}
+      ],
+      "sizing_impact": "Le Sofrel + son alim + batterie occupent environ 4 modules DIN rail (72 mm). Prévoir l'antenne soit sur toit (percement IP65) soit déportée."
+    },
+
+    {
+      "id": "gsm_alert_modem",
+      "label": "Modem alerte SMS / GSM",
+      "match": ["modem alerte", "modem GSM", "alerte SMS", "GSM alarm"],
+      "description": "GSM modem for SMS alarm messages.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Modem GSM avec antenne externe", "why": "envoi SMS alarmes"},
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 12 ou 24 VDC modem", "why": "alim modem"},
+        {"category": "05_equipment_on_top", "item": "Antenne GSM externe IP65", "why": "couverture réseau"}
+      ]
+    },
+
+    {
+      "id": "vfd_atv",
+      "label": "Variateur Schneider Altivar",
+      "match": ["ATV", "Altivar", "ATV630", "ATV320", "variateur Schneider"],
+      "description": "Schneider Electric VFD — controls motor speed. Generates heat + electrical noise.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Variateur dimensionné kW/A", "why": "organe principal"},
+        {"category": "04_internal_chassis_power", "item": "Filtre EMC (intégré ou externe selon taille)", "why": "respect CEM installation classe A/B"},
+        {"category": "04_internal_chassis", "item": "Ventilation forcée augmentée (+30% débit)", "why": "dissipation des pertes VFD (~3% de la puissance nominale)"},
+        {"category": "04_internal_chassis_power", "item": "Selfs de ligne en entrée (si réseau perturbé)", "why": "protection du variateur et du réseau"},
+        {"category": "07_supplied_separately", "item": "Résistance de freinage (si cycles freinants)", "why": "dissipation énergie de freinage"}
+      ],
+      "sizing_impact": "Prévoir 2x l'espace modulaire du variateur pour circulation d'air. Ventilation forcée obligatoire au-dessus de 15 kW."
+    },
+
+    {
+      "id": "soft_starter_ats",
+      "label": "Démarreur progressif ATS",
+      "match": ["démarreur", "demarreur", "ATS01", "ATS22", "ATS490", "soft starter"],
+      "description": "Electronic soft starter — reduces inrush current during motor startup.",
+      "implies": [
+        {"category": "04_internal_chassis_control", "item": "Démarreur ATS (par moteur)", "why": "démarrage progressif"},
+        {"category": "04_internal_chassis_control", "item": "Contacteur de by-pass une fois à vitesse nominale", "why": "économie d'énergie et réduction échauffement démarreur"},
+        {"category": "04_internal_chassis_power", "item": "Protection moteur thermique ou magnétothermique", "why": "sécurité moteur"}
+      ]
+    },
+
+    {
+      "id": "siemens_s7_1200",
+      "label": "Automate Siemens S7-1200",
+      "match": ["S7-1200", "s7 1200", "CPU 1214", "CPU 1215", "Simatic S7"],
+      "description": "Siemens compact PLC.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "CPU S7-1200 (référence 1214C AC/DC/RLY typique)", "why": "unité centrale"},
+        {"category": "04_internal_chassis_automation", "item": "Modules E/S supplémentaires selon nb de points", "why": "extension selon nb de pompes + capteurs"},
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 24 VDC Siemens PM1207 (ou équivalent)", "why": "alimentation automate + capteurs"},
+        {"category": "04_internal_chassis_automation", "item": "Switch Ethernet si plus de 2 équipements Profinet", "why": "bus de terrain"}
+      ]
+    },
+
+    {
+      "id": "millenium_zelio",
+      "label": "Relais programmable (Millénium / Zélio / LOGO!)",
+      "match": ["Millénium", "Millenium", "Zélio", "Zelio", "LOGO!", "LOGO 8", "programmable relay"],
+      "description": "Compact programmable logic relay (Millénium / Zélio / LOGO!). Used when the application does not need a full industrial PLC.",
+      "implies": [
+        {"category": "04_internal_chassis_automation", "item": "Relais programmable (Millénium III / Zelio / LOGO! 8)", "why": "logique programmée"},
+        {"category": "04_internal_chassis_automation", "item": "Alimentation 24 VDC dédiée", "why": "alim relais + E/S"}
+      ]
+    },
+
+    {
+      "id": "weekly_timer",
+      "label": "Horloge hebdomadaire / programmation horaire",
+      "match": ["horloge hebdomadaire", "horloge programmable", "horaire", "weekly timer", "time switch"],
+      "description": "Time-of-day / day-of-week scheduled operation.",
+      "implies": [
+        {"category": "04_internal_chassis_control", "item": "Horloge programmable modulaire (Hager EE, Theben, etc.)", "why": "pilotage horaire"},
+        {"category": "06_door_controls", "item": "Sélecteur Auto/Manu/0 avec voyant mode horloge", "why": "feedback opérateur"}
+      ]
+    },
+
+    {
+      "id": "emergency_stop",
+      "label": "Arrêt d'urgence",
+      "match": ["arrêt d'urgence", "arret d'urgence", "emergency stop", "bouton coup-de-poing", "AU"],
+      "description": "Mandatory emergency stop button(s) — cat. 1 or cat. 3 depending on risk assessment.",
+      "implies": [
+        {"category": "06_door_controls_power", "item": "Bouton coup-de-poing rouge verrouillable IP65", "why": "arrêt d'urgence accessible"},
+        {"category": "04_internal_chassis_control", "item": "Module de sécurité (Preventa XPS) si cat. 3 ou 4", "why": "conformité norme EN ISO 13849"},
+        {"category": "04_internal_chassis_power", "item": "Contacteurs de coupure de puissance", "why": "coupure moteurs"}
+      ]
+    },
+
+    {
+      "id": "level_floats",
+      "label": "Poires de niveau",
+      "match": ["poires", "poire de niveau", "float switch", "flotteurs"],
+      "description": "Level floats — basic on/off level detection, typically for sump pumps.",
+      "implies": [
+        {"category": "02_equipment_on_side", "item": "Presse-étoupe IP68 par câble de poire", "why": "étanchéité"},
+        {"category": "04_internal_chassis_control", "item": "Entrées TOR isolées pour poires (idéalement avec relais intermédiaires)", "why": "isolation galvanique de la fosse"}
+      ]
+    },
+
+    {
+      "id": "pump_alternation",
+      "label": "Alternance de pompes",
+      "match": ["alternance", "permutation automatique", "pump alternation", "duty/standby"],
+      "description": "Two (or more) pumps alternate on each run for wear equalisation.",
+      "implies": [
+        {"category": "04_internal_chassis_control", "item": "Relais ou logique d'alternance (dans automate ou Millénium)", "why": "équilibrage d'usure"},
+        {"category": "06_door_controls", "item": "Voyants individuels par pompe + heures de marche", "why": "supervision usage"}
+      ]
+    },
+
+    {
+      "id": "inverter_source",
+      "label": "Inverseur de sources / double alimentation",
+      "match": ["inverseur de source", "source automatique", "ATS", "dual source", "groupe électrogène", "EDF + groupe"],
+      "description": "Automatic transfer between utility and backup power (generator).",
+      "implies": [
+        {"category": "04_internal_chassis_power", "item": "Inverseur de source automatique 4P calibré sur courant pompes", "why": "commutation source"},
+        {"category": "04_internal_chassis_control", "item": "Automate de gestion de sources (ATyS, Socomec)", "why": "pilotage bascule"},
+        {"category": "06_door_controls", "item": "Voyants source EDF / source Groupe", "why": "feedback opérateur"},
+        {"category": "04_internal_chassis_power", "item": "Parafoudre en aval de chaque source", "why": "protection alimentation"}
+      ]
+    },
+
+    {
+      "id": "audible_alarm",
+      "label": "Alarme sonore / gyrophare",
+      "match": ["gyrophare", "avertisseur sonore", "sirène", "balise", "flashlight", "audible alarm"],
+      "description": "Visible/audible defect or alarm indication mounted on cabinet top.",
+      "implies": [
+        {"category": "05_equipment_on_top", "item": "Gyrophare LED IP65 sur toit armoire (option buzzer intégré)", "why": "signalisation défaut"},
+        {"category": "04_internal_chassis_control", "item": "Relais de commande gyrophare 24 V ou 230 V", "why": "pilotage"}
+      ]
+    },
+
+    {
+      "id": "commissioning_onsite",
+      "label": "Mise en service sur site / FAT",
+      "match": ["mise en service", "commissioning", "FAT", "réception usine", "intervention site"],
+      "description": "On-site (or factory-acceptance) commissioning explicitly requested.",
+      "implies": [
+        {"category": "09_commissioning", "item": "Ligne 'Mise en service sur site' avec nombre de demi-journées et département", "why": "chiffrage main d'œuvre déplacement"},
+        {"category": "09_commissioning", "item": "Ligne 'FAT en atelier' si test usine demandé", "why": "recette pré-expédition"}
+      ]
+    },
+
+    {
+      "id": "ip65_outdoor_rating",
+      "label": "Indice IP65 / IP66",
+      "match": ["IP65", "IP66", "IP67", "IP 65", "étanche"],
+      "description": "High IP protection rating required.",
+      "implies": [
+        {"category": "01_cabinet_enclosure", "item": "Enveloppe polyester ou inox certifiée IP65+", "why": "étanchéité"},
+        {"category": "02_equipment_on_side", "item": "Presse-étoupes IP65/IP68 adaptés aux diamètres câbles", "why": "préservation IP"}
+      ],
+      "sizing_impact": "Les enveloppes polyester sont plus volumineuses que l'acier à volume utile équivalent (+10%)."
+    }
+
+  ]
+}
