@@ -37,7 +37,8 @@ services:
     plan: starter                   # $7/month, always-on (no cold-start delays)
     region: frankfurt               # EU data residency; closest to France
     numInstances: 1                 # MUST stay at 1 — persistent disk can't be shared
-    autoDeploy: true                # redeploy on every push to main
+    branch: amir                    # deploy branch — change via dashboard if needed
+    autoDeploy: true                # redeploy on every push to the branch above
 
     buildCommand: "pip install -r poc/requirements.txt"
     startCommand: "gunicorn --chdir poc app:app --workers 2 --timeout 180 --bind 0.0.0.0:$PORT"

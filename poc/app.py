@@ -265,8 +265,30 @@ print(f"[state] Runtime state directory: {_STATE_DIR}")
 # Thread-safe file access (supports multiple concurrent users)
 _file_lock = threading.Lock()
 
-# ── In-memory session store  {token: user_dict} ───────────────────────────────
-_sessions: dict = {}
+# ── Session store  {token: user_dict} — persisted on the state disk ─────────
+# Sessions used to live only in RAM, which meant every Render redeploy kicked
+# every user out (they had a valid token in their browser, but the server had
+# forgotten it). We now back it with a JSON file on the persistent disk so
+# tokens survive across deploys.
+SESSIONS_PATH = _state_path("sessions.json")
+
+def _load_sessions() -> dict:
+    try:
+        with open(SESSIONS_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_sessions() -> None:
+    try:
+        with _file_lock:
+            with open(SESSIONS_PATH, "w", encoding="utf-8") as f:
+                json.dump(_sessions, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[auth] Could not persist sessions: {e}")
+
+_sessions: dict = _load_sessions()
+print(f"[auth] Restored {len(_sessions)} session(s) from {SESSIONS_PATH}")
 
 def _load_json(path, default):
     try:
@@ -1533,12 +1555,14 @@ def login():
         return jsonify({"error": "Invalid username or password"}), 401
     token = _secrets.token_hex(32)
     _sessions[token] = user
+    _save_sessions()   # persist so the session survives a deploy / restart
     return jsonify({"token": token, "user": _safe_user(user)})
 
 @app.route("/api/auth/logout", methods=["POST"])
 def logout():
     token = request.headers.get("X-Auth-Token", "")
     _sessions.pop(token, None)
+    _save_sessions()
     return jsonify({"status": "ok"})
 
 @app.route("/api/auth/me", methods=["GET"])
