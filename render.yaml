@@ -1,30 +1,69 @@
 # Render deployment configuration for the CETIE AI Configurator
-# https://render.com/docs/yaml-spec
+# Docs: https://render.com/docs/yaml-spec
 #
-# When the repo is connected to Render, this file auto-configures the service.
-# The two API keys MUST be set as secrets via the Render dashboard (never commit):
-#   OPENAI_API_KEY
-#   ANTHROPIC_API_KEY
+# ─────────────────────────────────────────────────────────────────────────────
+# Persistence guarantee
+# ─────────────────────────────────────────────────────────────────────────────
+# A 1 GB persistent disk ("cetie-state") is mounted at /var/cetie-state and
+# the app is told — via the CETIE_STATE_DIR env var — to read/write its
+# runtime state files there instead of on the ephemeral container filesystem.
+#
+# What this protects across EVERY future `git push` / redeploy / restart:
+#   • /var/cetie-state/history.json       (analysis history)
+#   • /var/cetie-state/feedback.json      (tester feedback)
+#   • /var/cetie-state/learned_rules.json (AI-learned rules)
+#   • /var/cetie-state/users.json         (user accounts + hashed passwords)
+#
+# Code vs data separation:
+#   • /opt/render/project/src/      → replaced fresh from git on every deploy
+#     (Python files, catalogue JSONs, ChromaDB index, accessories_rules.json)
+#   • /var/cetie-state/             → preserved forever, never touched by deploy
+#
+# First-boot migration: the app's _state_path() helper copies existing
+# users.json from the repo into /var/cetie-state on first boot, so the
+# initial admin account survives the switch to persistent storage.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# Secrets
+# ─────────────────────────────────────────────────────────────────────────────
+# The two API keys MUST be set via the Render dashboard (not committed here):
+#   • OPENAI_API_KEY     (OpenAI embeddings — text-embedding-3-small)
+#   • ANTHROPIC_API_KEY  (Claude Sonnet extraction + Claude Opus generation)
 
 services:
   - type: web
     name: cetie-ai-configurator
     runtime: python
-    plan: starter          # $7/month, always-on (no cold starts, needed for demo UX)
-    region: frankfurt      # nearest to France; change to "oregon" for US clients
+    plan: starter                   # $7/month, always-on (no cold-start delays)
+    region: frankfurt               # EU data residency; closest to France
+    numInstances: 1                 # MUST stay at 1 — persistent disk can't be shared
+    autoDeploy: true                # redeploy on every push to main
+
     buildCommand: "pip install -r poc/requirements.txt"
     startCommand: "gunicorn --chdir poc app:app --workers 2 --timeout 180 --bind 0.0.0.0:$PORT"
-    autoDeploy: true       # redeploy on every git push to main
+
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.5"
-      - key: CETIE_STATE_DIR       # tells app.py where to put runtime state
+
+      # Tells app.py where to read/write runtime state (history, feedback, users).
+      # See _state_path() in poc/app.py — if this env var is unset the app falls
+      # back to poc/data/ (local-dev behaviour). On Render we point at the disk.
+      - key: CETIE_STATE_DIR
         value: "/var/cetie-state"
+
+      # Secrets — set in Render dashboard → Environment tab (never committed)
       - key: OPENAI_API_KEY
-        sync: false        # set in Render dashboard (marked secret)
+        sync: false
       - key: ANTHROPIC_API_KEY
-        sync: false        # set in Render dashboard (marked secret)
+        sync: false
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # Persistent disk — survives every deploy, restart, and code change.
+    # DO NOT rename or remove this block once live data is on it, or you will
+    # lose the test history, feedback, and user accounts.
+    # ─────────────────────────────────────────────────────────────────────────
     disk:
-      name: cetie-state    # persistent volume for history / feedback / learned rules
-      mountPath: /var/cetie-state
-      sizeGB: 1            # 1 GB is ample — history.json is ~40 KB per analysis
+      name: cetie-state             # Render's disk identifier (keep stable)
+      mountPath: /var/cetie-state   # MUST match CETIE_STATE_DIR above
+      sizeGB: 1                     # 1 GB holds thousands of analyses; upsize later if needed
