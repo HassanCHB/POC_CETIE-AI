@@ -339,7 +339,31 @@ _ensure_admin()   # runs once at startup
 # ── Auth helpers ──────────────────────────────────────────────────────────────
 
 def _current_user() -> dict | None:
+    """
+    Resolve the current user from the X-Auth-Token header.
+
+    Gunicorn runs multiple worker processes that do NOT share Python memory,
+    so a token created by worker A won't be in worker B's _sessions dict.
+    To keep auth consistent across workers without adding Redis, we fall
+    back to re-reading sessions.json from the persistent disk on a cache
+    miss. Hot path (token already cached in this worker) stays fast.
+    """
+    global _sessions
     token = request.headers.get("X-Auth-Token", "")
+    if not token:
+        return None
+
+    # Fast path — token already cached in this worker's memory
+    user = _sessions.get(token)
+    if user is not None:
+        return user
+
+    # Cache miss — another worker may have created this token.
+    # Reload from disk to pick up cross-worker state.
+    try:
+        _sessions = _load_sessions()
+    except Exception:
+        return None
     return _sessions.get(token)
 
 def _require_auth():
