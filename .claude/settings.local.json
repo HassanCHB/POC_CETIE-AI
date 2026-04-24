@@ -61,7 +61,8 @@
       "Read(//Applications/**)",
       "Bash(echo \"PID: $!\")",
       "Bash(wait 1300)",
-      "Bash(kill 1300)"
+      "Bash(kill 1300)",
+      "Bash(pandoc --track-changes=all \"/Users/mac/Downloads/CETIE_Release_Note_v1.1-EN.docx\" -o /tmp/release_note.md)"
     ]
   }
 }
