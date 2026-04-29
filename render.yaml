@@ -53,6 +53,16 @@ services:
       - key: CETIE_STATE_DIR
         value: "/var/cetie-state"
 
+      # Tells rag.py where to keep the ChromaDB vector index (binary SQLite +
+      # HNSW files). Stored on the same persistent disk so the index survives
+      # deploys AND doesn't bloat the git repo (it grows past GitHub's 100 MB
+      # per-file limit after a 3-chunk reindex).
+      # On first boot after enabling this, the app rebuilds the index from the
+      # JSON corpus — one-time, ~10 min, ~$0.50 in OpenAI calls. After that
+      # every deploy reuses the existing index.
+      - key: CETIE_CHROMA_DIR
+        value: "/var/cetie-state/chroma_db"
+
       # Secrets — set in Render dashboard → Environment tab (never committed)
       - key: OPENAI_API_KEY
         sync: false

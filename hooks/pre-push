@@ -1,0 +1,159 @@
+#!/usr/bin/env bash
+# .git pre-push hook — catches the most common "oops" situations before
+# they hit GitHub or Render. Designed to be FAST (<30 seconds) so it
+# doesn't get in your way. For thorough validation including the slow
+# OpenAI embedding test, run `bash poc/prepare_for_deploy.sh` manually.
+#
+# This file is committed to the repo at hooks/pre-push and activated by
+# the one-time setup: `git config core.hooksPath hooks`
+# (already done — see hooks/README.md).
+#
+# Bypass once if needed: `git push --no-verify`
+
+set -e
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+cd "$PROJECT_ROOT"
+
+ROCKET="🚀"
+CROSS="✗"
+CHECK="✓"
+
+echo ""
+echo "─────────────────────────────────────────────────────────"
+echo " Pre-push checks  ($(date +%H:%M:%S))"
+echo "─────────────────────────────────────────────────────────"
+
+ERRORS=0
+WARNINGS=0
+
+err()  { echo "  $CROSS $1"; ERRORS=$((ERRORS+1)); }
+warn() { echo "  ⚠ $1"; WARNINGS=$((WARNINGS+1)); }
+ok()   { echo "  $CHECK $1"; }
+
+# ── Check 1: nothing huge being pushed ────────────────────────────
+echo ""
+echo "[1/5] Scanning for files > 50 MB in commits about to push..."
+LARGE_FILES=$(git diff --cached --name-only -z 2>/dev/null \
+              | xargs -0 -I{} sh -c 'test -f "{}" && ls -l "{}" | awk -v f="{}" "{if (\$5>52428800) print \$5\" \"f}"' 2>/dev/null \
+              || true)
+# Also scan the whole upcoming push, not just staged
+PUSH_LARGE=$(git rev-list --objects HEAD ^"@{push}" 2>/dev/null \
+             | git cat-file --batch-check='%(objectsize) %(rest)' 2>/dev/null \
+             | awk '$1 >= 52428800 && $1 < 104857600' || true)
+PUSH_HUGE=$(git rev-list --objects HEAD ^"@{push}" 2>/dev/null \
+            | git cat-file --batch-check='%(objectsize) %(rest)' 2>/dev/null \
+            | awk '$1 >= 104857600' || true)
+
+if [ -n "$PUSH_HUGE" ]; then
+    err "Files > 100 MB found (GitHub will reject these):"
+    echo "$PUSH_HUGE" | head -5 | awk '{ printf "      %.1f MB  %s\n", $1/1048576, $2 }'
+elif [ -n "$PUSH_LARGE" ]; then
+    warn "Files between 50-100 MB found (GitHub will warn):"
+    echo "$PUSH_LARGE" | head -5 | awk '{ printf "      %.1f MB  %s\n", $1/1048576, $2 }'
+else
+    ok "No oversized files in this push"
+fi
+
+# ── Check 2: chroma_db should never be tracked ────────────────────
+echo ""
+echo "[2/5] Confirming poc/chroma_db/ is not tracked..."
+if git ls-files poc/chroma_db | grep -q .; then
+    err "poc/chroma_db/ is tracked by git — should be on persistent disk only"
+    err "Fix: git rm -r --cached poc/chroma_db && git commit -m 'untrack chroma_db'"
+else
+    ok "poc/chroma_db/ correctly ignored"
+fi
+
+# ── Check 3: yearly_data should never be tracked (proprietary) ────
+echo ""
+echo "[3/5] Confirming yearly_data/ is not tracked..."
+if git ls-files yearly_data 2>/dev/null | grep -q .; then
+    err "yearly_data/ is tracked by git — proprietary client data, must be local-only"
+    err "Fix: git rm -rf --cached yearly_data && git commit"
+else
+    ok "yearly_data/ correctly ignored"
+fi
+
+# ── Check 4: secrets should never be in commits ───────────────────
+echo ""
+echo "[4/5] Scanning staged content for likely secrets..."
+SECRET_HITS=$(git diff --cached -G "(api_key|API_KEY|sk-[a-zA-Z0-9]{20,}|sk-ant-[a-zA-Z0-9]{20,})" \
+              --name-only 2>/dev/null | grep -v -E '\.(md|sample|example|template)$' || true)
+if [ -n "$SECRET_HITS" ]; then
+    warn "Potential secrets in staged files (review before pushing):"
+    echo "$SECRET_HITS" | while read f; do echo "      $f"; done
+else
+    ok "No obvious secrets in staged content"
+fi
+
+# ── Check 5: parsed JSONs are valid + reasonably sized ────────────
+echo ""
+echo "[5/5] Sanity-checking parsed JSON corpus..."
+if python3 - <<'PY'
+import json, sys, os
+
+problems = []
+for year in ("2022", "2026"):
+    path = f"poc/data/yearly_projects_{year}.json"
+    if not os.path.exists(path):
+        problems.append(f"  ✗ {path} missing")
+        continue
+    size = os.path.getsize(path)
+    if size < 100_000:                         # < 100 KB is suspicious
+        problems.append(f"  ✗ {path} is only {size:,} bytes (suspiciously small)")
+        continue
+    try:
+        data = json.loads(open(path).read())
+    except Exception as e:
+        problems.append(f"  ✗ {path} is not valid JSON: {e}")
+        continue
+    if not isinstance(data, list) or len(data) == 0:
+        problems.append(f"  ✗ {path} is empty or not a list")
+        continue
+    print(f"  ✓ {path}: {len(data)} projects, {size/1024:.0f} KB")
+
+# Catalogues
+for name, min_records in [("blocks.json", 1000), ("armoires.json", 50)]:
+    path = f"poc/data/{name}"
+    if not os.path.exists(path):
+        problems.append(f"  ✗ {path} missing")
+        continue
+    try:
+        data = json.loads(open(path).read())
+    except Exception as e:
+        problems.append(f"  ✗ {path} is not valid JSON: {e}")
+        continue
+    if len(data) < min_records:
+        problems.append(f"  ✗ {path} has only {len(data)} records (expected >= {min_records})")
+        continue
+    print(f"  ✓ {path}: {len(data)} records")
+
+if problems:
+    print("")
+    for p in problems: print(p)
+    sys.exit(1)
+PY
+then
+    ok "Corpus JSONs all valid"
+else
+    err "Corpus JSON checks failed — see messages above"
+fi
+
+# ── Summary ───────────────────────────────────────────────────────
+echo ""
+echo "─────────────────────────────────────────────────────────"
+if [ "$ERRORS" -eq 0 ]; then
+    echo " $CHECK All checks passed — push proceeding $ROCKET"
+    if [ "$WARNINGS" -gt 0 ]; then
+        echo "   ($WARNINGS warning(s) — review above, push not blocked)"
+    fi
+    echo "─────────────────────────────────────────────────────────"
+    exit 0
+else
+    echo " $CROSS $ERRORS error(s) found — push blocked"
+    echo ""
+    echo " Fix the errors above and re-push."
+    echo " To bypass once (use sparingly): git push --no-verify"
+    echo "─────────────────────────────────────────────────────────"
+    exit 1
+fi
