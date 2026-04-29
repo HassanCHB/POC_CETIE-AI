@@ -66,7 +66,9 @@
       "Bash(chmod +x /Users/mac/Projects/Personal/CETIE/projectcetie/poc/prepare_for_deploy.sh)",
       "Bash(chmod +x /Users/mac/Projects/Personal/CETIE/projectcetie/hooks/pre-push)",
       "Bash(git config *)",
-      "Bash(bash hooks/pre-push)"
+      "Bash(bash hooks/pre-push)",
+      "Bash(bash -n /Users/mac/Projects/Personal/CETIE/projectcetie/poc/prepare_for_deploy.sh)",
+      "Bash(grep -E \"/[0-9]{4}$\")"
     ]
   }
 }
