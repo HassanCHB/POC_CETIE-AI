@@ -25,23 +25,44 @@ echo " CETIE — pre-push verification"
 echo " $(date)"
 echo "==========================================================="
 
+# ── Discover all year folders present in yearly_data/ ────────────
+# This means dropping a new yearly_data/2027/ folder is enough — the
+# script auto-picks it up without any code changes.
+if [ ! -d yearly_data ]; then
+  echo "  ⚠ yearly_data/ not found — nothing to parse. Place your DEVIS folders"
+  echo "    under yearly_data/<year>/ first. See SETUP.md step 5."
+  exit 1
+fi
+
+YEARS=$(find yearly_data -maxdepth 1 -mindepth 1 -type d \
+        | grep -E "/[0-9]{4}$" \
+        | sed 's|.*/||' | sort -u)
+
+if [ -z "$YEARS" ]; then
+  echo "  ⚠ No 4-digit year folders found in yearly_data/."
+  echo "    Expected layout: yearly_data/2026/DEVIS260...../*.xlsm"
+  exit 1
+fi
+
+echo ""
+echo ">>> Years discovered in yearly_data/: $(echo $YEARS | tr '\n' ' ')"
+
 # ── Step 1: refresh catalogues from the latest DEVIS BDD ─────────
 echo ""
 echo ">>> [1/4] Syncing blocks.json + armoires.json from latest DEVIS"
 python3 poc/sync_catalogues.py
 
-# ── Step 2: re-parse Excel → JSON (force, in case of new DEVIS) ──
-echo ""
-echo ">>> [2/4] Re-parsing 2022 Excel → JSON"
-python3 poc/parse_yearly_data.py 2022 --force | tail -10
+# ── Step 2: re-parse Excel → JSON for each discovered year ───────
+for YEAR in $YEARS; do
+  echo ""
+  echo ">>> [2/4] Re-parsing $YEAR Excel → JSON"
+  python3 poc/parse_yearly_data.py "$YEAR" --force | tail -10
+done
 
-echo ""
-echo ">>> [2/4] Re-parsing 2026 Excel → JSON"
-python3 poc/parse_yearly_data.py 2026 --force | tail -10
-
-# ── Step 3: 3-layer validation ───────────────────────────────────
+# ── Step 3: 3-layer validation across ALL years ──────────────────
 echo ""
 echo ">>> [3/4] Running 3-layer validator (--strict)"
+# validate_parsing.py auto-discovers years too — no flag needed
 python3 poc/validate_parsing.py --full --strict $QUICK
 
 # ── Step 4: file-size sanity check ───────────────────────────────
