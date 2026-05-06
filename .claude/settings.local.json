@@ -62,7 +62,13 @@
       "Bash(echo \"PID: $!\")",
       "Bash(wait 1300)",
       "Bash(kill 1300)",
-      "Bash(pandoc --track-changes=all \"/Users/mac/Downloads/CETIE_Release_Note_v1.1-EN.docx\" -o /tmp/release_note.md)"
+      "Bash(pandoc --track-changes=all \"/Users/mac/Downloads/CETIE_Release_Note_v1.1-EN.docx\" -o /tmp/release_note.md)",
+      "Bash(chmod +x /Users/mac/Projects/Personal/CETIE/projectcetie/poc/prepare_for_deploy.sh)",
+      "Bash(chmod +x /Users/mac/Projects/Personal/CETIE/projectcetie/hooks/pre-push)",
+      "Bash(git config *)",
+      "Bash(bash hooks/pre-push)",
+      "Bash(bash -n /Users/mac/Projects/Personal/CETIE/projectcetie/poc/prepare_for_deploy.sh)",
+      "Bash(grep -E \"/[0-9]{4}$\")"
     ]
   }
 }

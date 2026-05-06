@@ -19,10 +19,23 @@ from openai import OpenAI
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(__file__)
-CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
 QUOTES_PATH = os.path.join(BASE_DIR, "data", "historical_quotes.json")
 COLLECTION  = "historical_quotes"
 YEARLY_COLLECTION_PREFIX = "yearly_projects_"
+
+# ChromaDB storage location.
+# In production (Render) we point this at /var/cetie-state/chroma_db so the
+# index lives on the persistent disk — survives every deploy, doesn't bloat
+# the git repo, doesn't run into GitHub's 100 MB file limit.
+# Locally, falls back to poc/chroma_db so dev work keeps working unchanged.
+_DEFAULT_CHROMA = os.path.join(BASE_DIR, "chroma_db")
+CHROMA_PATH = os.environ.get("CETIE_CHROMA_DIR") or _DEFAULT_CHROMA
+try:
+    os.makedirs(CHROMA_PATH, exist_ok=True)
+except Exception as _e:
+    print(f"[rag] Could not create {CHROMA_PATH}: {_e} — falling back to {_DEFAULT_CHROMA}")
+    CHROMA_PATH = _DEFAULT_CHROMA
+print(f"[rag] ChromaDB storage path: {CHROMA_PATH}")
 
 # ── Retrieval tuning ─────────────────────────────────────────────────────────
 # Temporal decay: recent projects are more relevant for pricing and component

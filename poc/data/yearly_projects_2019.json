@@ -422,7 +422,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire 2 pompes mono 2.5-4A avec millénium III | 24 composants | Matière: 743€ | Prix: 2079€ | 17.950000000000003h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:25.838260"
+    "parsed_at": "2026-05-06T13:23:19.597421"
   },
   {
     "id": "DEVIS1901101 IP FRANCE Armoire 2 postes 2 pompes avec S550",
@@ -1221,7 +1221,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 postes de 2 pompes avec S550 | 50 composants | Matière: 1427€ | Prix: 3624€ | 31.970000000000002h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:26.184262"
+    "parsed_at": "2026-05-06T13:23:20.127819"
   },
   {
     "id": "DEVIS1901102 PRS Armoire DP 2 pompes mono 4-6.3A avec RC, verrine et CH",
@@ -1285,7 +1285,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire DP 2 pompes mono 4-6.3A avec rc, verrine et ch | 9.04h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:26.402473"
+    "parsed_at": "2026-05-06T13:23:20.520061"
   },
   {
     "id": "DEVIS1901103 OPURE Armoire STEP",
@@ -4914,7 +4914,7 @@
       "wago"
     ],
     "summary": "Client: OPURE | Armoire STEP avec automate Siemens S7 | 247 composants | Matière: 28592€ | Prix: 53044€ | 220.02000000000004h fab + 90.0h prog",
-    "parsed_at": "2026-04-28T17:37:26.778477"
+    "parsed_at": "2026-05-06T13:23:21.126944"
   },
   {
     "id": "DEVIS1901104 PRS Armoire DP 2 pompes tri 6-10A avec verrine et CH",
@@ -4978,7 +4978,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire DP 2 pompes tri 6-10A avec verrine et CH | 8.36h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:27.005037"
+    "parsed_at": "2026-05-06T13:23:21.517204"
   },
   {
     "id": "DEVIS1901105 CALPEDA Coffret télétransmetteur IQtronic",
@@ -5145,7 +5145,7 @@
       "eau"
     ],
     "summary": "Client: CALPEDA | Coffret télétransmetteur IQtronic | 7 composants | Matière: 165€ | Prix: 392€ | 3.0300000000000002h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:27.348114"
+    "parsed_at": "2026-05-06T13:23:22.027094"
   },
   {
     "id": "DEVIS1901106 CALPEDA Armoire 1 pompe débit 15kW 27.3A et 1 groupe diésel",
@@ -5515,7 +5515,7 @@
       "pompe"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe débit 15kW 27.3A et 1 groupe diesel | 20 composants | Matière: 905€ | Prix: 2459€ | 20.03h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:27.681904"
+    "parsed_at": "2026-05-06T13:23:22.526363"
   },
   {
     "id": "DEVIS1901107 CALPEDA Armoire 1 groupe diesel",
@@ -5811,7 +5811,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 groupe diesel | 15 composants | Matière: 535€ | Prix: 1339€ | 9.96h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:27.993265"
+    "parsed_at": "2026-05-06T13:23:23.021222"
   },
   {
     "id": "DEVIS1901108 BONNEAU ASSAINISSEMENT Armoire 2 pompes 1.7kW 3.8A avec S550",
@@ -6581,7 +6581,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 1.7kW 3.8A avec S550 | 48 composants | Matière: 3873€ | Prix: 6686€ | 26.960000000000004h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:28.323361"
+    "parsed_at": "2026-05-06T13:23:23.551391"
   },
   {
     "id": "DEVIS1901109 CALPEDA Enveloppe 530x430x200 pour intégration coffret VRM ELEC et QML",
@@ -6788,7 +6788,7 @@
       "polyester"
     ],
     "summary": "Client: CALPEDA | Enveloppe 530x430x200 pour intégration coffret VRM ELEC et QML | 9 composants | Matière: 86€ | Prix: 170€ | 0.95h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:28.691948"
+    "parsed_at": "2026-05-06T13:23:24.080341"
   },
   {
     "id": "DEVIS1901110 CALPEDA Enveloppe 530x430x200 avec verrine pour intégration coffret VRM ELEC et QML",
@@ -7039,7 +7039,7 @@
       "polyester"
     ],
     "summary": "Client: CALPEDA | Enveloppe 530x430x200 avec verrine pour intégration coffret VRM ELEC et QML | 12 composants | Matière: 136€ | Prix: 312€ | 2.5300000000000002h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:29.082667"
+    "parsed_at": "2026-05-06T13:23:24.607790"
   },
   {
     "id": "DEVIS1901111 HYDRHECO Carte GSM pour Sofrel S530",
@@ -7123,7 +7123,7 @@
       "gsm"
     ],
     "summary": "Client: HYDRHECO | Carte GSM pour Sofrel S530 | 2 composants | Matière: 263€ | Prix: 385€ | 0.2h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:29.416169"
+    "parsed_at": "2026-05-06T13:23:25.117379"
   },
   {
     "id": "DEVIS1901112 FELJAS ET MASSON Armoire 1 pompe 88kW 178A avec ATS22 et automate Allen Bradley",
@@ -8228,7 +8228,7 @@
       "wago"
     ],
     "summary": "Client: FELJAS & MASSON | Armoire 1 pompe 88kW 178A avec ATS22 et automate Allen Bradley | 69 composants | Matière: 8595€ | Prix: 14753€ | 59.970000000000006h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:29.735163"
+    "parsed_at": "2026-05-06T13:23:25.676656"
   },
   {
     "id": "DEVIS1901113 CALPEDA Coffret 18 modules",
@@ -8297,7 +8297,7 @@
       "eau"
     ],
     "summary": "Client: CALPEDA | Coffret modulaire 18 modules | 1 composants | Matière: 35€ | Prix: 63€",
-    "parsed_at": "2026-04-28T17:37:30.061999"
+    "parsed_at": "2026-05-06T13:23:26.188504"
   },
   {
     "id": "DEVIS1901114 XYLEM Armoire 3 pompes avec modules XPC2 et S550",
@@ -8967,7 +8967,7 @@
       "wago"
     ],
     "summary": "Client: XYLEM | Armoire 3 pompes avec modules XPC2 et S550 | 41 composants | Matière: 3036€ | Prix: 5359€ | 22.04h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:30.386755"
+    "parsed_at": "2026-05-06T13:23:26.716462"
   },
   {
     "id": "DEVIS1901115 CALPEDA Armoire 3 pompes 7.5kW 14.3A avec variateur ATV320 et M241",
@@ -9496,7 +9496,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 18.5kW 34A avec Vacon 100 Flow et SCU | 32 composants | Matière: 4047€ | Prix: 8514€ | 34.95h fab + 16.0h prog",
-    "parsed_at": "2026-04-28T17:37:30.715648"
+    "parsed_at": "2026-05-06T13:23:27.233970"
   },
   {
     "id": "DEVIS1901116 IP FRANCE Armoire 1 pompe 2.5-4A avec S530",
@@ -10222,7 +10222,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 1 pompe 2.5-4A avec S530 | 45 composants | Matière: 2377€ | Prix: 4494€ | 22.009999999999994h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:31.073352"
+    "parsed_at": "2026-05-06T13:23:27.760777"
   },
   {
     "id": "DEVIS1901117 ERIDIS Armoire 1 pompe 6kW 13.6A",
@@ -10494,7 +10494,7 @@
       "wago"
     ],
     "summary": "Client: ERIDIS | Armoire 1 pompe 6kW 13.6A | 13 composants | Matière: 274€ | Prix: 670€ | 5.5h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:31.400524"
+    "parsed_at": "2026-05-06T13:23:28.286236"
   },
   {
     "id": "DEVIS1901118 ERIDIS Armoire 1 pompe 4kW 8.40A",
@@ -10766,7 +10766,7 @@
       "wago"
     ],
     "summary": "Client: ERIDIS | Armoire 1 pompe 4kW 8.4A | 13 composants | Matière: 239€ | Prix: 597€ | 4.97h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:31.743021"
+    "parsed_at": "2026-05-06T13:23:28.808829"
   },
   {
     "id": "DEVIS1901119 CALPEDA Armoire 1 pompe tri 230VAC 7.5kW avec contrôle manque eau par cos phi",
@@ -11055,7 +11055,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe tri 230VAC 7.5kW | 15 composants | Matière: 641€ | Prix: 1470€ | 11.979999999999999h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:32.097685"
+    "parsed_at": "2026-05-06T13:23:29.327996"
   },
   {
     "id": "DEVIS1901120 CALPEDA Armoire 2 pompes 0.55kW 1.5A avec S550",
@@ -11906,7 +11906,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 0.55kW 1.5A avec S550 | 53 composants | Matière: 3809€ | Prix: 7001€ | 32.92h fab + 6.0h prog",
-    "parsed_at": "2026-04-28T17:37:32.480405"
+    "parsed_at": "2026-05-06T13:23:29.865447"
   },
   {
     "id": "DEVIS1901121 PRS Armoire 2 postes de 2 pompes avec S530",
@@ -12718,7 +12718,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire 2 postes de 2 pompes avec Sofrel S530 | 52 composants | Matière: 2353€ | Prix: 4832€ | 30.020000000000003h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:32.853838"
+    "parsed_at": "2026-05-06T13:23:30.379835"
   },
   {
     "id": "DEVIS1901122 PRS Armoire 2 pompes 28A avec ATS01 et Millénium III",
@@ -13188,7 +13188,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire 2 pompes 28A avec ATS01 et Millénium III | 27 composants | Matière: 1397€ | Prix: 3103€ | 21.96h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:33.284732"
+    "parsed_at": "2026-05-06T13:23:30.906893"
   },
   {
     "id": "DEVIS1901123 CALPEDA Armoire 2 pompes 3kW 6A avec S530",
@@ -13740,7 +13740,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 3kW 6A avec S530 | 32 composants | Matière: 1730€ | Prix: 3287€ | 20.02h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:33.705150"
+    "parsed_at": "2026-05-06T13:23:31.437861"
   },
   {
     "id": "DEVIS1901124 CALPEDA Armoire 1 IMAT pour une pompe 5.5kW 13A",
@@ -13936,7 +13936,7 @@
       "pompe"
     ],
     "summary": "Client: CALPEDA | Armoire 1 IMAT et filtre pour une pompe 5,5kW 13A | 8 composants | Matière: 429€ | Prix: 1042€ | 8.98h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:34.041577"
+    "parsed_at": "2026-05-06T13:23:31.914875"
   },
   {
     "id": "DEVIS1901125 CALPEDA Armoire 2 pompes 1.8kW 3.7A avec S530",
@@ -14434,7 +14434,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 1.8kW 3.7A avec S530 | 29 composants | Matière: 1620€ | Prix: 3213€ | 20.04h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:34.396805"
+    "parsed_at": "2026-05-06T13:23:32.438236"
   },
   {
     "id": "DEVIS1901126 PRS Armoire 1 pompe mono 1.1kW 7.4kW IQtronic",
@@ -14714,7 +14714,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Coffret 1 pompe mono 1.1kW 7.4A avec télétransmetteur IQtronic | 13 composants | Matière: 300€ | Prix: 750€ | 5.0h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:34.751687"
+    "parsed_at": "2026-05-06T13:23:32.986046"
   },
   {
     "id": "DEVIS1901127 VINCENT Armoire 2 pompes 1.7kW, TESYS avec réarmement et S550",
@@ -15637,7 +15637,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Armoire 2 pompes 1.7kW, Tesys avec réarmement et S550 | 59 composants | Matière: 4026€ | Prix: 7343€ | 31.98h fab + 4.0h prog",
-    "parsed_at": "2026-04-28T17:37:35.093158"
+    "parsed_at": "2026-05-06T13:23:33.516661"
   },
   {
     "id": "DEVIS1901128 SOGEA Débitmètres et sondes",
@@ -15926,7 +15926,7 @@
       "ip68"
     ],
     "summary": "Client: SOGEA | Débitmètres et sondes | 16 composants",
-    "parsed_at": "2026-04-28T17:37:35.426304"
+    "parsed_at": "2026-05-06T13:23:34.064087"
   },
   {
     "id": "DEVIS1901129 SOGEA Ordinateur",
@@ -16146,7 +16146,7 @@
       "eau"
     ],
     "summary": "Client: SOGEA | Ordinateur avec office, Softool, Teamviewer et cordon pour connexion à un Sofrel | 10 composants | Matière: 540€ | Prix: 902€ | 0h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:35.789029"
+    "parsed_at": "2026-05-06T13:23:34.628880"
   },
   {
     "id": "DEVIS1901130 SOGEA Prestation automatisme",
@@ -16215,7 +16215,7 @@
       "prestation"
     ],
     "summary": "Client: SOGEA | Prestation automatisme | 1 composants | Matière: 400€",
-    "parsed_at": "2026-04-28T17:37:36.143944"
+    "parsed_at": "2026-05-06T13:23:35.165771"
   },
   {
     "id": "DEVIS1901131 CALPEDA Armoire 2 pompes 1.5kW 3.4A, Tesys avec réarmement et S550",
@@ -16886,7 +16886,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 1.5kW 3.4A, Tesys avec réarmement et S550 | 41 composants | Matière: 3034€ | Prix: 5479€ | 27.959999999999997h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:36.478260"
+    "parsed_at": "2026-05-06T13:23:35.702893"
   },
   {
     "id": "DEVIS1901132 HYDRALIANS SOMAIR GERVAT Armoire 1 pompe 13kW 30A avec ATS01",
@@ -17176,7 +17176,7 @@
       "wago"
     ],
     "summary": "Client: HYDRALIANS SOMAIR GERVAT | Armoire 1 pompe 13kW 30A avec ATS01 | 15 composants | Matière: 513€ | Prix: 1353€ | 11.98h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:36.826622"
+    "parsed_at": "2026-05-06T13:23:36.249084"
   },
   {
     "id": "DEVIS1901133 VINCENT Coffret EASY plus tri 1 pompe avec variateur ATV320",
@@ -17554,7 +17554,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Coffret EASY plus tri 1 pompe 5.3A avec variateur ATV320 | 21 composants | Matière: 997€ | Prix: 2233€ | 13.959999999999999h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:37.144448"
+    "parsed_at": "2026-05-06T13:23:36.807207"
   },
   {
     "id": "DEVIS1901134 VINCENT Coffret EASY plus tri 2 pompes avec variateurs ATV320",
@@ -17945,7 +17945,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Coffret EASY plus tri 2 pompes 5.3A avec variateurs ATV320 | 21 composants | Matière: 1425€ | Prix: 2908€ | 15.990000000000002h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:37.482267"
+    "parsed_at": "2026-05-06T13:23:37.364009"
   },
   {
     "id": "DEVIS1901135 CALPEDA Variateur et étude",
@@ -18091,7 +18091,7 @@
       "variateur"
     ],
     "summary": "Client: CALPEDA | Etude et variateurs | 6 composants | Matière: 0€ | Prix: 800€ | 0.5h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:37.831053"
+    "parsed_at": "2026-05-06T13:23:37.912168"
   },
   {
     "id": "DEVIS1901136 ISO POMPES Armoire 1 pompe mono 0.25kW 2.3A",
@@ -18323,7 +18323,7 @@
       "pompe"
     ],
     "summary": "Client: ISO POMPES | Armoire 1 pompe 0.25kW 2.3A | 11 composants | Matière: 276€ | Prix: 642€ | 5.02h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:38.172780"
+    "parsed_at": "2026-05-06T13:23:38.457643"
   },
   {
     "id": "DEVIS1901137 IP FRANCE Armoire 2 pompes 15A et 1 pompe mono 4A avec S550",
@@ -19105,7 +19105,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 pompes de relevage 15A, 1 pompe de vidange mono 4A avec S550 | 48 composants | Matière: 2938€ | Prix: 5543€ | 29.97h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:38.528295"
+    "parsed_at": "2026-05-06T13:23:39.034882"
   },
   {
     "id": "DEVIS1901138 XYLEM Armoire 2 pompes 22kW avec SMARTRUN et S550",
@@ -19661,7 +19661,7 @@
       "variateur"
     ],
     "summary": "Client: XYLEM | Armoire 2 pompes 22kW avec SmartRun | 33 composants | Matière: 3329€ | Prix: 6036€ | 27.969999999999995h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:38.854775"
+    "parsed_at": "2026-05-06T13:23:39.599272"
   },
   {
     "id": "DEVIS1901139 BONNEAU ASSAINISSEMENT Armoire 2 pompes 4.4kW 8.6A avec S550",
@@ -20532,7 +20532,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU | Armoire 2 pompes 4,4 Kw 8.6A et S550 - Armoire compresseur d'air 230V | 54 composants | Matière: 3949€ | Prix: 6918€ | 28.03h fab + 3.0h prog",
-    "parsed_at": "2026-04-28T17:37:39.222148"
+    "parsed_at": "2026-05-06T13:23:40.173798"
   },
   {
     "id": "DEVIS1901140 IP FRANCE Armoire 2 pompes 2.9kW 5.1A avec DEPAGNE et S550",
@@ -21227,7 +21227,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 pompes 2.9kW 5.1A avec S550 | 42 composants | Matière: 3095€ | Prix: 5643€ | 27.970000000000002h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:39.585233"
+    "parsed_at": "2026-05-06T13:23:40.749256"
   },
   {
     "id": "DEVIS1901141 IP FRANCE Armoire 2 pompes 2.9kW 5.1A avec DEPAGNE et S550",
@@ -21922,7 +21922,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 pompes 2.9kW 5.1A avec S550 | 42 composants | Matière: 3095€ | Prix: 5643€ | 27.970000000000002h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:39.944508"
+    "parsed_at": "2026-05-06T13:23:41.312234"
   },
   {
     "id": "DEVIS1901142 IP FRANCE Armoire 2 pompes 3.8kW 6.9A avec DEPAGNE et S550",
@@ -22617,7 +22617,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 pompes 3.8kW 6.9A avec S550 | 42 composants | Matière: 3102€ | Prix: 5652€ | 27.970000000000002h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:40.321570"
+    "parsed_at": "2026-05-06T13:23:41.879197"
   },
   {
     "id": "DEVIS1901143 CALPEDA Armoire 2 pompes 2.2kW 4.62A avec S550",
@@ -23232,7 +23232,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 2.2kW 4.62A avec S530 | 37 composants | Matière: 2336€ | Prix: 4410€ | 24.029999999999994h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:40.643460"
+    "parsed_at": "2026-05-06T13:23:42.440039"
   },
   {
     "id": "DEVIS1901144 BONNEAU ASSAINISSEMENT Armoire 2 pompes 9.2kW 19.2A avec ATV320 et S550",
@@ -24227,7 +24227,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 9.2kW 19.2A avec ATV320 et S550 | 64 composants | Matière: 6477€ | Prix: 10815€ | 33.970000000000006h fab + 6.0h prog",
-    "parsed_at": "2026-04-28T17:37:40.980231"
+    "parsed_at": "2026-05-06T13:23:43.004401"
   },
   {
     "id": "DEVIS1901145 CALPEDA Armoire 3 pompes 1.5kW 3.4A avec S550",
@@ -24938,7 +24938,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 3 pompes 1.5kW 3.4A avec S550 | 43 composants | Matière: 6500€ | Prix: 10642€ | 34.025h fab + 6.0h prog",
-    "parsed_at": "2026-04-28T17:37:41.347319"
+    "parsed_at": "2026-05-06T13:23:43.569295"
   },
   {
     "id": "DEVIS1901146 CALPEDA Armoire 2 pompes 1.5kW 3.4A avec S550",
@@ -25707,7 +25707,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 1.5kW 3.4A et 3 vannes 230VAC avec S550 | 48 composants | Matière: 4140€ | Prix: 7448€ | 32.015h fab + 7.0h prog",
-    "parsed_at": "2026-04-28T17:37:41.736537"
+    "parsed_at": "2026-05-06T13:23:44.135409"
   },
   {
     "id": "DEVIS1901147 CALPEDA Armoire 2 pompes 4-6.3A avec emplacement S530",
@@ -26266,7 +26266,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 4-6.3A avec emplacement S530 | 33 composants | Matière: 637€ | Prix: 1754€ | 17.96h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:42.087394"
+    "parsed_at": "2026-05-06T13:23:44.693179"
   },
   {
     "id": "DEVIS1901148 PRS Armoire 2 pompes 22kW 43A et 1 pompe 5.9kW 12A avec ATS22 et SD3",
@@ -27064,7 +27064,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire 2 pompes 22kW 43A et 1 pompe 15.9kW 12A avec ATS22 et SD3 | 51 composants | Matière: 3540€ | Prix: 6922€ | 40.029999999999994h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:42.438950"
+    "parsed_at": "2026-05-06T13:23:45.243091"
   },
   {
     "id": "DEVIS1901149 PVE Armoire 2 pompes 1.20kW 2.8A avec S530",
@@ -27792,7 +27792,7 @@
       "wago"
     ],
     "summary": "Client: PVE | Armoire 2 pompes 1.20kW 2.80A avec S530 | 45 composants | Matière: 2430€ | Prix: 4877€ | 28.00999999999999h fab + 3.0h prog",
-    "parsed_at": "2026-04-28T17:37:42.784914"
+    "parsed_at": "2026-05-06T13:23:45.804971"
   },
   {
     "id": "DEVIS1901150 CALPEDA Armoire 2 pompes 7.5kW 14.3A et 1 pompe jockey 1.5kW 4.3A",
@@ -28148,7 +28148,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes débit 7.5kW 14.3A et 1 pompe jockey 1.5kW 4.3A | 19 composants | Matière: 601€ | Prix: 1803€ | 20.009999999999998h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:43.121236"
+    "parsed_at": "2026-05-06T13:23:46.331588"
   },
   {
     "id": "DEVIS1901151 CALPEDA Armoire 2 pompes 4kW 7.7A avec S550",
@@ -28904,7 +28904,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 4kW 7.7A avec S550 | 47 composants | Matière: 3005€ | Prix: 5654€ | 28.009999999999998h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:43.475471"
+    "parsed_at": "2026-05-06T13:23:46.893016"
   },
   {
     "id": "DEVIS1901152 BONNEAU ASSAINISSEMENT Controleur de phases",
@@ -28972,7 +28972,7 @@
       "eau"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Contrôleur de phases | 1 composants | Matière: 16€ | Prix: 41€ | 0.35h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:43.792277"
+    "parsed_at": "2026-05-06T13:23:47.414585"
   },
   {
     "id": "DEVIS1901153 BONNEAU ASSAINISSEMENT Minuterie",
@@ -29054,7 +29054,7 @@
       "omron"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Temporisation Omron | 1 composants | Matière: 68€ | Prix: 98€",
-    "parsed_at": "2026-04-28T17:37:44.126999"
+    "parsed_at": "2026-05-06T13:23:47.953275"
   },
   {
     "id": "DEVIS1901154 CALPEDA Armoire 1 pompe débit 18.5kW 34A et 1 pompe jockey 4.3A avec hygrostat",
@@ -29525,7 +29525,7 @@
       "ventilateur"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe débit 18,5kW 34A et 1 pompe jockey 1,5kW 4,3A avec hygrostat, résistance et ventilation | 27 composants | Matière: 840€ | Prix: 2031€ | 17.950000000000003h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:44.446220"
+    "parsed_at": "2026-05-06T13:23:48.451189"
   },
   {
     "id": "DEVIS1901155 VINCENT Coffret EASY plus 2 pompes mono 4-6.3A avec parafoudre 230VAC",
@@ -29840,7 +29840,7 @@
       "pompe"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Coffret EASY PLUS 2 pompes mono 4-6.3A avec parafoudre 230VAC | 17 composants | Matière: 491€ | Prix: 1196€ | 8.450000000000001h fab + 0.5h prog",
-    "parsed_at": "2026-04-28T17:37:44.783491"
+    "parsed_at": "2026-05-06T13:23:48.959227"
   },
   {
     "id": "DEVIS1901156 BONNEAU ASSAINISSEMENT Armoire 2 pompes 43A avec ATS22 et S530",
@@ -30415,7 +30415,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 43A avec ATS22 et S530 | 35 composants | Matière: 3162€ | Prix: 5709€ | 27.96h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:45.131392"
+    "parsed_at": "2026-05-06T13:23:49.523336"
   },
   {
     "id": "DEVIS1901157 CALPEDA Armoire 1 pompe 17A et 1 pompe 15A",
@@ -30814,7 +30814,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe 17A et 1 pompe 15A | 22 composants | Matière: 485€ | Prix: 1171€ | 10.04h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:45.457258"
+    "parsed_at": "2026-05-06T13:23:50.090917"
   },
   {
     "id": "DEVIS1901158 CALPEDA Coffret V1INC pour une pompe 4.3A",
@@ -30968,7 +30968,7 @@
       "pompe"
     ],
     "summary": "Client: CALPEDA | Coffret V1INC pour une pompe de 4.3A | 6 composants | Matière: 79€ | Prix: 254€ | 2.96h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:45.793339"
+    "parsed_at": "2026-05-06T13:23:50.644007"
   },
   {
     "id": "DEVIS1901159 CALPEDA Coffret V1INC sans disjoncteur maxi 18A",
@@ -31122,7 +31122,7 @@
       "pompe"
     ],
     "summary": "Client: CALPEDA | Coffret V1INC sans disjoncteur maxi 18A | 6 composants | Matière: 66€ | Prix: 241€ | 3.04h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:46.144371"
+    "parsed_at": "2026-05-06T13:23:51.212828"
   },
   {
     "id": "DEVIS1901160 CALPEDA Armoire 1EV 24V et 1 départ pour pompe IMAT",
@@ -31408,7 +31408,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 EV 24VAC et 1 départ pour pompe avec IMAT | 14 composants | Matière: 263€ | Prix: 679€ | 5.96h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:46.495585"
+    "parsed_at": "2026-05-06T13:23:51.779571"
   },
   {
     "id": "DEVIS1901161 SOGEA Armoire 2 pompes 1.7kW 3.8A avec S550",
@@ -32265,7 +32265,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Armoire 2 pompes 1.7kW 3.8A avec S550 | 53 composants | Matière: 1174€ | Prix: 3377€ | 27.980000000000004h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:46.835134"
+    "parsed_at": "2026-05-06T13:23:52.370286"
   },
   {
     "id": "DEVIS1901162 SOGEA Armoire 2 pompes 2.4kW 5.1A avec S550",
@@ -33143,7 +33143,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Armoire 2 pompes 2.4kW 5.1A avec S550 | 52 composants | Matière: 1174€ | Prix: 3377€ | 27.980000000000004h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:47.213345"
+    "parsed_at": "2026-05-06T13:23:52.975067"
   },
   {
     "id": "DEVIS1901163 SOGEA Armoire 2 pompes 4.2kW 8A avec S550",
@@ -33999,7 +33999,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Armoire 2 pompes 4.2kW 8A avec S550 | 54 composants | Matière: 1322€ | Prix: 3621€ | 28.950000000000003h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:47.580053"
+    "parsed_at": "2026-05-06T13:23:53.550100"
   },
   {
     "id": "DEVIS1901164 HYDRAUSTAB Armoire 2 pompes 1.3kW 2.8A avec S530",
@@ -34708,7 +34708,7 @@
       "wago"
     ],
     "summary": "Client: HYDRAUSTAB | Armoire 2 pompes 1.3kW 2.8A avec S530 | 44 composants | Matière: 2574€ | Prix: 4949€ | 26.03h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:47.922458"
+    "parsed_at": "2026-05-06T13:23:54.116512"
   },
   {
     "id": "DEVIS1901165 HYDRAUSTAB Armoire 2 pompes 3kW 6A avec ATS01 et S530",
@@ -35418,7 +35418,7 @@
       "wago"
     ],
     "summary": "Client: HYDRAUSTAB | Armoire 2 pompes 3kW 6A avec S530 | 44 composants | Matière: 2926€ | Prix: 5524€ | 27.980000000000004h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:48.268567"
+    "parsed_at": "2026-05-06T13:23:54.700234"
   },
   {
     "id": "DEVIS1901166 BONNEAU ASSAINISSEMENT Armoire 3 vannes 24VDC avec millénium III",
@@ -35788,7 +35788,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 3 vérins électrique 24VDC et millénium III | 20 composants | Matière: 949€ | Prix: 2724€ | 24.0h fab + 3.0h prog",
-    "parsed_at": "2026-04-28T17:37:48.592034"
+    "parsed_at": "2026-05-06T13:23:55.261308"
   },
   {
     "id": "DEVIS1901167 PRS Armoire double porte 2 pompes mono 4-6.3A avec compteur horaire et verrine",
@@ -35850,7 +35850,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire double porte 2 pompes mono 4-6.3A avec compteur horaire et verrine | 8.36h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:48.815020"
+    "parsed_at": "2026-05-06T13:23:55.654752"
   },
   {
     "id": "DEVIS1901168 XYLEM Remise aux normes armoire location",
@@ -36187,7 +36187,7 @@
       "pompe"
     ],
     "summary": "Client: XYLEM | Remise aux normes armoire location 1600x800x400 | 19 composants | Matière: 319€ | Prix: 1344€ | 14.98h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:49.157481"
+    "parsed_at": "2026-05-06T13:23:56.206915"
   },
   {
     "id": "DEVIS1901169 PRS Armoire double porte 1 pompe tri 4-6.3A avec verrine et compteur horaire",
@@ -36249,7 +36249,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire double porte 1 pompe tri 4-6.3A avec verrine et compteur horaire | 6.85h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:49.382955"
+    "parsed_at": "2026-05-06T13:23:56.609362"
   },
   {
     "id": "DEVIS1901170 BONNEAU ASSAINISSEMENT Armoire 2 vannes 24VDC avec millénium III",
@@ -36619,7 +36619,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 vérins électrique 24VDC et millénium III | 20 composants | Matière: 845€ | Prix: 2393€ | 19.979999999999997h fab + 3.0h prog",
-    "parsed_at": "2026-04-28T17:37:49.709105"
+    "parsed_at": "2026-05-06T13:23:57.170726"
   },
   {
     "id": "DEVIS1901171 BONNEAU ASSAINISSEMENT Armoire télétransmission",
@@ -37038,7 +37038,7 @@
       "polyester"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire télétransmission | 24 composants | Matière: 1443€ | Prix: 2884€ | 15.96h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:50.066341"
+    "parsed_at": "2026-05-06T13:23:57.730926"
   },
   {
     "id": "DEVIS1901172 BONNEAU ASSAINISSEMENT Câbles",
@@ -37164,7 +37164,7 @@
       "eau"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | 4 composants | Matière: 2946€ | Prix: 4277€",
-    "parsed_at": "2026-04-28T17:37:50.418693"
+    "parsed_at": "2026-05-06T13:23:58.297838"
   },
   {
     "id": "DEVIS1901173 PRS Armoire simple porte 2 pompes tri 9-14A avec compteur horaire et verrine",
@@ -37226,7 +37226,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire simple porte 2 pompes tri 9-14A avec compteur horaire et verrine | 9.36h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:50.649316"
+    "parsed_at": "2026-05-06T13:23:58.699444"
   },
   {
     "id": "DEVIS1901174 PRS Armoire double porte 2 pompes tri 9-14A avec compteur horaire, verrine et résistance chauffante",
@@ -37288,7 +37288,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire double porte 2 pompes tri 9-14A avec compteur horaire verrine et résistance chauffante | 10.04h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:50.867468"
+    "parsed_at": "2026-05-06T13:23:59.104878"
   },
   {
     "id": "DEVIS1901175 SOGEA Armoire compresseur anti H2S",
@@ -37688,7 +37688,7 @@
       "moteur"
     ],
     "summary": "Client: SOGEA | Armoire compresseur anti H2S | 22 composants | Matière: 2573€ | Prix: 4362€ | 17.990000000000002h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:51.210362"
+    "parsed_at": "2026-05-06T13:23:59.740639"
   },
   {
     "id": "DEVIS1901176 CALPEDA Coffret 1 électrovanne 230VAC",
@@ -37899,7 +37899,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Coffret 1 électrovanne 230VAC | 9 composants | Matière: 85€ | Prix: 211€ | 2.03h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:51.578394"
+    "parsed_at": "2026-05-06T13:24:00.320387"
   },
   {
     "id": "DEVIS1901176 VINCENT Fourniture démarreur, kit de fils et modification de 2 folios de schéma",
@@ -38033,7 +38033,7 @@
       "pompe"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Fourniture démarreurs, kit de fils et modification de 2 folios de schéma | 4 composants | Matière: 199€ | Prix: 545€ | 1.75h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:51.926851"
+    "parsed_at": "2026-05-06T13:24:00.895462"
   },
   {
     "id": "DEVIS1901177 CALPEDA Armoire 1 pompe débit 37kW 64A, 1 pompe jockey 2.2kW 5.3A et 1 groupe diesel IFM",
@@ -38588,7 +38588,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 Pompe débit 37kW 64A, 1 pompe jockey 2.2kW 5.3A et 1 groupe diesel IFM | 30 composants | Matière: 1192€ | Prix: 2784€ | 24.02h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:52.287516"
+    "parsed_at": "2026-05-06T13:24:01.513233"
   },
   {
     "id": "DEVIS1901178 BONNEAU ASSAINISSEMENT Armoire compresseur d'air 230VAC dans armoire 100x800",
@@ -38895,7 +38895,7 @@
       "ventilateur"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire compresseur d'air 230VAC dans coffret 1000x800 | 16 composants | Matière: 564€ | Prix: 988€ | 5.029999999999999h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:52.575829"
+    "parsed_at": "2026-05-06T13:24:02.042535"
   },
   {
     "id": "DEVIS1901179 CALPEDA Armoire 3 pompes 4kW 8.4A avec Millénium III",
@@ -39436,7 +39436,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 3 pompes 4kW 8.4A avec millénium III | 32 composants | Matière: 1011€ | Prix: 2546€ | 22.005000000000003h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:52.920684"
+    "parsed_at": "2026-05-06T13:24:02.603899"
   },
   {
     "id": "DEVIS1901180 SOGEA Modification armoire",
@@ -39827,7 +39827,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Modification armoire sur site | 21 composants | Matière: 2286€ | Prix: 2875€",
-    "parsed_at": "2026-04-28T17:37:53.305850"
+    "parsed_at": "2026-05-06T13:24:03.215285"
   },
   {
     "id": "DEVIS1901181 SOGEA Modification armoire",
@@ -40218,7 +40218,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Modification armoire sur site | 21 composants | Matière: 2393€ | Prix: 3018€",
-    "parsed_at": "2026-04-28T17:37:53.692634"
+    "parsed_at": "2026-05-06T13:24:03.842699"
   },
   {
     "id": "DEVIS1901182 SOGEA Modification armoire",
@@ -40438,7 +40438,7 @@
       "wago"
     ],
     "summary": "Client: SOGEA | Modification armoire sur site | 9 composants | Matière: 411€ | Prix: 445€",
-    "parsed_at": "2026-04-28T17:37:54.057567"
+    "parsed_at": "2026-05-06T13:24:04.463838"
   },
   {
     "id": "DEVIS1901183 VINCENT Armoire 2 pompes 12.5kW 26A avec S550 et Grolleau avec compartiment EDF",
@@ -41205,7 +41205,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Armoire 2 pompes 12.5kW 26A avec ATS01, S550 et Grolleau avec compartiment EDF | 48 composants | Matière: 4983€ | Prix: 8477€ | 32.04h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:54.395977"
+    "parsed_at": "2026-05-06T13:24:05.030521"
   },
   {
     "id": "DEVIS1901184 CALPEDA Armoire 1 pompe mono 0.55kW 4.3A et 1 pompe mono 1.1kW 8.4A",
@@ -41561,7 +41561,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe mono 0.55kW 4.3 et 1 pompe mono 1.1kW 8.4A | 19 composants | Matière: 486€ | Prix: 1170€ | 10.009999999999998h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:54.748928"
+    "parsed_at": "2026-05-06T13:24:05.603194"
   },
   {
     "id": "DEVIS1901185 CALPEDA Armoire 2 pompes 1.1kW 2.5A avec S530",
@@ -42174,7 +42174,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes 1.1kW 2.5A avec S530 | 37 composants | Matière: 1772€ | Prix: 3442€ | 19.95h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:55.093862"
+    "parsed_at": "2026-05-06T13:24:06.174528"
   },
   {
     "id": "DEVIS1901186 CALPEDA Armoire 1 pompe débit 18.5kW 34.5A et 1 groupe diesel IFM",
@@ -42575,7 +42575,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 Pompe débit 18.5kW 34.5A et 1 groupe diesel IFM | 23 composants | Matière: 822€ | Prix: 2048€ | 18.95h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:55.453751"
+    "parsed_at": "2026-05-06T13:24:06.746199"
   },
   {
     "id": "DEVIS1901187 CALPEDA Coffret alimentation 1 pompe avec IMAT 30kW 54A et relais 24VAC",
@@ -42708,7 +42708,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Coffret alimentation 1 pompe IMAT 30kW 54A et 1 relais 24VAC | 4 composants | Matière: 143€ | Prix: 277€ | 1.45h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:55.814457"
+    "parsed_at": "2026-05-06T13:24:07.366672"
   },
   {
     "id": "DEVIS1901188 ERIDIS Verrine à LED rouge 230VAC",
@@ -42788,7 +42788,7 @@
       "eau"
     ],
     "summary": "Client: ERIDIS | Verrine à LED rouge 230VAC | 1 composants | Matière: 41€ | Prix: 82€",
-    "parsed_at": "2026-04-28T17:37:56.154607"
+    "parsed_at": "2026-05-06T13:24:07.948401"
   },
   {
     "id": "DEVIS1901189 IP FRANCE Armoire 2 pompes 2.4kW 4.3A avec S4W",
@@ -43442,7 +43442,7 @@
       "wago"
     ],
     "summary": "Client: IP FRANCE | Armoire 2 pompes 2.4kW 4.3A avec S4W | 39 composants | Matière: 3160€ | Prix: 5746€ | 28.04h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:56.513151"
+    "parsed_at": "2026-05-06T13:24:08.528537"
   },
   {
     "id": "DEVIS1901190 HYDRHECO Intervention automatisme",
@@ -43491,7 +43491,7 @@
       "eau"
     ],
     "summary": "Client: HYDRHECO | Intervention automatisme",
-    "parsed_at": "2026-04-28T17:37:56.869515"
+    "parsed_at": "2026-05-06T13:24:09.095198"
   },
   {
     "id": "DEVIS1901191 VINCENT Armoire 3 pompes 7.5kW avec S550 et Grolleau avec compartiment EDF",
@@ -43520,7 +43520,9 @@
       "total": 0
     },
     "emails": [],
-    "docs": [],
+    "docs": [
+      "Spécifications.docx"
+    ],
     "configuration": {
       "by_category": {
         "01_cabinet_enclosure": [
@@ -44247,7 +44249,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Armoire 3 pompes 7.5kW avec ATS01, S550 et Grolleau avec compartiment EDF | 48 composants | Matière: 5246€ | Prix: 8921€ | 33.99h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:57.218220"
+    "parsed_at": "2026-05-06T13:24:09.694172"
   },
   {
     "id": "DEVIS1901192 VINCENT Armoire 2 pompes 2.2kW avec ATV320",
@@ -44609,7 +44611,7 @@
       "wago"
     ],
     "summary": "Client: VINCENT ASSAINISSEMENT | Armoire 2 pompes 2.2kW avec ATV320 | 20 composants | Matière: 1329€ | Prix: 2891€ | 19.959999999999997h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:57.537732"
+    "parsed_at": "2026-05-06T13:24:10.246932"
   },
   {
     "id": "DEVIS1901193 HYDRAUSTAB Armoire 2 pompes 7A avec millénium III",
@@ -45242,7 +45244,7 @@
       "wago"
     ],
     "summary": "Client: HYDRAUSTAB | Armoire 2 pompes 7A avec millénium III | 38 composants | Matière: 1395€ | Prix: 3079€ | 22.04h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:57.881587"
+    "parsed_at": "2026-05-06T13:24:10.815472"
   },
   {
     "id": "DEVIS1901194 BONNEAU ASSAINISSEMENT Armoire 2 pompes 15.2A avec ATS01, 1 pompe de brassage mono 10A avec S550",
@@ -46153,7 +46155,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 15.2A avec ATS01, 1 pompe de brassage mono 10A avec S550 | 58 composants | Matière: 6372€ | Prix: 9452€ | 29.97h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:58.225680"
+    "parsed_at": "2026-05-06T13:24:11.380969"
   },
   {
     "id": "DEVIS1901195 BONNEAU ASSAINISSEMENT Armoire 2 pompes 3.1A, 1 pompe de brassage mono 10A avec S530",
@@ -46879,7 +46881,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 3.1A, 1 pompe de brassage mono 10A avec S530 | 45 composants | Matière: 2548€ | Prix: 4874€ | 26.02h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:58.563110"
+    "parsed_at": "2026-05-06T13:24:11.944933"
   },
   {
     "id": "DEVIS1901196 BONNEAU ASSAINISSEMENT Armoire 2 pompes 8.4A avec ATS01, 1 pompe de brassage mono 10A avec S530",
@@ -47704,7 +47706,7 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 8.4A avec ATS01, 1 pompe de brassage mono 10A avec S550 | 52 composants | Matière: 4734€ | Prix: 7407€ | 29.950000000000006h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:37:58.905739"
+    "parsed_at": "2026-05-06T13:24:12.505785"
   },
   {
     "id": "DEVIS1901197 PRS Armoire double porte 2 pompes tri 14A maxi avec verrine et compteur horaire",
@@ -48049,7 +48051,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire double porte 2 pompes tri 14A maxi avec compteurs horaires et verrine | 19 composants | Matière: 430€ | Prix: 1058€ | 8.965h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:59.217716"
+    "parsed_at": "2026-05-06T13:24:13.059244"
   },
   {
     "id": "DEVIS1901198 PRS Armoire double porte 2 pompes mono 14A maxi avec verrine et compteur horaire",
@@ -48394,7 +48396,7 @@
       "wago"
     ],
     "summary": "Client: PRS | Armoire double porte 2 pompes mono 14A maxi avec compteurs horaires et verrine | 19 composants | Matière: 410€ | Prix: 1031€ | 8.96h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:59.540904"
+    "parsed_at": "2026-05-06T13:24:13.615781"
   },
   {
     "id": "DEVIS1901199 PRS Armoire double porte 2 pompes 6-10A avec résistance chauffante, compteur horaire, verrine et SD3",
@@ -48456,7 +48458,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire double porte 2 pompes 6-10A avec CH, résistance chauffante, verrine et SD3 | 10.630000000000003h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:37:59.762962"
+    "parsed_at": "2026-05-06T13:24:14.019650"
   },
   {
     "id": "DEVIS1901200 PRS Armoire simple porte 2 pompes mono 4-6.3A avec compteur horaire et verrine",
@@ -48518,7 +48520,7 @@
       "pompe"
     ],
     "summary": "Client: PRS | Armoire simple porte 2 pompes mono 4-6.3A avec compteurs horaires et verrine | 8.36h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:37:59.984461"
+    "parsed_at": "2026-05-06T13:24:14.410987"
   },
   {
     "id": "DEVIS1902100 CALPEDA Armoire 2 pompes mono 0.55kW 4.3A avec S550",
@@ -49146,7 +49148,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes mono 0.55kW 4.3A avec S530 | 38 composants | Matière: 2071€ | Prix: 3911€ | 22.04h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:38:00.302290"
+    "parsed_at": "2026-05-06T13:24:14.971946"
   },
   {
     "id": "DEVIS1902101 HYDRAUSTAB Armoire 2 pompes 7A de relevage et 1 pompe de recirculation 6A avec ATS01, 6 vannes motorisées et S550",
@@ -50291,7 +50293,7 @@
       "wago"
     ],
     "summary": "Client: HYDRAUSTAB | Armoire 2 pompes de relevage 7A et 1 pompe de recirculation 6A avec ATS01, 6 vannes motorisées et S550 | 74 composants | Matière: 6123€ | Prix: 11780€ | 51.989999999999995h fab + 12.0h prog",
-    "parsed_at": "2026-04-28T17:38:00.650010"
+    "parsed_at": "2026-05-06T13:24:15.558798"
   },
   {
     "id": "DEVIS1902102 HYDRAUSTAB Armoire 2 pompes 8A avec ATS01",
@@ -51058,7 +51060,7 @@
       "wago"
     ],
     "summary": "Client: HYDRAUSTAB | Armoire 2 pompes de relevage 8A avec ATS01 | 47 composants | Matière: 3009€ | Prix: 5757€ | 30.509999999999998h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:38:00.993239"
+    "parsed_at": "2026-05-06T13:24:16.131629"
   },
   {
     "id": "DEVIS1902103 FELJAS ET MASSON Armoire télétransmission S550",
@@ -51588,7 +51590,7 @@
       "gsm"
     ],
     "summary": "Client: FELJAS ET MASSON | Armoire télétransmission S550 | 29 composants | Matière: 2175€ | Prix: 3786€ | 15.950000000000001h fab + 0.5h prog",
-    "parsed_at": "2026-04-28T17:38:01.351160"
+    "parsed_at": "2026-05-06T13:24:16.740237"
   },
   {
     "id": "DEVIS1902104 CALPEDA Armoire 1 pompe mono 0.55kW 4.1A",
@@ -51875,7 +51877,7 @@
       "wago"
     ],
     "summary": "Client: CALPEDA | Armoire 1 pompe mono 0.55kW 4.1A | 14 composants | Matière: 226€ | Prix: 632€ | 6.03h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:38:01.687861"
+    "parsed_at": "2026-05-06T13:24:17.302915"
   },
   {
     "id": "DEVIS1902105 ERIDIS Armoire 2 pompes 1.9kW 4.4A",
@@ -52247,7 +52249,7 @@
       "wago"
     ],
     "summary": "Client: ERIDIS | Armoire 2 pompes 1.9kW 4.4A | 20 composants | Matière: 637€ | Prix: 1504€ | 11.969999999999999h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:38:01.994947"
+    "parsed_at": "2026-05-06T13:24:17.862743"
   },
   {
     "id": "DEVIS1902106 CALPEDA Armoire 2 pompes mono 6-10A avec SD3",
@@ -52309,7 +52311,7 @@
       "pompe"
     ],
     "summary": "Client: CALPEDA | Armoire 2 pompes mono 6-10A avec SD3 | 12.340000000000003h fab + 1.0h prog",
-    "parsed_at": "2026-04-28T17:38:02.207857"
+    "parsed_at": "2026-05-06T13:24:18.258747"
   },
   {
     "id": "DEVIS1902107 CG2D Armoire 2 pompes tri 14A",
@@ -52593,7 +52595,7 @@
       "wago"
     ],
     "summary": "Client: CG2D | Armoire 2 pompes 14A | 14 composants | Matière: 408€ | Prix: 1105€ | 10.02h fab + 0h prog",
-    "parsed_at": "2026-04-28T17:38:02.543489"
+    "parsed_at": "2026-05-06T13:24:18.824547"
   },
   {
     "id": "DEVIS1902108 BONNEAU ASSAINISSEMENT Armoire 2 pompes 7.4kW 14A avec S550",
@@ -53417,6 +53419,6 @@
       "wago"
     ],
     "summary": "Client: BONNEAU ASSAINISSEMENT | Armoire 2 pompes 7.4kW 14A avec S550 | 52 composants | Matière: 4394€ | Prix: 7529€ | 30.02h fab + 2.0h prog",
-    "parsed_at": "2026-04-28T17:38:02.918857"
+    "parsed_at": "2026-05-06T13:24:19.391406"
   }
 ]
