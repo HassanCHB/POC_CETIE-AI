@@ -18,7 +18,7 @@ package-lock.json
 *.tsbuildinfo
 
 # ── Python ─────────────────────────────────────────────────────
-__pycache__/
+_pycache_/
 *.pyc
 *.pyo
 *.pyd
@@ -38,7 +38,7 @@ poc/data/eval_report*.json
 
 # ── ChromaDB vector index (binary, exceeds GitHub 100 MB limit) ─
 # In production it lives on the Render persistent disk — see CETIE_CHROMA_DIR
-# in render.yaml. Locally it's regenerated on demand via `python3 poc/rag.py`.
+# in render.yaml. Locally it's regenerated on demand via python3 poc/rag.py.
 poc/chroma_db/
 
 # ── IDE / OS ───────────────────────────────────────────────────

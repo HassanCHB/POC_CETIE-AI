@@ -3953,7 +3953,7 @@
   {
     "id": 619,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E41 sur TC double tarif",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E41 sur TC double tarif",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 190.39100000000002,
@@ -3962,7 +3962,7 @@
   {
     "id": 620,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E42 sur TC double tarif et MID",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E42 sur TC double tarif et MID",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 196.091,
@@ -3971,7 +3971,7 @@
   {
     "id": 621,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E43 sur TC double tarif + com Modbus sur RS485",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E43 sur TC double tarif + com Modbus sur RS485",
     "heures_cablage": 0.446,
     "heures_prog": 0.1,
     "cout": 212.8474,
@@ -3980,7 +3980,7 @@
   {
     "id": 622,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E44 sur TC  double tarif + com Modbus sur RS485 - MID",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E44 sur TC  double tarif + com Modbus sur RS485 - MID",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 218.94099999999997,
@@ -3989,7 +3989,7 @@
   {
     "id": 623,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E45 sur TC  double tarif + com M-Bus",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E45 sur TC  double tarif + com M-Bus",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 220.461,
@@ -3998,7 +3998,7 @@
   {
     "id": 624,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E46 sur TC  double tarif + com M-Bus - MID",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E46 sur TC  double tarif + com M-Bus - MID",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 229.981,
@@ -4007,7 +4007,7 @@
   {
     "id": 625,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E47 sur TC  double tarif + com Modubus TCP",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E47 sur TC  double tarif + com Modubus TCP",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 273.76099999999997,
@@ -4016,7 +4016,7 @@
   {
     "id": 2604,
     "categorie": "Compteur d'énergie",
-    "designation": "Compteur d'énergie active tri jusqu’à 12000A COUNTIS E48 sur TC  double tarif + com Modubus TCP - MID",
+    "designation": "Compteur d'énergie active tri jusquà 12000A COUNTIS E48 sur TC  double tarif + com Modubus TCP - MID",
     "heures_cablage": 0.132,
     "heures_prog": 0.0,
     "cout": 60.56099999999999,
@@ -13790,7 +13790,7 @@
   {
     "id": 1569,
     "categorie": "Ambiance (16m3/h) STEGO",
-    "designation": "Ventilation d’armoire 21m3 97x97 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 21m3 97x97 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 66.78999999999999,
@@ -13799,7 +13799,7 @@
   {
     "id": 1570,
     "categorie": "Ambiance (42m3/h) STEGO",
-    "designation": "Ventilation d’armoire 55m3 125x125 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 55m3 125x125 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 71.85999999999999,
@@ -13808,7 +13808,7 @@
   {
     "id": 1571,
     "categorie": "Ambiance (68m3/h) STEGO",
-    "designation": "Ventilation d’armoire 102m3 176x176 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 102m3 176x176 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 85.58,
@@ -13817,7 +13817,7 @@
   {
     "id": 1572,
     "categorie": "Ambiance (125m3/h) STEGO",
-    "designation": "Ventilation d’armoire 200m3 176x176 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 200m3 176x176 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 117.97999999999998,
@@ -13826,7 +13826,7 @@
   {
     "id": 1573,
     "categorie": "Ambiance (230m3/h) STEGO",
-    "designation": "Ventilation d’armoire 300m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 300m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 171.18,
@@ -13835,7 +13835,7 @@
   {
     "id": 1574,
     "categorie": "Ambiance (300m3/h) STEGO",
-    "designation": "Ventilation d’armoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 164.12,
@@ -13853,7 +13853,7 @@
   {
     "id": 1576,
     "categorie": "Ambiance  STEGO",
-    "designation": "Ventilation sur toit de l’armoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation sur toit de larmoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.56,
     "heures_prog": 0.0,
     "cout": 212.37,
@@ -13862,7 +13862,7 @@
   {
     "id": 1577,
     "categorie": "Ambiance SCHNEIDER 400V",
-    "designation": "Ventilation d’armoire 400VAC 798m3 336x316 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 400VAC 798m3 336x316 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.5900000000000001,
     "heures_prog": 0.0,
     "cout": 337.1694,
@@ -13871,7 +13871,7 @@
   {
     "id": 1578,
     "categorie": "Ambiance TARIF JAUNE (16m3/h) STEGO",
-    "designation": "Ventilation d’armoire 21m3 97x97 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 21m3 97x97 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 86.03,
@@ -13880,7 +13880,7 @@
   {
     "id": 1579,
     "categorie": "Ambiance TARIF JAUNE (42m3/h) STEGO",
-    "designation": "Ventilation d’armoire 55m3 125x125 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 55m3 125x125 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 91.1,
@@ -13889,7 +13889,7 @@
   {
     "id": 1580,
     "categorie": "Ambiance TARIF JAUNE (68m3/h) STEGO",
-    "designation": "Ventilation d’armoire 102m3 176x176 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 102m3 176x176 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 104.82,
@@ -13898,7 +13898,7 @@
   {
     "id": 1581,
     "categorie": "Ambiance TARIF JAUNE (125m3/h) STEGO",
-    "designation": "Ventilation d’armoire 200m3 176x176 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 200m3 176x176 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 137.22,
@@ -13907,7 +13907,7 @@
   {
     "id": 1582,
     "categorie": "Ambiance TARIF JAUNE (230m3/h) STEGO",
-    "designation": "Ventilation d’armoire 300m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 300m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 190.42,
@@ -13916,7 +13916,7 @@
   {
     "id": 1583,
     "categorie": "Ambiance TARIF JAUNE (300m3/h) STEGO",
-    "designation": "Ventilation d’armoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.45999999999999996,
     "heures_prog": 0.0,
     "cout": 183.6,
@@ -13934,7 +13934,7 @@
   {
     "id": 1585,
     "categorie": "Ambiance TARIF JAUNE STEGO",
-    "designation": "Ventilation sur toit de l’armoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation sur toit de larmoire 550m3 250x250 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.56,
     "heures_prog": 0.0,
     "cout": 231.61,
@@ -13943,7 +13943,7 @@
   {
     "id": 1586,
     "categorie": "Ambiance SCHNEIDER 400V",
-    "designation": "Ventilation d’armoire 400VAC 798m3 336x316 et son thermostat de commande pour dissiper la chaleur",
+    "designation": "Ventilation darmoire 400VAC 798m3 336x316 et son thermostat de commande pour dissiper la chaleur",
     "heures_cablage": 0.5900000000000001,
     "heures_prog": 0.0,
     "cout": 337.1694,
@@ -17012,7 +17012,7 @@
   {
     "id": 2748,
     "categorie": "Mesure de débit texte",
-    "designation": "Découpe dans la porte intérieure afin de permettre la lecture des informations du débitmètre sans devoir l’ouvrir",
+    "designation": "Découpe dans la porte intérieure afin de permettre la lecture des informations du débitmètre sans devoir louvrir",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19145,7 +19145,7 @@
   {
     "id": 2100,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation de l'analyse fonctionnelle",
+    "designation": " Réalisation de l'analyse fonctionnelle",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19154,7 +19154,7 @@
   {
     "id": 2101,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation du développement du programme du sofrel",
+    "designation": " Réalisation du développement du programme du sofrel",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19163,7 +19163,7 @@
   {
     "id": 2102,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation du développement du programme du Millénium",
+    "designation": " Réalisation du développement du programme du Millénium",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19172,7 +19172,7 @@
   {
     "id": 2654,
     "categorie": "Télégestion - Automate",
-    "designation": "• Chargement de notre programme standard EASY 1 pompe dans le Millénium",
+    "designation": " Chargement de notre programme standard EASY 1 pompe dans le Millénium",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19181,7 +19181,7 @@
   {
     "id": 2615,
     "categorie": "Télégestion - Automate",
-    "designation": "• Chargement de notre programme standard EASY 2 pompes dans le Millénium",
+    "designation": " Chargement de notre programme standard EASY 2 pompes dans le Millénium",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19190,7 +19190,7 @@
   {
     "id": 2655,
     "categorie": "Télégestion - Automate",
-    "designation": "• Chargement de notre programme standard EASY 3 pompes dans le Millénium",
+    "designation": " Chargement de notre programme standard EASY 3 pompes dans le Millénium",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19199,7 +19199,7 @@
   {
     "id": 2103,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation du développement du programme de l'automate",
+    "designation": " Réalisation du développement du programme de l'automate",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19208,7 +19208,7 @@
   {
     "id": 2104,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation des tests plateforme et des essais en atelier",
+    "designation": " Réalisation des tests plateforme et des essais en atelier",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19217,7 +19217,7 @@
   {
     "id": 2105,
     "categorie": "Télégestion - Automate",
-    "designation": "• Réalisation d'une notice de fonctionnement",
+    "designation": " Réalisation d'une notice de fonctionnement",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19325,7 +19325,7 @@
   {
     "id": 2118,
     "categorie": "Téléalarme",
-    "designation": "• Défaut pompe 1",
+    "designation": " Défaut pompe 1",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19334,7 +19334,7 @@
   {
     "id": 2119,
     "categorie": "Téléalarme",
-    "designation": "• Défaut pompe 2",
+    "designation": " Défaut pompe 2",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19343,7 +19343,7 @@
   {
     "id": 2120,
     "categorie": "Téléalarme",
-    "designation": "• Niveau alarme",
+    "designation": " Niveau alarme",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19379,7 +19379,7 @@
   {
     "id": 2124,
     "categorie": "Téléalarme",
-    "designation": "• 10 numéros d’appel téléphonique nominatifs : Nom et type de message programmables",
+    "designation": " 10 numéros dappel téléphonique nominatifs : Nom et type de message programmables",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19388,7 +19388,7 @@
   {
     "id": 2125,
     "categorie": "Téléalarme",
-    "designation": "• 8 entrées d’alarme",
+    "designation": " 8 entrées dalarme",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19397,7 +19397,7 @@
   {
     "id": 2126,
     "categorie": "Téléalarme",
-    "designation": "• Messages vocaux enregistrables sur le transmetteur : message d’identification + 8 messages d’alarme (chaque message peut durer 30 secondes)",
+    "designation": " Messages vocaux enregistrables sur le transmetteur : message didentification + 8 messages dalarme (chaque message peut durer 30 secondes)",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19406,7 +19406,7 @@
   {
     "id": 2127,
     "categorie": "Téléalarme",
-    "designation": "• Mémoire des 128 derniers événements horodatés",
+    "designation": " Mémoire des 128 derniers événements horodatés",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19415,7 +19415,7 @@
   {
     "id": 2128,
     "categorie": "Téléalarme",
-    "designation": "• Possibilité d’enregistrer un message localement ou à distance, le transmetteur signalera la présence d’un message à consulter par bip ou clignotement sur l’afficheur",
+    "designation": " Possibilité denregistrer un message localement ou à distance, le transmetteur signalera la présence dun message à consulter par bip ou clignotement sur lafficheur",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19424,7 +19424,7 @@
   {
     "id": 2129,
     "categorie": "Téléalarme",
-    "designation": "• Les informations suivantes seront câblées sur les entrées du transmetteur :",
+    "designation": " Les informations suivantes seront câblées sur les entrées du transmetteur :",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19433,7 +19433,7 @@
   {
     "id": 2130,
     "categorie": "Téléalarme",
-    "designation": "• Manque tension",
+    "designation": " Manque tension",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19442,7 +19442,7 @@
   {
     "id": 2131,
     "categorie": "Téléalarme",
-    "designation": "• Défaut pompe 1",
+    "designation": " Défaut pompe 1",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19451,7 +19451,7 @@
   {
     "id": 2132,
     "categorie": "Téléalarme",
-    "designation": "• Défaut pompe 2",
+    "designation": " Défaut pompe 2",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -19460,7 +19460,7 @@
   {
     "id": 2133,
     "categorie": "Téléalarme",
-    "designation": "• Niveau alarme",
+    "designation": " Niveau alarme",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20756,7 +20756,7 @@
   {
     "id": 2236,
     "categorie": "Reports sur bornes",
-    "designation": "• Manque tension",
+    "designation": " Manque tension",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20765,7 +20765,7 @@
   {
     "id": 2237,
     "categorie": "Reports sur bornes",
-    "designation": "• Défaut pompe 1",
+    "designation": " Défaut pompe 1",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20774,7 +20774,7 @@
   {
     "id": 2238,
     "categorie": "Reports sur bornes",
-    "designation": "• Défaut pompe 2",
+    "designation": " Défaut pompe 2",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20783,7 +20783,7 @@
   {
     "id": 2239,
     "categorie": "Reports sur bornes",
-    "designation": "• Défaut pompe 3",
+    "designation": " Défaut pompe 3",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20792,7 +20792,7 @@
   {
     "id": 2240,
     "categorie": "Reports sur bornes",
-    "designation": "• Marche pompe 1",
+    "designation": " Marche pompe 1",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20801,7 +20801,7 @@
   {
     "id": 2241,
     "categorie": "Reports sur bornes",
-    "designation": "• Marche pompe 2",
+    "designation": " Marche pompe 2",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20810,7 +20810,7 @@
   {
     "id": 2242,
     "categorie": "Reports sur bornes",
-    "designation": "• Marche pompe 3",
+    "designation": " Marche pompe 3",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20819,7 +20819,7 @@
   {
     "id": 2243,
     "categorie": "Reports sur bornes",
-    "designation": "• Niveau alarme",
+    "designation": " Niveau alarme",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20828,7 +20828,7 @@
   {
     "id": 2244,
     "categorie": "Reports sur bornes",
-    "designation": "• Manque eau",
+    "designation": " Manque eau",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20837,7 +20837,7 @@
   {
     "id": 2652,
     "categorie": "Reports sur bornes",
-    "designation": "• Synthèse défauts",
+    "designation": " Synthèse défauts",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -20846,7 +20846,7 @@
   {
     "id": 2653,
     "categorie": "Reports sur bornes",
-    "designation": "• Synthèse défauts (No/Nc)",
+    "designation": " Synthèse défauts (No/Nc)",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -21152,7 +21152,7 @@
   {
     "id": 2268,
     "categorie": "Développement IHM",
-    "designation": "• Affichage de synoptiques animés représentants l’état de l’installation",
+    "designation": " Affichage de synoptiques animés représentants létat de linstallation",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -21161,7 +21161,7 @@
   {
     "id": 2269,
     "categorie": "Développement IHM",
-    "designation": "• Affichage de courbes temps réel et courbes de tendance avec historique",
+    "designation": " Affichage de courbes temps réel et courbes de tendance avec historique",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -21170,7 +21170,7 @@
   {
     "id": 2270,
     "categorie": "Développement IHM",
-    "designation": "• Affichage alarmes, évènements, historique",
+    "designation": " Affichage alarmes, évènements, historique",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
@@ -21179,7 +21179,7 @@
   {
     "id": 2271,
     "categorie": "Développement IHM",
-    "designation": "• Consultation des états des pompes ainsi que leurs compteurs associés",
+    "designation": " Consultation des états des pompes ainsi que leurs compteurs associés",
     "heures_cablage": 0.0,
     "heures_prog": 0.0,
     "cout": 0.01,
