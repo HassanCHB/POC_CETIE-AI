@@ -13,6 +13,7 @@ import os
 import math
 import json
 import glob
+import threading
 import chromadb
 from datetime import datetime
 from openai import OpenAI
@@ -81,17 +82,37 @@ def _openai_client() -> OpenAI:
     return OpenAI(api_key=api_key)
 
 
+# ── ChromaDB singleton ────────────────────────────────────────────────────────
+# One PersistentClient per worker process is enough — SQLite can't handle
+# multiple concurrent writers, and each extra client adds a file-lock round trip.
+# With Gunicorn's multi-process model each worker has its own copy of this module,
+# so this singleton is per-worker (correct behaviour).
+_chroma_instance: chromadb.PersistentClient | None = None
+_chroma_lock = threading.Lock()
+
+
 def _chroma_client() -> chromadb.PersistentClient:
-    return chromadb.PersistentClient(path=CHROMA_PATH)
+    """Return the module-level ChromaDB singleton (created once per worker)."""
+    global _chroma_instance
+    if _chroma_instance is None:
+        with _chroma_lock:
+            if _chroma_instance is None:          # double-checked locking
+                _chroma_instance = chromadb.PersistentClient(path=CHROMA_PATH)
+    return _chroma_instance
 
 
 def embed_text(text: str, client=None) -> list[float]:
-    """Embed a single string with text-embedding-3-small."""
+    """Embed a single string with text-embedding-3-small.
+
+    A hard 15-second timeout is enforced so a transient OpenAI network blip
+    never hangs a Gunicorn worker until it gets SIGKILL'd (default 180 s).
+    """
     if client is None:
         client = _openai_client()
     response = client.embeddings.create(
         model="text-embedding-3-small",
         input=text.replace("\n", " "),
+        timeout=15.0,   # prevent infinite hang on network blip
     )
     return response.data[0].embedding
 

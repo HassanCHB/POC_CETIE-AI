@@ -5,6 +5,7 @@ import uuid
 import hashlib
 import secrets as _secrets
 import threading
+import concurrent.futures
 from datetime import datetime, timezone
 from flask import Flask, render_template, request, jsonify, Response, stream_with_context, send_file
 import anthropic
@@ -191,10 +192,8 @@ def _start_boot(force_years: list[str] | None = None):
 _start_boot()
 
 
-def _retrieve_yearly_projects(query_text: str, n_per_year: int = 5) -> list[dict]:
-    """Query all active yearly indices and return merged, deduplicated results."""
-    if not _active_years:
-        return []
+def _retrieve_yearly_projects_inner(query_text: str, n_per_year: int = 5) -> list[dict]:
+    """Core retrieval logic — called inside a timeout-guarded thread."""
     results = []
     seen_ids = set()
     for year in _active_years:
@@ -208,9 +207,31 @@ def _retrieve_yearly_projects(query_text: str, n_per_year: int = 5) -> list[dict
                     results.append(h)
         except Exception as e:
             print(f"[RAG] Retrieval error for year {year}: {e}")
-    # Sort by similarity descending, keep top n_per_year overall
     results.sort(key=lambda x: x.get("similarity_score", 0), reverse=True)
     return results[:n_per_year]
+
+
+def _retrieve_yearly_projects(query_text: str, n_per_year: int = 5) -> list[dict]:
+    """
+    Query all active yearly indices and return merged, deduplicated results.
+
+    Runs inside a ThreadPoolExecutor with a hard 25-second timeout so a hung
+    OpenAI embedding call (or ChromaDB lock) can never block a Gunicorn worker
+    long enough to trigger the 180-second SIGKILL.
+    Returns [] on timeout so the stream can continue without RAG context.
+    """
+    if not _active_years:
+        return []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as _exe:
+        _fut = _exe.submit(_retrieve_yearly_projects_inner, query_text, n_per_year)
+        try:
+            return _fut.result(timeout=25.0)
+        except concurrent.futures.TimeoutError:
+            print("[RAG] _retrieve_yearly_projects timed out after 25 s — returning []")
+            return []
+        except Exception as e:
+            print(f"[RAG] _retrieve_yearly_projects error: {e}")
+            return []
 
 
 def _ensure_rag_index():
